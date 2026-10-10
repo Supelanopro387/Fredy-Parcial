@@ -15,6 +15,7 @@ web/
 EXAMEN_SEGUNDO_CORTE.pdf
 captura-portafolio-opera-gx.png
 captura-actividades-opera-gx.png
+captura-descargas-drive-opera-gx.png
 ```
 
 ## Abrir localmente

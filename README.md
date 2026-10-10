@@ -23,11 +23,11 @@ Abre `web/index.html` en un navegador. La búsqueda y los filtros del catálogo 
 
 ## Publicación gratuita
 
-El workflow `.github/workflows/deploy-pages.yml` publica automáticamente `web/` en GitHub Pages al hacer push a `main`. La dirección prevista es:
+El workflow `.github/workflows/deploy-pages.yml` publica automáticamente `web/` en GitHub Pages al hacer push a `main`. El repositorio ya está configurado para desplegar mediante GitHub Actions. La dirección del sitio es:
 
 https://supelanopro387.github.io/Fredy-Parcial/
 
-En el repositorio, configura **Settings → Pages → Build and deployment → Source: GitHub Actions** si aún no está activado. Los siguientes pushes a `main` actualizan el sitio.
+Los siguientes pushes a `main` actualizan el sitio.
 
 ## Antes de entregar el examen
 

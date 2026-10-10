@@ -77,3 +77,45 @@ filterButtons.forEach((button) => {
     updatePrograms();
   });
 });
+
+async function loadPublishedMediaLinks() {
+  try {
+    const response = await fetch(new URL('media-links.json', document.baseURI), { cache: 'no-store' });
+    if (!response.ok) return;
+
+    const mediaConfig = await response.json();
+    const driveUrl = getSafeHttpsUrl(mediaConfig.driveFolderUrl);
+    const driveLink = document.querySelector('#drive-folder-link');
+    const drivePending = document.querySelector('#drive-link-pending');
+
+    if (driveUrl && driveLink && drivePending) {
+      driveLink.href = driveUrl;
+      driveLink.hidden = false;
+      drivePending.hidden = true;
+    }
+
+    document.querySelectorAll('[data-media-id]').forEach((slot) => {
+      const url = getSafeHttpsUrl(mediaConfig.products?.[slot.dataset.mediaId]);
+      const link = slot.querySelector('a');
+      const pending = slot.querySelector('small');
+      if (!url || !link || !pending) return;
+
+      link.href = url;
+      link.hidden = false;
+      pending.hidden = true;
+    });
+  } catch {
+    // Local file previews work without the optional hosted-media configuration.
+  }
+}
+
+function getSafeHttpsUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' ? url.href : '';
+  } catch {
+    return '';
+  }
+}
+
+loadPublishedMediaLinks();

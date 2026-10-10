@@ -9,6 +9,7 @@ web/
 ├── index.html
 ├── styles.css
 ├── app.js
+├── media-links.json
 └── entregables/
     └── guiones-prototipo.md
 .github/workflows/deploy-pages.yml
@@ -32,10 +33,11 @@ Los siguientes pushes a `main` actualizan el sitio.
 
 ## Antes de entregar el examen
 
-1. Completa el programa y nivel académico de Nicolás. El examen especifica productos para Administración y Contaduría, pero no asigna actividad a Ingeniería de Sistemas.
-2. Escoge la ruta asignada. El portafolio incluye prototipos de guion/storyboard y enlaces de consulta para las seis rutas; no afirma que las piezas finales se hayan exportado.
-3. Conecta el enlace de la carpeta compartida de Google Drive en la sección **Descargas** y sube allí los MP4, MP3, infografías, capturas y versiones finales.
-4. Registra prompts y herramientas realmente utilizados, revisa los datos SNIES y prueba la página en computador y celular.
-5. La guía indica que la entrega debe realizarse presencialmente.
+1. La campaña se centra en **Administración de Empresas** y **Contaduría Pública**, con los tres ciclos propedéuticos de cada programa. Nicolás estudia Ingeniería de Sistemas en FESNA; ese dato identifica al estudiante, no el tema de campaña.
+2. Las seis tarjetas contienen borradores de guiones/storyboards para los productos de la consigna; no son archivos finales de video, audio o animación.
+3. Al exportar cada pieza, pega su enlace HTTPS en `web/media-links.json`, en el espacio con su identificador; pega también el enlace de la carpeta compartida de Drive en `driveFolderUrl`.
+4. El chatbot local Fesnando define el cuatrimestre como un periodo de cuatro meses. El descanso de una semana entre periodos proviene de la información aportada por Nicolás y debe validarse con el calendario académico vigente.
+5. Verifica SNIES, fuentes, créditos visuales, prompts y herramientas utilizadas; revisa el sitio en computador y celular.
+6. La guía del examen indica que la entrega debe realizarse presencialmente.
 
 Las ilustraciones de la página se implementan con HTML/CSS/SVG con asistencia de IA. No se usan fotografías externas ni se reutiliza el archivo del logotipo institucional.

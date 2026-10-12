@@ -29,6 +29,7 @@ captura-actividades-opera-gx.png
 captura-productos-opera-gx.png
 captura-descargas-drive-opera-gx.png
 captura-voz-ia-opera-gx.png
+captura-productos-movil-edge.png
 ```
 
 ## Abrir localmente

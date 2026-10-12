@@ -1,17 +1,17 @@
 {
   "driveFolderUrl": "",
   "products": {
-    "admin-tp-video": "",
-    "admin-tp-infografia": "",
-    "admin-tec-reel": "",
-    "admin-tec-spot": "",
-    "admin-prof-video": "",
-    "admin-prof-motion": "",
-    "conta-tp-reels": "",
-    "conta-tp-cuna": "",
-    "conta-tec-podcast": "",
-    "conta-tec-animacion": "",
-    "conta-prof-avatar": "",
-    "conta-prof-podcast": ""
+    "admin-tp-video": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-tp-video-explicativo.mp4",
+    "admin-tp-infografia": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/admin-tp-estructura-organizacional-fesna.png",
+    "admin-tec-reel": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-tec-reel-promocional.mp4",
+    "admin-tec-spot": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/admin-spot-voz-ia.mp3",
+    "admin-prof-video": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-prof-video-institucional.mp4",
+    "admin-prof-motion": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-prof-motion-graphics.mp4",
+    "conta-tp-reels": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-tp-serie-reels.mp4",
+    "conta-tp-cuna": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-tp-cuna.mp3",
+    "conta-tec-podcast": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-tec-podcast-conoce-fesna.mp3",
+    "conta-tec-animacion": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-tec-animacion-2d.mp4",
+    "conta-prof-avatar": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-prof-testimonio-avatar-ficticio.mp4",
+    "conta-prof-podcast": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-prof-podcast-institucional.mp3"
   }
 }

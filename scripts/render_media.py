@@ -84,11 +84,12 @@ def draw_visual(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], kind:
                 draw.line((left + item_w, y1 + h // 2, left + item_w + gap, y1 + h // 2), fill=accent, width=3)
         draw.text((x1 + 22, y2 - 54), "FLUJO DOCUMENTAL · EJEMPLO EDUCATIVO", font=font(14), fill=MUTED)
     elif kind == "finance":
-        draw.text((x1 + 24, y1 + 25), "RAZÓN CORRIENTE", font=font(17, True), fill=accent)
-        draw.text((x1 + 24, y1 + 76), "Activo corriente", font=font(27, True), fill=WHITE)
-        draw.line((x1 + 23, y1 + 115, x1 + w - 24, y1 + 115), fill=accent, width=3)
-        draw.text((x1 + 24, y1 + 132), "Pasivo corriente", font=font(27, True), fill=WHITE)
-        draw.text((x1 + 24, y2 - 42), "INTERPRETA CON CONTEXTO · DATOS FICTICIOS", font=font(12), fill=MUTED)
+        draw.text((x1 + 24, y1 + 15), "RAZÓN CORRIENTE = ACTIVO CORRIENTE ÷ PASIVO CORRIENTE",
+                  font=font(13, True), fill=accent)
+        draw.text((x1 + 24, y1 + 48), "Activo corriente", font=font(22, True), fill=WHITE)
+        draw.line((x1 + 23, y1 + 82, x1 + w - 24, y1 + 82), fill=accent, width=3)
+        draw.text((x1 + 24, y1 + 91), "Pasivo corriente", font=font(22, True), fill=WHITE)
+        draw.text((x1 + 24, y2 - 19), "DATOS FICTICIOS · INTERPRETA CON CONTEXTO", font=font(10), fill=MUTED)
     elif kind == "avatar":
         cx, cy = x1 + w // 2, y1 + 76
         draw.ellipse((cx - 42, cy - 42, cx + 42, cy + 42), fill=(28, 72, 73), outline=accent, width=4)
@@ -189,34 +190,49 @@ def render_video(filename: str, program: str, accent: tuple[int, int, int],
     output.parent.mkdir(parents=True, exist_ok=True)
     voice_length = audio_duration(narration) if narration and narration.exists() else 0.0
     total_duration = max(minimum_duration, voice_length + 1.0)
+    fps = 24
     scene_duration = total_duration / len(scenes)
 
     with tempfile.TemporaryDirectory(prefix="fesna-render-") as temp_dir:
         temp = Path(temp_dir)
-        concat_path = temp / "slides.txt"
-        with concat_path.open("w", encoding="utf-8") as playlist:
-            frame_paths: list[Path] = []
-            for index, scene in enumerate(scenes, start=1):
-                frame = temp / f"scene-{index:02d}.png"
-                title, body, label, visual = scene
-                render_slide(frame, (width, height), accent, title, body, label, visual,
-                             "Verifica los datos institucionales antes de publicar.",
-                             index, len(scenes), program)
-                frame_paths.append(frame)
-                safe_path = frame.resolve().as_posix().replace("'", "'\\''")
-                playlist.write(f"file '{safe_path}'\n")
-                playlist.write(f"duration {scene_duration:.3f}\n")
-            playlist.write(f"file '{frame_paths[-1].resolve().as_posix()}'\n")
+        playlist_path = temp / "scenes.txt"
+        clip_paths: list[Path] = []
+        for index, scene in enumerate(scenes, start=1):
+            frame = temp / f"scene-{index:02d}.png"
+            clip = temp / f"clip-{index:02d}.mp4"
+            title, body, label, visual = scene
+            render_slide(frame, (width, height), accent, title, body, label, visual,
+                         "Verifica los datos institucionales antes de publicar.",
+                         index, len(scenes), program)
+            zoom_filter = (
+                f"zoompan=z='min(zoom+0.0006,1.045)':x='iw/2-(iw/zoom/2)':"
+                f"y='ih/2-(ih/zoom/2)':d=1:s={width}x{height}:fps={fps},format=yuv420p"
+            )
+            clip_command = [str(FFMPEG), "-y", "-hide_banner", "-loglevel", "error",
+                            "-loop", "1", "-framerate", str(fps), "-t", f"{scene_duration:.3f}",
+                            "-i", str(frame), "-vf", zoom_filter, "-an", "-c:v", "libx264",
+                            "-preset", "veryfast", "-crf", "27", "-pix_fmt", "yuv420p",
+                            "-movflags", "+faststart", str(clip)]
+            subprocess.run(clip_command, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+            clip_paths.append(clip)
 
-        command = [str(FFMPEG), "-y", "-f", "concat", "-safe", "0", "-i", str(concat_path)]
+        with playlist_path.open("w", encoding="utf-8") as playlist:
+            for clip in clip_paths:
+                safe_path = clip.resolve().as_posix().replace("'", "'\\''")
+                playlist.write(f"file '{safe_path}'\n")
+
+        command = [str(FFMPEG), "-y", "-hide_banner", "-loglevel", "error",
+                   "-f", "concat", "-safe", "0", "-i", str(playlist_path)]
         if narration and narration.exists():
             command += ["-i", str(narration), "-map", "0:v:0", "-map", "1:a:0", "-shortest",
                         "-c:a", "aac", "-b:a", "96k"]
         else:
-            command += ["-an"]
-        command += ["-vf", "fps=24,format=yuv420p", "-c:v", "libx264", "-preset", "veryfast",
-                    "-crf", "29", "-movflags", "+faststart", str(output)]
-        subprocess.run(command, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+            command += ["-map", "0:v:0", "-an"]
+        command += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "27",
+                    "-movflags", "+faststart", str(output)]
+        result = subprocess.run(command, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+        if result.returncode:
+            raise RuntimeError(f"FFmpeg failed to render {filename}: {result.stderr}")
     return output
 
 

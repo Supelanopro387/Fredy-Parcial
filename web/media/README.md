@@ -1,6 +1,6 @@
 # Medios exportados de la campaña FESNA
 
-Las piezas son prototipos académicos creados con guiones asistidos por IA, voces sintéticas genéricas y gráficos elaborados en Python/Pillow; FFmpeg se usó para montar y exportar los MP4. El avatar de Valeria es una ilustración vectorial original y ficticia con locución sintética. No se clonaron voces o rostros.
+Las piezas son prototipos académicos creados con guiones asistidos por IA, voces sintéticas genéricas y gráficos originales elaborados en Python/Pillow. FFmpeg se usó para el movimiento de cámara, los cortes entre escenas y la exportación MP4. El avatar de Valeria es una ilustración vectorial original y ficticia con locución sintética. No se clonaron voces o rostros ni se generaron estadísticas de FESNA.
 
 ## Administración de Empresas
 

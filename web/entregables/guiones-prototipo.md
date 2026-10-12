@@ -92,24 +92,25 @@ Rótulo visible: **“Avatar vectorial ficticio y voz sintética IA; no represen
 
 Guion: “En este ejemplo académico, Valeria —personaje ficticio— explica que el juicio profesional requiere estudiar la norma aplicable, documentar evidencia y actuar con ética. En una auditoría, las conclusiones deben basarse en procedimientos y evidencia suficiente; cada caso exige revisar los estándares vigentes”. El avatar es una ilustración vectorial; la locución se sintetizó con IA. No atribuirle experiencia real.
 
-### Podcast institucional asistido por IA (escaleta sugerida de 4 min)
+### Podcast institucional asistido por IA (guion educativo)
 
-- **0:00–0:30:** bienvenida y aviso de contenido educativo.
-- **0:30–1:30:** pregunta guía: ¿por qué importa la ética en auditoría?
-- **1:30–2:40:** diálogo entre presentador y personaje ficticio sobre evidencia, independencia y documentación.
-- **2:40–3:30:** mención general de NIIF/NIC; no interpretar una norma específica sin verificarla.
-- **3:30–4:00:** conclusiones y fuentes consultadas. Identificar las voces sintéticas en los créditos.
+- Bienvenida y declaración explícita de que la invitada y su voz son ficticias/sintéticas.
+- Auditoría: planificación, riesgos, evidencia, documentación y conclusiones.
+- Revisoría fiscal: referencia al marco legal colombiano vigente, sin reemplazar su consulta.
+- NIIF/NIC: reconocimiento, medición, presentación y revelaciones, según la versión aplicable.
+- Análisis macrofinanciero: relación educativa entre inflación, tasas, costos, deuda y presupuestos.
+- Cierre con advertencia de que es contenido educativo y consulta de fuentes oficiales.
 
-## Herramientas de producción sugeridas
+## Herramientas realmente utilizadas
 
-- Diseño, infografías y edición de video: [Canva](https://www.canva.com/) y [su guía para editar videos](https://www.canva.com/help/creating-and-editing-videos/).
-- Edición de reels y montaje: [CapCut](https://www.capcut.com/es-es/tools).
-- Grabación y edición de audio: [Audacity](https://www.audacityteam.org/).
-- Avatares demostrativos: [HeyGen](https://www.heygen.com/es-es/). Usar solo personajes ficticios o imágenes/voz propias con autorización explícita.
-- Voz sintética gratuita: [TTS.ai](https://tts.ai/tools/free-tts/), modelo Kokoro (Rápido), voz Alex (es). No se clonó ninguna voz.
-- Composición/exportación local de imágenes y video: Pillow y FFmpeg.
+- **ChatGPT:** organización de la consigna, redacción y revisión de guiones, prompts, código y briefs visuales. La revisión final de datos y medios sigue a cargo del estudiante.
+- **TTS.ai — Kokoro (Rápido), voz Alex (es):** síntesis de voz genérica para spots, cuña, podcasts y narraciones. No se clonó ninguna voz.
+- **Python y Pillow:** composición original de escenas, diagramas, láminas y avatar vectorial ficticio.
+- **FFmpeg:** síntesis de escenas con movimiento de cámara, montaje de MP4, unión de segmentos de podcast y exportación de audio/video.
+- **HTML5, CSS y JavaScript:** desarrollo del portafolio interactivo y sus controles adaptables.
+- **GitHub Pages:** alojamiento del portafolio y los medios finales.
 
-Anotar en la entrega las herramientas que realmente se usaron y comprobar las condiciones/licencias vigentes antes de exportar.
+Canva, CapCut, Audacity y HeyGen se evaluaron como alternativas de producción, pero no se usaron en estas exportaciones.
 
 ## Locuciones exportadas con voz sintética
 
@@ -131,21 +132,21 @@ Las locuciones se sintetizaron con TTS.ai (modelo Kokoro, voz Alex en español).
 
 **Avatar ficticio — `voz/conta-prof-avatar-voice.mp3`:** “Este testimonio es una dramatización académica. Valeria es un personaje ficticio; no representa a una egresada ni a una contadora real. La ética profesional exige consultar las normas aplicables, documentar evidencia y actuar con independencia. El avatar es una ilustración vectorial original; su voz es sintética y no imita a una persona real.”
 
-**Podcast institucional — `conta-prof-podcast-institucional.mp3`:** “Bienvenidos al podcast institucional de FESNA. En este episodio educativo conversamos sobre ética, auditoría y evidencia. Un trabajo de auditoría empieza con la planificación; continúa con procedimientos y documentación; y termina con conclusiones sustentadas en evidencia suficiente y apropiada. En contaduría, la independencia y la responsabilidad ayudan a proteger la confianza en la información. Las NIIF y NIC deben revisarse en sus versiones oficiales vigentes y aplicarse según el caso. Una cifra sin contexto puede confundir; por eso se analizan políticas, estimaciones y notas. La persona invitada en este episodio es un personaje ficticio y su voz es sintética. No representa a egresados ni expertos reales de FESNA. Este contenido es educativo, no constituye asesoría profesional. Consulta la bibliografía académica y las fuentes oficiales. Gracias por escuchar el podcast institucional de FESNA.”
+**Podcast institucional — `conta-prof-podcast-institucional.mp3`:** “Bienvenidos al podcast institucional de FESNA. Este episodio es educativo: Valeria es una experta virtual ficticia, su voz es sintética y no representa a una egresada ni a una experta real. Hablaremos de ética, auditoría, revisoría fiscal, normas NIIF y NIC, y análisis macrofinanciero. Una auditoría requiere planear procedimientos, valorar riesgos, obtener evidencia suficiente y apropiada, documentarla y sustentar conclusiones. La independencia y el juicio profesional son esenciales. En Colombia, la revisoría fiscal se ejerce dentro del marco legal vigente; el artículo 207 del Código de Comercio establece funciones que deben revisarse en el texto actualizado. Las NIIF y NIC orientan el reconocimiento, la medición, la presentación y las revelaciones contables. Confirma siempre la versión adoptada y aplicable al caso antes de interpretarla. El análisis macrofinanciero observa inflación, tasas de interés y tasa de cambio, variables que pueden influir en costos, deuda y presupuestos. No predicen por sí solas el resultado de una empresa: revisa políticas, periodos, supuestos y fuentes. Este caso es conceptual, no usa cifras de FESNA, no es asesoría y no expresa una postura institucional. Consulta la Contaduría General de la Nación, la DIAN y las fuentes legales oficiales. Gracias por escuchar.”
 
 ## Prompts de producción por pieza
 
-Reemplaza los campos entre corchetes con información oficial verificada. Pídele a la IA borradores; revisa y aprueba cada resultado antes de exportar.
+Los briefs siguientes se normalizaron para registrar y reproducir la instrucción principal aplicada a cada pieza; resumen el trabajo realizado, no son una transcripción literal del historial de chat. Los borradores y datos se revisaron antes de exportar.
 
 ### Administración de Empresas
 
 **Técnica Profesional en Procesos Administrativos Empresariales — video explicativo**
 
-> A partir del proceso institucional verificado [proceso], crea un guion visual paso a paso sobre recepción, clasificación, trámite y archivo de documentos. Separa locución y visuales, usa lenguaje claro y no inventes procedimientos ni datos de FESNA. Señala lo que deba confirmar con el docente.
+> Crea un guion visual paso a paso sobre el flujo documental general: recepción, clasificación, trámite y archivo. Separa locución y visuales, usa lenguaje claro y no lo presentes como procedimiento interno de FESNA. Indica que cada organización aplica sus reglas documentales.
 
 **Técnica Profesional en Procesos Administrativos Empresariales — infografía**
 
-> Diseña el contenido de una infografía académica sobre [estructura organizacional verificada]. Organízalo por niveles y funciones usando solo la fuente adjunta. No presentes un organigrama genérico como si fuera el de FESNA; indica fuentes y créditos.
+> Resume el PDF institucional “Equipo y estructura organizacional” de FESNA (2023) en una infografía académica. Organiza por niveles y funciones; conserva nombres y relaciones, no añadas cargos y agrega atribución y enlace al documento fuente.
 
 **Tecnología en Gestión Administrativa — reel**
 
@@ -179,15 +180,15 @@ Reemplaza los campos entre corchetes con información oficial verificada. Pídel
 
 **Tecnología en Gestión Contable y Financiera — animación 2D**
 
-> Diseña un storyboard 2D que explique un indicador financiero [indicador] con datos ficticios. Divide el proceso en escenas, muestra la fórmula con claridad y agrega una nota de que es un ejemplo educativo, no un dato de FESNA ni una asesoría financiera. Verifica fórmula y normativa.
+> Diseña un storyboard 2D para explicar la razón corriente (activo corriente ÷ pasivo corriente). Divide el proceso en cuatro escenas, muestra la fórmula con claridad y añade que es un ejemplo educativo, no un dato de FESNA ni asesoría financiera. Verifica el concepto con fuentes contables.
 
 **Contaduría Pública — testimonio con avatar**
 
-> Escribe un testimonio demostrativo para un personaje completamente ficticio que explique [tema NIIF/NIC, auditoría o ética]. Incluye de forma visible “personaje ficticio creado con IA; no representa a una persona real”. No inventes experiencia de egresados ni clones voces o rostros.
+> Escribe un testimonio demostrativo para un personaje completamente ficticio sobre ética profesional, independencia y evidencia en auditoría. Incluye de forma visible que el personaje es ficticio y no representa a una persona real. No inventes experiencia de egresados ni clones voces o rostros.
 
 **Contaduría Pública — podcast institucional**
 
-> Crea una escaleta de podcast institucional sobre [auditoría, revisoría fiscal, NIIF/NIC, ética o análisis macrofinanciero]. Identifica las voces sintéticas, cita fuentes vigentes y no atribuyas opiniones a FESNA o a expertos reales sin autorización.
+> Crea un guion para un podcast institucional educativo sobre ética, auditoría, revisoría fiscal, NIIF/NIC y análisis macrofinanciero. Explica los temas de forma general, incluye inflación, tasas y presupuestos sin predecir resultados; cita el marco legal oficial vigente; usa una invitada ficticia con voz sintética y no atribuyas opiniones a FESNA ni a expertos reales.
 
 ## Mapa de enlaces para productos exportados
 
@@ -235,10 +236,8 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 
 **`audio/conta-prof-podcast-institucional.mp3` — Podcast institucional**
 
-> Bienvenidos al podcast institucional de FESNA. En este episodio educativo conversamos sobre ética, auditoría y evidencia. Un trabajo de auditoría empieza con la planificación; continúa con procedimientos y documentación; y termina con conclusiones sustentadas en evidencia suficiente y apropiada. En contaduría, la independencia y la responsabilidad ayudan a proteger la confianza en la información. Las NIIF y NIC deben revisarse en sus versiones oficiales vigentes y aplicarse según el caso. Una cifra sin contexto puede confundir; por eso se analizan políticas, estimaciones y notas. La persona invitada en este episodio es un personaje ficticio y su voz es sintética. No representa a egresados ni expertos reales de FESNA. Este contenido es educativo, no constituye asesoría profesional. Consulta la bibliografía académica y las fuentes oficiales. Gracias por escuchar el podcast institucional de FESNA.
+> Bienvenidos al podcast institucional de FESNA. Este episodio es educativo: Valeria es una experta virtual ficticia, su voz es sintética y no representa a una egresada ni a una experta real. Hablaremos de ética, auditoría, revisoría fiscal, normas NIIF y NIC, y análisis macrofinanciero. Una auditoría requiere planear procedimientos, valorar riesgos, obtener evidencia suficiente y apropiada, documentarla y sustentar conclusiones. La independencia y el juicio profesional son esenciales. En Colombia, la revisoría fiscal se ejerce dentro del marco legal vigente; el artículo 207 del Código de Comercio establece funciones que deben revisarse en el texto actualizado. Las NIIF y NIC orientan el reconocimiento, la medición, la presentación y las revelaciones contables. Confirma siempre la versión adoptada y aplicable al caso antes de interpretarla. El análisis macrofinanciero observa inflación, tasas de interés y tasa de cambio, variables que pueden influir en costos, deuda y presupuestos. No predicen por sí solas el resultado de una empresa: revisa políticas, periodos, supuestos y fuentes. Este caso es conceptual, no usa cifras de FESNA, no es asesoría y no expresa una postura institucional. Consulta la Contaduría General de la Nación, la DIAN y las fuentes legales oficiales. Gracias por escuchar.
 
 ## Publicación de los productos
 
-Al terminar la exportación, pega la URL compartida de cada archivo en el espacio correspondiente de `web/media-links.json`. Se aceptan enlaces HTTPS públicos o con permiso de lectura. Para cambiar la carpeta única de Drive, llena `driveFolderUrl` en ese mismo archivo. No pegues archivos confidenciales ni enlaces que requieran permisos del estudiante.
-
-El proyecto FESNA local define el cuatrimestre como un periodo de cuatro meses. Los planes adjuntos organizan los ciclos en periodos I–III (técnico), IV–V (tecnológico) y VI–IX (profesional). El receso de una semana entre periodos fue proporcionado por Nicolás y requiere contraste con el calendario vigente.
+Los doce productos exportados están publicados y enlazados desde `web/media-links.json`. Si se reemplaza una pieza, valida el archivo y actualiza la URL correspondiente. La carpeta central de Drive es opcional mientras los enlaces directos del sitio funcionen; se configura en `driveFolderUrl` si el docente la solicita. No publiques archivos confidenciales ni enlaces que requieran permisos del estudiante.

@@ -61,5 +61,5 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(`Validated ${slotIds.length} product links and ${configuredIds.length} configured media slots.`);
-  if (!config.driveFolderUrl) console.log('Drive folder link is not set yet.');
+  if (!config.driveFolderUrl) console.log('Optional Drive folder is not configured; all product links are validated.');
 }

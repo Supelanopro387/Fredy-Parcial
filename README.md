@@ -21,6 +21,7 @@ web/
     └── bitacora-produccion.html
 .github/workflows/deploy-pages.yml
 scripts/render_media.py
+scripts/render_refreshed_media.py
 scripts/check-media-links.mjs
 scripts/media-requirements.txt
 EXAMEN_SEGUNDO_CORTE.pdf
@@ -29,6 +30,10 @@ captura-actividades-opera-gx.png
 captura-productos-opera-gx.png
 captura-descargas-drive-opera-gx.png
 captura-voz-ia-opera-gx.png
+captura-dialogo-ttsmaker-opera-gx.png
+captura-cuna-ttsmaker-opera-gx.png
+captura-conoce-ttsmaker-opera-gx.png
+captura-podcast-profesional-ttsmaker-opera-gx.png
 captura-productos-movil-edge.png
 ```
 
@@ -52,7 +57,7 @@ Los siguientes pushes a `main` actualizan el sitio.
 4. Verifica nombres, SNIES, fuentes, créditos visuales, prompts y herramientas; revisa el sitio en computador y celular.
 5. La guía del examen indica que la entrega debe realizarse presencialmente.
 
-Para volver a renderizar los medios, instala `scripts/media-requirements.txt` con Python y ejecuta `python scripts/render_media.py`. Los MP3 de voz sintética fuente están en `web/media/audio/voz/`; TTS.ai, Pillow y FFmpeg se usaron para generar y exportar los productos.
+Para volver a renderizar los medios, instala `scripts/media-requirements.txt` con Python. Ejecuta `python scripts/render_media.py` para las piezas originales y `python scripts/render_refreshed_media.py` para las dos animaciones y mezclas radiales renovadas. Se usaron TTS.ai y TTSMaker (ambos web), Pillow y FFmpeg; las voces son sintéticas y los dos podcasts nuevos son diálogos de dos voces.
 
 Valida los 12 enlaces y sus archivos locales con `node scripts/check-media-links.mjs`.
 

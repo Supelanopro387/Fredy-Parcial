@@ -345,11 +345,9 @@ def main() -> None:
     admin_spot_voice = MEDIA / "audio" / "admin-spot-voz-ia.mp3"
     admin_prof_voice = MEDIA / "audio" / "voz" / "admin-prof-video-narration.mp3"
     reels_voice = MEDIA / "audio" / "voz" / "conta-tp-reels-narration.mp3"
-    animation_voice = MEDIA / "audio" / "voz" / "conta-tec-animacion.mp3"
     avatar_voice = MEDIA / "audio" / "voz" / "conta-prof-avatar-voice.mp3"
 
-    concat_audio([f"conta-tec-podcast-parte-{n}.mp3" for n in range(1, 4)], "conta-tec-podcast-conoce-fesna.mp3")
-    concat_audio([f"conta-prof-podcast-parte-{n}.mp3" for n in range(1, 4)], "conta-prof-podcast-institucional.mp3")
+    # The two podcasts are multi-speaker TTSMaker exports; leave these final mixes intact.
 
     products = [
         ("admin-tp-video-explicativo.mp4", "Técnica Profesional en Procesos Administrativos Empresariales", MINT, "landscape", admin_voice, 18,
@@ -367,21 +365,11 @@ def main() -> None:
           ("Planificar", "Objetivos, equipo y recursos se organizan para orientar el trabajo.", "PLAN DE NEGOCIO", "flow"),
           ("Liderar con responsabilidad", "Las decisiones consideran a las personas y el entorno.", "RESPONSABILIDAD SOCIAL", "nodes"),
           ("Administración de Empresas", "FESNA · SNIES 111357 presencial · 111750 virtual.", "CONSULTA LA OFERTA", "nodes")]),
-        ("admin-prof-motion-graphics.mp4", "Administración de Empresas", LIME, "landscape", None, 16,
-         [("01 · Idea y necesidad", "Identifica la situación que se quiere comprender.", "SECUENCIA ANIMADA", "nodes"),
-          ("02 · Contexto", "Reúne información y separa hechos de supuestos.", "ANÁLISIS", "flow"),
-          ("03 · Plan", "Relaciona objetivos, actividades y recursos por definir.", "PLANEACIÓN", "nodes"),
-          ("04 · Seguimiento", "Revisa avances y responsabilidad con los grupos involucrados.", "FESNA · ADMINISTRACIÓN", "nodes")]),
         ("conta-tp-serie-reels.mp4", "Técnica Profesional en Procesos Contables", VIOLET, "vertical", reels_voice, 19,
          [("Tip 1 · Asientos contables", "Identifica la operación, revisa el soporte y verifica las cuentas.", "SERIE EDUCATIVA", "flow"),
           ("Tip 2 · Caja menor", "Registra los gastos y conserva los comprobantes.", "CONTROL", "finance"),
           ("Tip 3 · Archivo tributario", "Organiza documentos por periodo y protege la información.", "ARCHIVO", "flow"),
           ("Tip 4 · Nómina básica", "Revisa las novedades y valida el cálculo con reglas vigentes.", "TÉCNICA PROFESIONAL", "finance")]),
-        ("conta-tec-animacion-2d.mp4", "Tecnología en Gestión Contable y Financiera", VIOLET, "landscape", animation_voice, 17,
-         [("¿Qué entendemos por liquidez?", "Una relación entre recursos de corto plazo y obligaciones corrientes.", "ANIMACIÓN EDUCATIVA", "finance"),
-          ("Activo corriente", "Identifica los recursos que pertenecen a este grupo contable.", "PASO 1", "finance"),
-          ("Pasivo corriente", "Ubica las obligaciones que se comparan en el indicador.", "PASO 2", "finance"),
-          ("Interpreta con contexto", "La razón corriente es un apoyo al análisis, no un diagnóstico por sí sola.", "EJEMPLO SIN CIFRAS DE FESNA", "finance")]),
         ("conta-prof-testimonio-avatar-ficticio.mp4", "Contaduría Pública", VIOLET, "vertical", avatar_voice, 17,
          [("Testimonio demostrativo", "Avatar vectorial ficticio con voz sintética IA.", "NO REPRESENTA UNA PERSONA REAL", "avatar"),
           ("Valeria · personaje ficticio", "La ética contable requiere estudiar la norma y cuidar la evidencia.", "PERSONAJE DE EJEMPLO", "avatar"),

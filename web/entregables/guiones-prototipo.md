@@ -104,7 +104,8 @@ Guion: “En este ejemplo académico, Valeria —personaje ficticio— explica q
 ## Herramientas realmente utilizadas
 
 - **ChatGPT:** organización de la consigna, redacción y revisión de guiones, prompts, código y briefs visuales. La revisión final de datos y medios sigue a cargo del estudiante.
-- **TTS.ai — Kokoro (Rápido), voz Alex (es):** síntesis de voz genérica para spots, cuña, podcasts y narraciones. No se clonó ninguna voz.
+- **TTS.ai — Kokoro (Rápido), voz Alex (es):** locuciones sintéticas que se mantienen en los videos y clips no modificados de esta actualización.
+- **[TTSMaker](https://ttsmaker.com/es) — herramienta web gratuita:** voz Camila (Colombia, femenina) para el nuevo spot y la cuña; su [generador de diálogo](https://ttsmaker.com/voice-dialogue-generator) usó Santiago (masculina) y Camila en los dos podcasts. Valeria es un personaje ficticio interpretado por la voz sintética Camila; no se clonó a nadie.
 - **Python y Pillow:** composición original de escenas, diagramas, láminas y avatar vectorial ficticio.
 - **FFmpeg:** síntesis de escenas con movimiento de cámara, montaje de MP4, unión de segmentos de podcast y exportación de audio/video.
 - **HTML5, CSS y JavaScript:** desarrollo del portafolio interactivo y sus controles adaptables.
@@ -114,9 +115,9 @@ Canva, CapCut, Audacity y HeyGen se evaluaron como alternativas de producción, 
 
 ## Locuciones exportadas con voz sintética
 
-Las locuciones se sintetizaron con TTS.ai (modelo Kokoro, voz Alex en español). Los clips fuente están en `web/media/audio/voz/`; los spots, la cuña y los podcasts finales están en `web/media/audio/`. Los segmentos de podcast se unieron con FFmpeg.
+Los MP3 finales y las voces fuente que se usan individualmente están en `web/media/audio/`. Las versiones renovadas del spot y la cuña utilizan una firma sonora original compuesta con tonos generados localmente; los dos podcasts dialogados se exportaron desde TTSMaker. El resto de locuciones que no se reemplazaron continúa con TTS.ai (Kokoro/Alex). Todas las voces son sintéticas.
 
-**Spot de Gestión Administrativa — `admin-spot-voz-ia.mp3`:** “Cada organización necesita coordinar personas, procesos y recursos. Conoce Tecnología en Gestión Administrativa de la Fundación de Educación Superior Nueva América. Presencial, SNIES 111385; virtual, SNIES 111386. Consulta la información oficial de FESNA.”
+**Spot de Gestión Administrativa — `admin-spot-voz-ia.mp3` (voz sintética Camila, TTSMaker):** “¿Te interesa cómo se organiza una empresa? Supervisión, talento humano y logística son tres piezas clave de la gestión. Conoce Tecnología en Gestión Administrativa de la Fundación de Educación Superior Nueva América. Presencial: SNIES 111385. Virtual: SNIES 111386. Infórmate en los canales oficiales de FESNA.” La mezcla incluye una firma sonora original sin música de terceros.
 
 **Video de Procesos Administrativos — `voz/admin-tp-video-narration.mp3`:** “Cada documento cumple una función. Primero, recepción y registro. Después, clasificación y envío al área responsable. Durante el trámite se revisa la solicitud, se prepara respuesta y se deja constancia. Al cierre, el archivo se organiza para consultar la información conforme a las reglas de la organización. Un flujo claro permite dar seguimiento.”
 
@@ -124,15 +125,35 @@ Las locuciones se sintetizaron con TTS.ai (modelo Kokoro, voz Alex en español).
 
 **Serie de reels contables — `voz/conta-tp-reels-narration.mp3`:** “Tip uno: antes de registrar un asiento contable, identifica la operación, revisa el soporte y comprueba las cuentas. Tip dos: en caja menor, registra cada gasto y guarda el comprobante. Tip tres: organiza los documentos tributarios por periodo y tipo. Tip cuatro: en nómina, revisa las novedades y verifica los cálculos con las reglas vigentes. Estudia y confirma cada caso.”
 
-**Cuña radial de Procesos Contables — `conta-tp-cuna.mp3`:** “¿Te interesa la contabilidad? Organiza soportes, registra operaciones y revisa cada dato con responsabilidad. Conoce la Técnica Profesional en Procesos Contables de la Fundación de Educación Superior Nueva América. Presencial, SNIES 111389; virtual, SNIES 111390. Consulta la información oficial de FESNA.”
+**Cuña radial de Procesos Contables — `conta-tp-cuna.mp3` (voz sintética Camila, TTSMaker):** “¿Te atraen los números y el orden? Conoce la Técnica Profesional en Procesos Contables de la Fundación de Educación Superior Nueva América: registro de operaciones, soportes y revisión responsable. Presencial, SNIES 111389; virtual, SNIES 111390. Consulta la información oficial de FESNA.” La mezcla incluye una firma sonora original sin música de terceros.
 
-**Podcast “Conoce FESNA” — `conta-tec-podcast-conoce-fesna.mp3`:** “Bienvenidos a Conoce FESNA. Hoy conversamos sobre cómo leer la información financiera. El estado de situación financiera presenta activos, pasivos y patrimonio en una fecha. El estado de resultados resume ingresos y gastos de un periodo. El flujo de efectivo muestra entradas y salidas de dinero. Cada informe ofrece una perspectiva distinta; conviene leerlos en conjunto. Un presupuesto organiza ingresos, gastos y metas para un periodo. Para estudiar liquidez, una medida básica relaciona activo corriente y pasivo corriente. No se interpreta de forma aislada: revisa el contexto, las tendencias y la procedencia de los datos. Este ejemplo es educativo y no usa cifras reales de FESNA. Los asuntos tributarios deben verificarse con normativa colombiana vigente y el calendario de la DIAN. Consulta fuentes oficiales y la orientación académica antes de tomar decisiones financieras o contables. Este episodio se elaboró con apoyo de IA; revisa los conceptos y referencias antes de publicar.”
+**Podcast “Conoce FESNA” — `conta-tec-podcast-conoce-fesna.mp3` (diálogo sintético TTSMaker):**
+
+> **Santiago:** Hola, soy Santiago y esto es Conoce FESNA. Me acompaña Valeria, personaje ficticio, para conversar sobre cómo leer los estados financieros.
+>
+> **Valeria:** Hola. El estado de situación financiera muestra activos, pasivos y patrimonio en una fecha; resultados resume ingresos y gastos; y flujo de efectivo registra entradas y salidas.
+>
+> **Santiago:** ¿Cómo conectamos esos informes con un presupuesto y la liquidez? Pensemos en una empresa ficticia, sin cifras de FESNA ni diagnósticos reales.
+>
+> **Valeria:** Un presupuesto ordena ingresos, gastos y metas. La razón corriente divide activo corriente entre pasivo corriente; orienta, pero no se interpreta sin contexto.
+>
+> **Santiago:** Para cada obligación, identifiquemos el impuesto y el periodo, y revisemos sujeto, formulario y vencimiento en la DIAN. Voces sintéticas; episodio educativo.
 
 **Animación 2D contable — `voz/conta-tec-animacion.mp3`:** “La razón corriente compara activos corrientes con pasivos corrientes. Divide el valor de los activos corrientes entre el de los pasivos corrientes. Interpreta el resultado junto con el contexto y otros indicadores. Este es un ejemplo educativo con datos ficticios; no representa cifras de FESNA ni asesoría financiera.”
 
 **Avatar ficticio — `voz/conta-prof-avatar-voice.mp3`:** “Este testimonio es una dramatización académica. Valeria es un personaje ficticio; no representa a una egresada ni a una contadora real. La ética profesional exige consultar las normas aplicables, documentar evidencia y actuar con independencia. El avatar es una ilustración vectorial original; su voz es sintética y no imita a una persona real.”
 
-**Podcast institucional — `conta-prof-podcast-institucional.mp3`:** “Bienvenidos al podcast institucional de FESNA. Este episodio es educativo: Valeria es una experta virtual ficticia, su voz es sintética y no representa a una egresada ni a una experta real. Hablaremos de ética, auditoría, revisoría fiscal, normas NIIF y NIC, y análisis macrofinanciero. Una auditoría requiere planear procedimientos, valorar riesgos, obtener evidencia suficiente y apropiada, documentarla y sustentar conclusiones. La independencia y el juicio profesional son esenciales. En Colombia, la revisoría fiscal se ejerce dentro del marco legal vigente; el artículo 207 del Código de Comercio establece funciones que deben revisarse en el texto actualizado. Las NIIF y NIC orientan el reconocimiento, la medición, la presentación y las revelaciones contables. Confirma siempre la versión adoptada y aplicable al caso antes de interpretarla. El análisis macrofinanciero observa inflación, tasas de interés y tasa de cambio, variables que pueden influir en costos, deuda y presupuestos. No predicen por sí solas el resultado de una empresa: revisa políticas, periodos, supuestos y fuentes. Este caso es conceptual, no usa cifras de FESNA, no es asesoría y no expresa una postura institucional. Consulta la Contaduría General de la Nación, la DIAN y las fuentes legales oficiales. Gracias por escuchar.”
+**Podcast institucional — `conta-prof-podcast-institucional.mp3` (diálogo sintético TTSMaker):**
+
+> **Santiago:** Bienvenidos al podcast FESNA. Santiago conversa con Valeria, experta virtual ficticia. Ambos usan voces sintéticas; este diálogo es educativo, no representa a una persona real.
+>
+> **Valeria:** Las NIIF y NIC orientan reconocimiento, medición, presentación y revelación. Revisa siempre la versión vigente y su aplicación en Colombia.
+>
+> **Santiago:** En auditoría, ¿por qué se planean procedimientos, se valoran riesgos y se documenta evidencia antes de emitir conclusiones?
+>
+> **Valeria:** Una conclusión necesita evidencia suficiente y apropiada. La independencia y la ética guían auditoría y revisoría fiscal. Consulta las funciones vigentes del artículo 207 del Código de Comercio.
+>
+> **Santiago:** Inflación, tasas de interés y cambio pueden influir en costos y presupuestos, pero no predicen resultados. Este diálogo es educativo, no es asesoría ni postura oficial de FESNA.
 
 ## Prompts de producción por pieza
 
@@ -154,7 +175,7 @@ Los briefs siguientes se normalizaron para registrar y reproducir la instrucció
 
 **Tecnología en Gestión Administrativa — spot con voz IA**
 
-> Redacta un spot radial para Tecnología en Gestión Administrativa con los datos institucionales verificados. Incluye una locución clara y una invitación a consultar la oferta de FESNA. Sugiere una voz sintética genérica con licencia; no imites ni clones una voz real.
+> Redacta un spot radial breve para Tecnología en Gestión Administrativa. Conecta supervisión, talento humano y logística; conserva nombre y ambos SNIES oficiales, termina invitando a consultar FESNA y no prometas beneficios. Indica una voz sintética femenina colombiana y una firma sonora original sin música de terceros.
 
 **Administración de Empresas — video institucional**
 
@@ -162,7 +183,7 @@ Los briefs siguientes se normalizaron para registrar y reproducir la instrucció
 
 **Administración de Empresas — motion graphics**
 
-> Propón una secuencia de motion graphics que explique visualmente cómo una idea se convierte en un plan de negocio: problema, análisis, objetivos, actividades y seguimiento. Etiqueta ejemplos y cifras como ilustrativos. Cierra con el nombre y los SNIES oficiales de Administración de Empresas de FESNA.
+> Diseña motion graphics animados en cuatro escenas: observar una oportunidad, conectar equipo y decisiones, organizar mercado/operación/recursos y dar seguimiento a personas y entorno. Usa barras sin cifras institucionales, etiqueta las relaciones como ilustrativas y cierra con el nombre y SNIES oficiales de Administración de Empresas.
 
 ### Contaduría Pública
 
@@ -172,15 +193,15 @@ Los briefs siguientes se normalizaron para registrar y reproducir la instrucció
 
 **Técnica Profesional en Procesos Contables — cuña radial**
 
-> Redacta una cuña radial promocional para Técnica Profesional en Procesos Contables de FESNA. Usa una invitación general y los SNIES verificados. No prometas empleo, ingresos, requisitos ni beneficios no publicados. Separa locución, música sugerida y créditos de audio.
+> Redacta una cuña radial breve para Técnica Profesional en Procesos Contables. Abre con una pregunta sobre interés en números y orden; menciona registro, soportes y revisión responsable; conserva SNIES 111389 y 111390; cierra con consulta oficial. Usa voz sintética femenina colombiana y firma sonora original, sin prometer empleo.
 
 **Tecnología en Gestión Contable y Financiera — podcast “Conoce FESNA”**
 
-> Prepara una escaleta educativa para “Conoce FESNA” sobre análisis de estados financieros, presupuestos, indicadores de liquidez y normatividad tributaria intermedia. Explica conceptos con un ejemplo ficticio claramente rotulado. Cita fuentes oficiales y marca cualquier dato que requiera revisión experta.
+> Escribe una conversación educativa en cinco turnos entre Santiago y Valeria (personaje ficticio) para “Conoce FESNA”. Alterna dos voces sintéticas colombianas y cubre estados financieros, presupuesto, razón corriente y consulta de obligaciones vigentes en DIAN. No uses cifras FESNA ni des asesoría.
 
 **Tecnología en Gestión Contable y Financiera — animación 2D**
 
-> Diseña un storyboard 2D para explicar la razón corriente (activo corriente ÷ pasivo corriente). Divide el proceso en cuatro escenas, muestra la fórmula con claridad y añade que es un ejemplo educativo, no un dato de FESNA ni asesoría financiera. Verifica el concepto con fuentes contables.
+> Crea una animación 2D en cuatro escenas para explicar la razón corriente con una empresa ficticia: activo corriente 150, pasivo corriente 100 y resultado 1,5. Anima barras, fracción y dial; añade contexto (composición, vencimientos y flujo de caja) y rotula que las cifras son ficticias, no de FESNA ni asesoría.
 
 **Contaduría Pública — testimonio con avatar**
 
@@ -188,7 +209,7 @@ Los briefs siguientes se normalizaron para registrar y reproducir la instrucció
 
 **Contaduría Pública — podcast institucional**
 
-> Crea un guion para un podcast institucional educativo sobre ética, auditoría, revisoría fiscal, NIIF/NIC y análisis macrofinanciero. Explica los temas de forma general, incluye inflación, tasas y presupuestos sin predecir resultados; cita el marco legal oficial vigente; usa una invitada ficticia con voz sintética y no atribuyas opiniones a FESNA ni a expertos reales.
+> Escribe un diálogo institucional educativo en cinco turnos entre Santiago y Valeria, experta virtual ficticia. Usa una voz femenina sintética para Valeria y masculina para Santiago; cubre NIIF/NIC, auditoría, revisoría fiscal (art. 207 del Código de Comercio), ética e inflación/tasas. No predigas resultados ni atribuyas posturas a FESNA.
 
 ## Mapa de enlaces para productos exportados
 
@@ -198,7 +219,7 @@ Los doce enlaces a video, audio, infografía y animación están configurados en
 
 Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los videos son composiciones originales de escenas ilustradas para esta campaña; la voz es sintética, genérica y no imita a ninguna persona real. La infografía se basa en el organigrama oficial de FESNA y enlaza su fuente.
 
-**Síntesis de voz usada:** [TTS.ai](https://tts.ai/tools/free-tts/), modelo Kokoro (Rápido), voz Alex (es). Los textos siguientes son las locuciones suministradas al sintetizador; se pueden editar y volver a exportar.
+**Síntesis de voz usada:** [TTS.ai](https://tts.ai/tools/free-tts/) con Kokoro/Alex en las piezas que se mantienen, y [TTSMaker](https://ttsmaker.com/es) con Camila (voz femenina colombiana) para los spots y la cuña, y Santiago/Camila (voces masculina y femenina colombianas) para los diálogos de podcast. Valeria es un personaje ficticio interpretado con voz sintética; no se clonó a ninguna persona.
 
 ### Locuciones
 
@@ -208,7 +229,7 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 
 **`audio/admin-spot-voz-ia.mp3` — Spot de Gestión Administrativa**
 
-> Cada organización necesita coordinar personas, procesos y recursos. Conoce Tecnología en Gestión Administrativa de la Fundación de Educación Superior Nueva América. Presencial, SNIES 111385; virtual, SNIES 111386. Consulta la información oficial de FESNA.
+> ¿Te interesa cómo se organiza una empresa? Supervisión, talento humano y logística son tres piezas clave de la gestión. Conoce Tecnología en Gestión Administrativa de la Fundación de Educación Superior Nueva América. Presencial: SNIES 111385. Virtual: SNIES 111386. Infórmate en los canales oficiales de FESNA.
 
 **`audio/voz/admin-prof-video-narration.mp3` — Video de Administración de Empresas**
 
@@ -220,11 +241,11 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 
 **`audio/conta-tp-cuna.mp3` — Cuña de Procesos Contables**
 
-> ¿Te interesa la contabilidad? Organiza soportes, registra operaciones y revisa cada dato con responsabilidad. Conoce la Técnica Profesional en Procesos Contables de la Fundación de Educación Superior Nueva América. Presencial, SNIES 111389; virtual, SNIES 111390. Consulta la información oficial de FESNA.
+> ¿Te atraen los números y el orden? Conoce la Técnica Profesional en Procesos Contables de la Fundación de Educación Superior Nueva América: registro de operaciones, soportes y revisión responsable. Presencial, SNIES 111389; virtual, SNIES 111390. Consulta la información oficial de FESNA.
 
 **`audio/conta-tec-podcast-conoce-fesna.mp3` — Podcast “Conoce FESNA”**
 
-> Bienvenidos a Conoce FESNA. Hoy conversamos sobre cómo leer la información financiera. El estado de situación financiera presenta activos, pasivos y patrimonio en una fecha. El estado de resultados resume ingresos y gastos de un periodo. El flujo de efectivo muestra entradas y salidas de dinero. Cada informe ofrece una perspectiva distinta; conviene leerlos en conjunto. Un presupuesto organiza ingresos, gastos y metas para un periodo. Para estudiar liquidez, una medida básica relaciona activo corriente y pasivo corriente. No se interpreta de forma aislada: revisa el contexto, las tendencias y la procedencia de los datos. Este ejemplo es educativo y no usa cifras reales de FESNA. Los asuntos tributarios deben verificarse con normativa colombiana vigente y el calendario de la DIAN. Consulta fuentes oficiales y la orientación académica antes de tomar decisiones financieras o contables. Este episodio de Conoce FESNA se elaboró con apoyo de IA; revisa los conceptos y las referencias antes de publicar.
+> **Santiago:** Hola, soy Santiago y esto es Conoce FESNA. Me acompaña Valeria, personaje ficticio, para conversar sobre cómo leer los estados financieros. **Valeria:** Hola. El estado de situación financiera muestra activos, pasivos y patrimonio en una fecha; resultados resume ingresos y gastos; y flujo de efectivo registra entradas y salidas. **Santiago:** ¿Cómo conectamos esos informes con un presupuesto y la liquidez? Pensemos en una empresa ficticia, sin cifras de FESNA ni diagnósticos reales. **Valeria:** Un presupuesto ordena ingresos, gastos y metas. La razón corriente divide activo corriente entre pasivo corriente; orienta, pero no se interpreta sin contexto. **Santiago:** Para cada obligación, identifiquemos el impuesto y el periodo, y revisemos sujeto, formulario y vencimiento en la DIAN. Voces sintéticas; episodio educativo.
 
 **`audio/voz/conta-tec-animacion.mp3` — Animación 2D**
 
@@ -236,7 +257,7 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 
 **`audio/conta-prof-podcast-institucional.mp3` — Podcast institucional**
 
-> Bienvenidos al podcast institucional de FESNA. Este episodio es educativo: Valeria es una experta virtual ficticia, su voz es sintética y no representa a una egresada ni a una experta real. Hablaremos de ética, auditoría, revisoría fiscal, normas NIIF y NIC, y análisis macrofinanciero. Una auditoría requiere planear procedimientos, valorar riesgos, obtener evidencia suficiente y apropiada, documentarla y sustentar conclusiones. La independencia y el juicio profesional son esenciales. En Colombia, la revisoría fiscal se ejerce dentro del marco legal vigente; el artículo 207 del Código de Comercio establece funciones que deben revisarse en el texto actualizado. Las NIIF y NIC orientan el reconocimiento, la medición, la presentación y las revelaciones contables. Confirma siempre la versión adoptada y aplicable al caso antes de interpretarla. El análisis macrofinanciero observa inflación, tasas de interés y tasa de cambio, variables que pueden influir en costos, deuda y presupuestos. No predicen por sí solas el resultado de una empresa: revisa políticas, periodos, supuestos y fuentes. Este caso es conceptual, no usa cifras de FESNA, no es asesoría y no expresa una postura institucional. Consulta la Contaduría General de la Nación, la DIAN y las fuentes legales oficiales. Gracias por escuchar.
+> **Santiago:** Bienvenidos al podcast FESNA. Santiago conversa con Valeria, experta virtual ficticia. Ambos usan voces sintéticas; este diálogo es educativo, no representa a una persona real. **Valeria:** Las NIIF y NIC orientan reconocimiento, medición, presentación y revelación. Revisa siempre la versión vigente y su aplicación en Colombia. **Santiago:** En auditoría, ¿por qué se planean procedimientos, se valoran riesgos y se documenta evidencia antes de emitir conclusiones? **Valeria:** Una conclusión necesita evidencia suficiente y apropiada. La independencia y la ética guían auditoría y revisoría fiscal. Consulta las funciones vigentes del artículo 207 del Código de Comercio. **Santiago:** Inflación, tasas de interés y cambio pueden influir en costos y presupuestos, pero no predicen resultados. Este diálogo es educativo, no es asesoría ni postura oficial de FESNA.
 
 ## Publicación de los productos
 

@@ -139,7 +139,7 @@ Los MP3 finales y las voces fuente que se usan individualmente están en `web/me
 >
 > **Santiago:** Para cada obligación, identifiquemos el impuesto y el periodo, y revisemos sujeto, formulario y vencimiento en la DIAN. Voces sintéticas; episodio educativo.
 
-**Animación 2D contable — `voz/conta-tec-animacion.mp3`:** “La razón corriente compara activos corrientes con pasivos corrientes. Divide el valor de los activos corrientes entre el de los pasivos corrientes. Interpreta el resultado junto con el contexto y otros indicadores. Este es un ejemplo educativo con datos ficticios; no representa cifras de FESNA ni asesoría financiera.”
+**Animación 2D contable — `voz/conta-tec-animacion.mp3` (voz Camila, TTSMaker):** “En una empresa ficticia, los activos corrientes suman 150 y las obligaciones corrientes, 100. Dividimos 150 entre 100 y obtenemos una razón de 1,5. Estos indicadores son una pista, no un veredicto: compara composición, vencimientos y flujo de caja. No son cifras de FESNA ni asesoría financiera.”
 
 **Avatar ficticio — `voz/conta-prof-avatar-voice.mp3`:** “Este testimonio es una dramatización académica. Valeria es un personaje ficticio; no representa a una egresada ni a una contadora real. La ética profesional exige consultar las normas aplicables, documentar evidencia y actuar con independencia. El avatar es una ilustración vectorial original; su voz es sintética y no imita a una persona real.”
 
@@ -249,7 +249,7 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 
 **`audio/voz/conta-tec-animacion.mp3` — Animación 2D**
 
-> La razón corriente compara activos corrientes con pasivos corrientes. Divide el valor de los activos corrientes entre el de los pasivos corrientes. Interpreta el resultado junto con el contexto y otros indicadores. Este es un ejemplo educativo con datos ficticios; no representa cifras de FESNA ni asesoría financiera.
+> En una empresa ficticia, los activos corrientes suman 150 y las obligaciones corrientes, 100. Dividimos 150 entre 100 y obtenemos una razón de 1,5. Estos indicadores son una pista, no un veredicto: compara composición, vencimientos y flujo de caja. No son cifras de FESNA ni asesoría financiera.
 
 **`audio/voz/conta-prof-avatar-voice.mp3` — Testimonio demostrativo**
 

@@ -1,6 +1,6 @@
 # Guiones y storyboards — Portafolio de campaña FESNA
 
-**Autor del portafolio:** Nicolás Boulevard<br>
+**Autor del portafolio:** Nicolás Bolivar<br>
 **Campaña:** Administración de Empresas y Contaduría Pública de FESNA, abarcando sus ciclos técnico, tecnológico y profesional. Nicolás estudia Ingeniería de Sistemas; esto identifica al estudiante, no cambia los programas objeto de la campaña.<br>
 **Estado:** borradores demostrativos asistidos por IA. Son guiones/storyboards, no exportaciones finales de video, audio o animación.
 

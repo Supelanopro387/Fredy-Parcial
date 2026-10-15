@@ -1,4 +1,4 @@
-# Portafolio FESNA — Nicolás Boulevard
+# Portafolio FESNA — Nicolás Bolivar
 
 Portafolio web estático, adaptable y sin dependencias externas. Los archivos de publicación están separados dentro de `web/`.
 

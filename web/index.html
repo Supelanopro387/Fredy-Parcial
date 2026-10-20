@@ -21,6 +21,7 @@
     <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
       <a href="#propuesta">Propuesta</a>
       <a href="#proceso">Proceso</a>
+      <a href="#prompts">Prompts</a>
       <a href="#programas">Programas</a>
       <a href="#descargas">Descargas</a>
       <a href="#referencias">Referencias</a>
@@ -111,13 +112,123 @@
       </div>
     </section>
 
+    <section class="prompts-section section-pad" id="prompts" aria-labelledby="prompts-title">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">03 / BIBLIOTECA DE PROMPTS</div><h2 id="prompts-title">Los prompts detrás<br><span>de cada pieza.</span></h2></div>
+          <p>Instrucciones normalizadas aplicadas a los 12 productos audiovisuales de la campaña: guiones, locuciones, animaciones e infografía. Cada prompt define formato, audiencia, límites factuales y aviso de IA; el resultado siempre pasa por revisión humana antes de exportarse.</p>
+        </div>
+        <div class="prompt-toolbar">
+          <label class="search-box"><span class="visually-hidden">Buscar prompt por producto, herramienta o ciclo</span><span aria-hidden="true">⌕</span><input id="prompt-search" type="search" placeholder="Buscar por producto, ciclo o herramienta…" autocomplete="off"></label>
+          <div class="prompt-filters" role="group" aria-label="Filtrar prompts por programa o tipo de producto">
+            <button class="prompt-filter-button is-active" type="button" data-filter="todos" aria-pressed="true">Todos · 12</button>
+            <button class="prompt-filter-button" type="button" data-filter="administracion" aria-pressed="false">Administración · 6</button>
+            <button class="prompt-filter-button" type="button" data-filter="contaduria" aria-pressed="false">Contaduría · 6</button>
+            <button class="prompt-filter-button" type="button" data-filter="video" aria-pressed="false">Video · 5</button>
+            <button class="prompt-filter-button" type="button" data-filter="audio" aria-pressed="false">Voz / Audio · 4</button>
+            <button class="prompt-filter-button" type="button" data-filter="animacion" aria-pressed="false">Animación · 2</button>
+            <button class="prompt-filter-button" type="button" data-filter="infografia" aria-pressed="false">Infografía · 1</button>
+          </div>
+        </div>
+        <p class="results-count" id="prompt-count" aria-live="polite">12 prompts documentados</p>
+        <p class="no-results" id="no-prompt-results" hidden>No encontramos prompts con esa búsqueda. Prueba con otro producto, ciclo o herramienta.</p>
+        <div class="prompt-grid" id="prompt-grid">
+          <article class="prompt-card" data-area="administracion" data-type="video" data-search="video explicativo flujo documental recepción clasificación trámite archivo chatgpt tts.ai alex ffmpeg técnica profesional procesos administrativos 111383 111384">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTS.AI (ALEX) → FFMPEG</span><span class="prompt-no">01</span></div>
+            <h3>Video explicativo · “Un documento, una ruta clara”</h3>
+            <p class="prompt-meta">Técnica Profesional en Procesos Administrativos Empresariales · MP4 · narración sintética · SNIES 111383 / 111384</p>
+            <blockquote class="prompt-quote">Crea un guion visual paso a paso sobre el flujo documental general: recepción, clasificación, trámite y archivo. Separa locución y visuales, usa lenguaje claro y no lo presentes como procedimiento interno de FESNA. Indica que cada organización aplica sus reglas documentales.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/admin-tp-video-explicativo.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="administracion" data-type="infografia" data-search="infografía organigrama estructura organizacional pdf institucional chatgpt pillow diagrama jerarquía técnica profesional procesos administrativos">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT (PDF) → PYTHON · PILLOW</span><span class="prompt-no">02</span></div>
+            <h3>Infografía · Estructura organizacional oficial</h3>
+            <p class="prompt-meta">Técnica Profesional en Procesos Administrativos Empresariales · PNG con atribución y enlace a la fuente institucional</p>
+            <blockquote class="prompt-quote">Resume el PDF institucional “Equipo y estructura organizacional” de FESNA (2023) en una infografía académica. Organiza por niveles y funciones; conserva nombres y relaciones, no añadas cargos y agrega atribución y enlace al documento fuente.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">infografias/admin-tp-estructura-organizacional-fesna.png</span></div>
+          </article>
+          <article class="prompt-card" data-area="administracion" data-type="video" data-search="reel promocional vertical 9:16 gestión administrativa supervisión talento humano logística subtítulos snies 111385 111386">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → PYTHON · PILLOW → FFMPEG</span><span class="prompt-no">03</span></div>
+            <h3>Reel promocional · Supervisión, talento y logística</h3>
+            <p class="prompt-meta">Tecnología en Gestión Administrativa · MP4 vertical · rótulos animados · SNIES 111385 / 111386</p>
+            <blockquote class="prompt-quote">Escribe un guion para un reel vertical que presente Tecnología en Gestión Administrativa de FESNA y conecte supervisión, talento humano y logística. Usa únicamente los nombres y SNIES entregados; no inventes duración, requisitos ni beneficios. Incluye planos, texto en pantalla y subtítulos.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/admin-tec-reel-promocional.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="administracion" data-type="audio" data-search="spot radial voz ia ttsmaker camila firma sonora original mezcla gestión administrativa colombiana">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTSMAKER (CAMILA) → FFMPEG</span><span class="prompt-no">04</span></div>
+            <h3>Spot radial · Voz sintética Camila</h3>
+            <p class="prompt-meta">Tecnología en Gestión Administrativa · MP3 renovado · voz femenina colombiana + firma sonora original sin música de terceros</p>
+            <blockquote class="prompt-quote">Redacta un spot radial breve para Tecnología en Gestión Administrativa. Conecta supervisión, talento humano y logística; conserva nombre y ambos SNIES oficiales, termina invitando a consultar FESNA y no prometas beneficios. Indica una voz sintética femenina colombiana y una firma sonora original sin música de terceros.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">audio/admin-spot-voz-ia.mp3</span></div>
+          </article>
+          <article class="prompt-card" data-area="administracion" data-type="video" data-search="video institucional administración de empresas visión estratégica liderazgo responsabilidad social plan de negocio snies 111357 111750">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTS.AI (ALEX) → FFMPEG</span><span class="prompt-no">05</span></div>
+            <h3>Video institucional · De la idea al plan</h3>
+            <p class="prompt-meta">Administración de Empresas · MP4 · guion y storyboard asistidos por IA · SNIES 111357 / 111750</p>
+            <blockquote class="prompt-quote">Crea un guion y storyboard para presentar Administración de Empresas de FESNA. Conecta visión estratégica, liderazgo, responsabilidad social y planes de negocio como temas de la campaña. No atribuyas beneficios ni resultados institucionales que no estén en la fuente. Conserva el SNIES oficial.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/admin-prof-video-institucional.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="administracion" data-type="animacion" data-search="motion graphics animación cuatro escenas pillow ffmpeg barras ilustrativas administración de empresas seguimiento">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → PYTHON · PILLOW → FFMPEG</span><span class="prompt-no">06</span></div>
+            <h3>Motion graphics · Cuatro secuencias animadas</h3>
+            <p class="prompt-meta">Administración de Empresas · MP4 renovado · escenas dibujadas por código y movimiento por fotogramas</p>
+            <blockquote class="prompt-quote">Diseña motion graphics animados en cuatro escenas: observar una oportunidad, conectar equipo y decisiones, organizar mercado/operación/recursos y dar seguimiento a personas y entorno. Usa barras sin cifras institucionales, etiqueta las relaciones como ilustrativas y cierra con el nombre y SNIES oficiales de Administración de Empresas.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/admin-prof-motion-graphics.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="video" data-search="serie reels asientos contables caja menor archivo tributario nómina básica consejos procesos contables snies 111389 111390">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTS.AI (ALEX) → FFMPEG</span><span class="prompt-no">07</span></div>
+            <h3>Serie de reels · Cuatro tips contables</h3>
+            <p class="prompt-meta">Técnica Profesional en Procesos Contables · MP4 · guion IA en cuatro microtemas · SNIES 111389 / 111390</p>
+            <blockquote class="prompt-quote">Escribe una serie de guiones breves con consejos introductorios sobre asientos contables, caja menor, archivo tributario y liquidación básica de nómina. No inventes cifras ni normas. Señala qué conceptos necesitan cotejo con la normativa colombiana vigente y conserva el nombre y SNIES del programa FESNA.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/conta-tp-serie-reels.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="audio" data-search="cuña radial procesos contables ttsmaker camila firma sonora original soportes registro revisión">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTSMAKER (CAMILA) → FFMPEG</span><span class="prompt-no">08</span></div>
+            <h3>Cuña radial · Números y orden</h3>
+            <p class="prompt-meta">Técnica Profesional en Procesos Contables · MP3 renovado · voz femenina colombiana + firma sonora original</p>
+            <blockquote class="prompt-quote">Redacta una cuña radial breve para Técnica Profesional en Procesos Contables. Abre con una pregunta sobre interés en números y orden; menciona registro, soportes y revisión responsable; conserva SNIES 111389 y 111390; cierra con consulta oficial. Usa voz sintética femenina colombiana y firma sonora original, sin prometer empleo.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">audio/conta-tp-cuna.mp3</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="audio" data-search="podcast conoce fesna diálogo santiago valeria estados financieros presupuesto razón corriente dian ttsmaker diálogo multipersonaje">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTSMAKER (SANTIAGO + CAMILA)</span><span class="prompt-no">09</span></div>
+            <h3>Podcast “Conoce FESNA” · Diálogo de dos voces</h3>
+            <p class="prompt-meta">Tecnología en Gestión Contable y Financiera · MP3 renovado · diálogo sintético en cinco turnos · Valeria ficticia</p>
+            <blockquote class="prompt-quote">Escribe una conversación educativa en cinco turnos entre Santiago y Valeria (personaje ficticio) para “Conoce FESNA”. Alterna dos voces sintéticas colombianas y cubre estados financieros, presupuesto, razón corriente y consulta de obligaciones vigentes en DIAN. No uses cifras FESNA ni des asesoría.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">audio/conta-tec-podcast-conoce-fesna.mp3</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="animacion" data-search="animación 2d razón corriente activo corriente pasivo corriente empresa ficticia barras fracción dial pillow ffmpeg">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTSMAKER (CAMILA) → PILLOW + FFMPEG</span><span class="prompt-no">10</span></div>
+            <h3>Animación 2D · Leer la razón corriente</h3>
+            <p class="prompt-meta">Tecnología en Gestión Contable y Financiera · MP4 renovado · cifras ficticias 150/100 = 1,5 con aviso educativo</p>
+            <blockquote class="prompt-quote">Crea una animación 2D en cuatro escenas para explicar la razón corriente con una empresa ficticia: activo corriente 150, pasivo corriente 100 y resultado 1,5. Anima barras, fracción y dial; añade contexto (composición, vencimientos y flujo de caja) y rotula que las cifras son ficticias, no de FESNA ni asesoría.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/conta-tec-animacion-2d.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="video" data-search="testimonio avatar ia ficticio valeria ética profesional independencia evidencia auditoría ilustración vectorial voz sintética">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → PILLOW (AVATAR) → TTSMAKER</span><span class="prompt-no">11</span></div>
+            <h3>Testimonio demostrativo · Avatar ficticio “Valeria”</h3>
+            <p class="prompt-meta">Contaduría Pública · MP4 · avatar vectorial original + voz sintética con rótulo permanente de ficción</p>
+            <blockquote class="prompt-quote">Escribe un testimonio demostrativo para un personaje completamente ficticio sobre ética profesional, independencia y evidencia en auditoría. Incluye de forma visible que el personaje es ficticio y no representa a una persona real. No inventes experiencia de egresados ni clones voces o rostros.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">video/conta-prof-testimonio-avatar-ficticio.mp4</span></div>
+          </article>
+          <article class="prompt-card" data-area="contaduria" data-type="audio" data-search="podcast institucional niif nic auditoría revisoría fiscal artículo 207 código de comercio ética inflación tasas santiago valeria">
+            <div class="prompt-card-top"><span class="prompt-chain">CHATGPT → TTSMAKER (SANTIAGO + CAMILA) → FFMPEG</span><span class="prompt-no">12</span></div>
+            <h3>Podcast institucional · NIIF, auditoría y ética</h3>
+            <p class="prompt-meta">Contaduría Pública · MP3 renovado · diálogo educativo en cinco turnos con voces sintéticas identificadas</p>
+            <blockquote class="prompt-quote">Escribe un diálogo institucional educativo en cinco turnos entre Santiago y Valeria, experta virtual ficticia. Usa una voz femenina sintética para Valeria y masculina para Santiago; cubre NIIF/NIC, auditoría, revisoría fiscal (art. 207 del Código de Comercio), ética e inflación/tasas. No predigas resultados ni atribuyas posturas a FESNA.</blockquote>
+            <div class="prompt-card-foot"><button class="copy-prompt" type="button" aria-live="polite">Copiar prompt</button><span class="prompt-file">audio/conta-prof-podcast-institucional.mp3</span></div>
+          </article>
+        </div>
+        <div class="disclaimer prompts-note"><span aria-hidden="true">ⓘ</span><p><strong>Transparencia:</strong> estos prompts se normalizaron para documentar y reproducir la instrucción principal de cada pieza; resumen el trabajo realizado y no transcriben literalmente el historial de chat. Todas las voces son sintéticas, los personajes contables son ficticios y cada exportación fue revisada por el estudiante antes de publicarse.</p></div>
+      </div>
+    </section>
+
     <section class="process-section section-wrap section-pad" id="proceso" aria-labelledby="process-title">
-      <div class="section-kicker">03 / BITÁCORA DE DESARROLLO</div>
+      <div class="section-kicker">04 / BITÁCORA DE DESARROLLO</div>
       <div class="section-heading process-heading"><h2 id="process-title">Del material fuente<br>a un sitio funcional.</h2><p>El recorrido documenta decisiones reales del proyecto y diferencia los datos verificados de la propuesta creativa.</p></div>
       <div class="process-list">
         <article class="process-item"><span class="process-no">01</span><div><h3>Selección y verificación</h3><p>Se contrastó la consigna, los planes de estudio suministrados y las páginas oficiales de FESNA. La campaña se delimitó a Administración de Empresas y Contaduría Pública; Ingeniería de Sistemas se presenta solo como la carrera que estudia Nicolás.</p><span class="process-outcome">DESAFÍO · Separar la carrera del estudiante de los dos programas de la campaña.<br>DECISIÓN · Organizar los productos por los tres ciclos propedéuticos de cada carrera.</span></div><span class="process-type">ANÁLISIS</span></article>
         <article class="process-item"><span class="process-no">02</span><div><h3>Brief creativo y prompts</h3><p>Para cada ruta se propone un prompt inicial que define formato, audiencia o enfoque y límites factuales. El prompt es un punto de partida: hay que ajustarlo al material institucional real, generar la pieza con las herramientas elegidas y revisar el resultado antes de publicarlo.</p><span class="process-outcome">DESAFÍO · Hacer mensajes atractivos sin inventar datos ni clonar identidades.<br>DECISIÓN · Usar fuentes oficiales, personajes ficticios cuando aplique y declarar la asistencia de IA.</span></div><span class="process-type">CAMPAÑA</span></article>
-        <article class="process-item"><span class="process-no">03</span><div><h3>Diseño y desarrollo web</h3><p>Se construyó una página estática con HTML semántico, CSS adaptable y JavaScript nativo. Integra navegación, búsqueda y filtros, tarjetas de actividades con prompts desplegables, galería de medios y los seis programas SNIES de las dos carreras.</p><span class="process-outcome">DESAFÍO · Reunir varios formatos en una consulta sencilla.<br>DECISIÓN · Organizar por las carreras elegidas, ciclos y productos exportables.</span></div><span class="process-type">DESARROLLO</span></article>
+        <article class="process-item"><span class="process-no">03</span><div><h3>Diseño y desarrollo web</h3><p>Se construyó una página estática con HTML semántico, CSS adaptable y JavaScript nativo. Integra navegación, búsqueda y filtros, tarjetas de actividades con prompts desplegables, una biblioteca central de los 12 prompts de producción con copiado rápido, galería de medios y los seis programas SNIES de las dos carreras.</p><span class="process-outcome">DESAFÍO · Reunir varios formatos en una consulta sencilla.<br>DECISIÓN · Organizar por las carreras elegidas, ciclos y productos exportables.</span></div><span class="process-type">DESARROLLO</span></article>
         <article class="process-item"><span class="process-no">04</span><div><h3>Producción y exportación</h3><p>Se produjeron las locuciones restantes con TTS.ai y las seis piezas renovadas con TTSMaker, incluido diálogo de dos voces. Pillow y FFmpeg compusieron los gráficos animados originales y las firmas sonoras. La infografía resume el organigrama oficial de FESNA. Los archivos finales se guardan en <code>web/media/</code> y sus URL se gestionan con <code>web/media-links.json</code>.</p><span class="process-outcome">CONTROL · Revisar contenido, datos, créditos, voces ficticias y enlaces antes de entregar.</span></div><span class="process-type">PRODUCCIÓN</span></article>
       </div>
       <div class="tools-row"><div><div class="section-kicker">HERRAMIENTAS UTILIZADAS</div><h3>Diseño web y medios<br>con recursos gratuitos.</h3></div><div class="tool-chips"><span><b>HTML5 / CSS / JS</b><small>Estructura e interacción web</small></span><span><b>ChatGPT</b><small>Guiones, storyboards y prompts</small></span><span><b>TTS.ai · Kokoro</b><small>Locuciones de los productos no renovados</small></span><span><b>TTSMaker</b><small>Camila y Santiago · voces sintéticas</small></span><span><b>Python · Pillow</b><small>Gráficos y composiciones originales</small></span><span><b>FFmpeg</b><small>Animación y exportación MP4/MP3</small></span><span><b>Fuentes FESNA</b><small>Examen y planes de estudio adjuntos</small></span></div></div>
@@ -127,7 +238,7 @@
     <section class="programs-section section-pad" id="programas" aria-labelledby="programs-title">
       <div class="section-wrap">
         <div class="section-heading">
-          <div><div class="section-kicker">04 / DATOS INSTITUCIONALES</div><h2 id="programs-title">Seis programas.<br><span>Dos carreras FESNA.</span></h2></div>
+          <div><div class="section-kicker">05 / DATOS INSTITUCIONALES</div><h2 id="programs-title">Seis programas.<br><span>Dos carreras FESNA.</span></h2></div>
           <p>Consulta los nombres y SNIES de los tres ciclos propedéuticos de Administración de Empresas y Contaduría Pública. Filtra por carrera o busca el nombre o código.</p>
         </div>
         <div class="program-controls">
@@ -153,15 +264,15 @@
     </section>
 
     <section class="delivery-section section-wrap section-pad" id="descargas" aria-labelledby="delivery-title">
-      <div class="section-kicker">05 / DESCARGAS Y CARPETA CENTRAL</div>
+      <div class="section-kicker">06 / DESCARGAS Y CARPETA CENTRAL</div>
       <div class="delivery-grid">
-        <div><h2 id="delivery-title">Guiones y piezas descargables.</h2><p>Consulta los prompts, storyboards y locuciones, o abre la bitácora con los pasos, herramientas y soluciones documentados para cada uno de los 12 productos.</p><a class="button button-primary" href="entregables/guiones-prototipo.md" download>Descargar guiones y locuciones ↓</a><p><a class="text-link" href="entregables/bitacora-produccion.html">Ver bitácora detallada de producción ↗</a></p></div>
+        <div><h2 id="delivery-title">Guiones y piezas descargables.</h2><p>Consulta los prompts, storyboards y locuciones, o abre la bitácora con los pasos, herramientas y soluciones documentados para cada uno de los 12 productos.</p><a class="button button-primary" href="entregables/guiones-prototipo.md" download>Descargar guiones y locuciones ↓</a><p><a class="text-link" href="#prompts">Ver la biblioteca de prompts de la campaña ↗</a></p><p><a class="text-link" href="entregables/bitacora-produccion.html">Ver bitácora detallada de producción ↗</a></p></div>
         <div class="drive-card"><span class="drive-status" id="drive-link-pending">CARPETA OPCIONAL</span><h3>Google Drive · copia adicional</h3><p>Los doce medios ya están disponibles individualmente desde la galería. Si el docente solicita también una carpeta única, comparte el enlace con permiso de lectura y agréguelo a <code>driveFolderUrl</code> en <code>web/media-links.json</code>.</p><a id="drive-folder-link" class="button button-quiet" href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir carpeta de Drive ↗</a><p class="small-note">Los enlaces directos del portafolio funcionan sin una carpeta externa.</p></div>
       </div>
     </section>
 
     <section class="responsibility-section section-wrap section-pad" aria-labelledby="responsibility-title">
-      <div class="section-kicker">06 / USO RESPONSABLE</div>
+      <div class="section-kicker">07 / USO RESPONSABLE</div>
       <div class="responsibility-grid">
         <div><h2 id="responsibility-title">Hecho con cuidado.<br><span>Publicado con claridad.</span></h2><p>La creatividad también incluye reconocer autoría, revisar la información y comunicar el papel de las herramientas de IA.</p></div>
         <div class="responsibility-cards">
@@ -175,7 +286,7 @@
 
     <section class="references-section section-pad" id="referencias" aria-labelledby="references-title">
       <div class="section-wrap">
-        <div class="references-wrap"><div><div class="section-kicker">07 / FUENTES, VIDEOS Y TUTORIALES</div><h2 id="references-title">Referencias para cada ruta.</h2><p>Enlaces de consulta y ejemplos de formato. Los videos de terceros son material didáctico complementario; para normas, datos institucionales y obligaciones colombianas prevalecen las fuentes oficiales.</p></div>
+        <div class="references-wrap"><div><div class="section-kicker">08 / FUENTES, VIDEOS Y TUTORIALES</div><h2 id="references-title">Referencias para cada ruta.</h2><p>Enlaces de consulta y ejemplos de formato. Los videos de terceros son material didáctico complementario; para normas, datos institucionales y obligaciones colombianas prevalecen las fuentes oficiales.</p></div>
           <div class="references-list">
             <article><span>01</span><p><strong>Procesos administrativos:</strong> <a href="https://www.archivogeneral.gov.co/Politica/procesos" target="_blank" rel="noopener noreferrer">Archivo General de la Nación: procesos de gestión documental</a> · <a href="https://www.nuevaamerica.edu.co/wp-content/uploads/2023/06/Estructura-Organizacional.pdf" target="_blank" rel="noopener noreferrer">Organigrama institucional oficial de FESNA [PDF]</a> · <a href="https://www.canva.com/help/creating-and-editing-videos/" target="_blank" rel="noopener noreferrer">Tutorial de Canva para editar videos</a>.</p></article>
             <article><span>02</span><p><strong>Tecnología en Gestión Administrativa:</strong> <a href="https://www.youtube.com/fesna" target="_blank" rel="noopener noreferrer">Canal oficial de FESNA</a> · <a href="https://www.youtube.com/watch?v=Eqd-Bqnq4EQ" target="_blank" rel="noopener noreferrer">Presentación de FES Nueva América por Rectoría [video]</a> · <a href="https://www.capcut.com/es-es/tools" target="_blank" rel="noopener noreferrer">Herramientas de edición CapCut</a>.</p></article>

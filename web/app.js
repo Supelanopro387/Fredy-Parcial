@@ -5,7 +5,7 @@ const mainNav = document.querySelector('#main-nav');
 document.documentElement.classList.add('js');
 
 const revealItems = document.querySelectorAll(
-  '.intro-grid, .campaign-card, .activity-summary, .process-item, .tools-row, .program-card, .responsibility-cards article, .references-list article'
+  '.intro-grid, .campaign-card, .activity-summary, .process-item, .tools-row, .program-card, .prompt-card, .responsibility-cards article, .references-list article'
 );
 
 if ('IntersectionObserver' in window) {
@@ -75,6 +75,89 @@ filterButtons.forEach((button) => {
       item.setAttribute('aria-pressed', String(isActive));
     });
     updatePrograms();
+  });
+});
+
+const promptSearch = document.querySelector('#prompt-search');
+const promptCards = [...document.querySelectorAll('.prompt-card')];
+const promptFilterButtons = [...document.querySelectorAll('.prompt-filter-button')];
+const promptCount = document.querySelector('#prompt-count');
+const noPromptResults = document.querySelector('#no-prompt-results');
+let activePromptFilter = 'todos';
+
+function updatePromptLibrary() {
+  const query = promptSearch?.value.trim().toLocaleLowerCase('es') ?? '';
+  let visibleCount = 0;
+
+  promptCards.forEach((card) => {
+    const matchesFilter = activePromptFilter === 'todos' || card.dataset.area === activePromptFilter || card.dataset.type === activePromptFilter;
+    const matchesQuery = (card.dataset.search ?? '').toLocaleLowerCase('es').includes(query);
+    const isVisible = matchesFilter && matchesQuery;
+    card.hidden = !isVisible;
+    if (isVisible) visibleCount += 1;
+  });
+
+  if (promptCount) {
+    promptCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'prompt documentado' : 'prompts documentados'}`;
+  }
+  if (noPromptResults) noPromptResults.hidden = visibleCount !== 0;
+}
+
+promptSearch?.addEventListener('input', updatePromptLibrary);
+promptFilterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    activePromptFilter = button.dataset.filter ?? 'todos';
+    promptFilterButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
+    updatePromptLibrary();
+  });
+});
+
+document.querySelectorAll('.copy-prompt').forEach((button) => {
+  const originalLabel = button.textContent;
+  let resetTimer = 0;
+
+  button.addEventListener('click', async () => {
+    const quote = button.closest('.prompt-card')?.querySelector('.prompt-quote');
+    if (!quote) return;
+    const text = quote.textContent.replace(/\s+/g, ' ').trim();
+    let copied = false;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch {
+      copied = false;
+    }
+
+    if (!copied) {
+      const helper = document.createElement('textarea');
+      helper.value = text;
+      helper.setAttribute('readonly', '');
+      helper.style.position = 'fixed';
+      helper.style.opacity = '0';
+      document.body.appendChild(helper);
+      helper.select();
+      try {
+        copied = document.execCommand('copy');
+      } catch {
+        copied = false;
+      }
+      helper.remove();
+    }
+
+    button.textContent = copied ? 'Copiado ✓' : 'No disponible';
+    button.classList.toggle('is-copied', copied);
+    window.clearTimeout(resetTimer);
+    resetTimer = window.setTimeout(() => {
+      button.textContent = originalLabel;
+      button.classList.remove('is-copied');
+    }, 1800);
   });
 });
 

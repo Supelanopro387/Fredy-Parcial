@@ -1,0 +1,1 @@
+Desde el principio. Cada rincón del sistema que revisamos temprano cuesta menos que un incidente después. Validar entradas, limitar permisos y proteger datos personales no son extras: son parte de la calidad del software. Y siempre tomamos la normativa vigente de protección de datos como referencia, sin inventar requisitos concretos.

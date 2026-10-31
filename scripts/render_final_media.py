@@ -96,6 +96,15 @@ def render_slide(path: Path, size: tuple[int, int], accent: tuple[int, int, int]
         draw.line((x, 0, x, height), fill=(11, 27, 32), width=1)
     for y in range(0, height, 54):
         draw.line((0, y, width, y), fill=(11, 27, 32), width=1)
+    # Decoración: círculos concéntricos y halo suave en la esquina superior derecha.
+    decor_cx, decor_cy = width - int(width * .09), int(height * .12)
+    for radius, alpha_fill in [(86, (16, 40, 46)), (60, (20, 52, 58)), (36, (26, 66, 70))]:
+        draw.ellipse((decor_cx - radius, decor_cy - radius, decor_cx + radius, decor_cy + radius),
+                     fill=alpha_fill, outline=accent, width=2)
+    draw.ellipse((decor_cx - 10, decor_cy - 10, decor_cx + 10, decor_cy + 10), fill=accent)
+    # Banda diagonal inferior de acento.
+    band_x1, band_y1, band_y2 = 0, height - int(height * .035), height
+    draw.polygon([(band_x1, band_y1), (width, band_y1 + 26), (width, band_y2), (band_x1, band_y2)], fill=(13, 33, 38))
     vertical = height > width
     draw.text((margin, int(height * .075)), "FESNA  ·  FUNDACIÓN DE EDUCACIÓN SUPERIOR NUEVA AMÉRICA",
               font=font(18 if not vertical else 16, True), fill=accent)
@@ -118,6 +127,8 @@ def render_slide(path: Path, size: tuple[int, int], accent: tuple[int, int, int]
 
     footer_y = height - int(height * .055)
     draw.text((margin, footer_y), footer, font=font(11 if not vertical else 10), fill=(137, 163, 163))
+    draw.text((width - margin - 190, footer_y), "VOCES SINTÉTICAS · PIEZA EDUCATIVA",
+              font=font(10), fill=(137, 163, 163))
     bar_y = height - 8
     bar_left, bar_right = margin, width - margin
     draw.rounded_rectangle((bar_left, bar_y, bar_right, bar_y + 3), radius=2, fill=(43, 66, 68))
@@ -209,8 +220,9 @@ def draw_visual(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], kind:
         rows = [("edad = 16", CYAN), ("nombre = \"Ana\"", YELLOW),
                 ("si edad >= 18:", WHITE), ("    print(f\"{nombre}, mayor de edad\")", MUTED),
                 ("y_reportado = False", YELLOW)]
+        max_rows = max(2, min(len(rows), int((h - 110) // 27)))
         y = y1 + 56
-        for text, color in rows:
+        for text, color in rows[:max_rows]:
             draw.line((x1 + 26, y + 4, x1 + 26, y + 18), fill=(48, 82, 84), width=1)
             draw.text((x1 + 44, y), text, font=font(15, mono=True), fill=color)
             y += 27
@@ -368,6 +380,150 @@ def draw_visual(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], kind:
             if i < len(labels) - 1:
                 draw.line((left + (w - 44) // len(labels) - 8, top + 34, left + (w - 44) // len(labels), top + 34), fill=accent, width=3)
         draw.text((x1 + 22, y2 - 26), "PANEL SIMULADO · FLUJO DE UNA SOLICITUD ACADÉMICA", font=font(11), fill=MUTED)
+    elif kind == "reelintro":
+        draw.text((x1 + 22, y1 + 18), "SERIE EDUCATIVA · 6 TIPS", font=font(12, True), fill=accent)
+        draw.text((x1 + 22, y1 + 44), "PROGRAMA MEJOR", font=font(34, True), fill=WHITE)
+        cx_ = x1 + 22
+        for i in range(1, 7):
+            cx_ += chip(draw, cx_, y1 + 92, f"tip {i:02d}", accent, mono=True, size=11) + 8
+        y = y1 + 132
+        for i, line in enumerate(["leer → planear → escribir → probar", "un error temprano ahorra horas",
+                                  "documenta el prompt de la IA"]):
+            draw.text((x1 + 26, y), f"{i + 1}. {line}", font=font(14, True, mono=True),
+                      fill=WHITE if i == 0 else MUTED)
+            y += 26
+        draw.ellipse((x2 - 110, y1 + 40, x2 - 46, y1 + 104), fill=(13, 36, 40), outline=accent, width=3)
+        text_center(draw, (x2 - 78, y1 + 72), "</>", font(17, True, mono=True), accent)
+        draw.text((x1 + 22, y2 - 26), "6 CÁPSULAS · DE LA IDEA AL DESPLIEGUE", font=font(11), fill=MUTED)
+    elif kind == "tips":
+        cols = 3
+        gap_ = 12
+        card_w_ = (w - 24 - (cols - 1) * gap_) // cols
+        card_h_ = (h - 24 - gap_) // 2
+        items = [("01", "Variables"), ("02", "Condicional"), ("03", "Ciclo"),
+                 ("04", "Función"), ("05", "Algoritmo"), ("06", "Revisión IA")]
+        for i, (num, label) in enumerate(items):
+            col, row = i % cols, i // cols
+            bx = x1 + 12 + col * (card_w_ + gap_)
+            by = y1 + 12 + row * (card_h_ + gap_)
+            border = accent if i in (0, 5) else (44, 76, 80)
+            rounded(draw, (bx, by, bx + card_w_, by + card_h_), (10, 26, 32), border, 14, 2)
+            draw.text((bx + 14, by + 14), num, font=font(19, True, mono=True), fill=accent)
+            draw.text((bx + 14, by + 48), label, font=font(15, True), fill=WHITE)
+        draw.text((x1 + 22, y2 - 24), "RECORRIDO DE LA SERIE · UN TIP POR CÁPSULA", font=font(11), fill=MUTED)
+    elif kind == "branch":
+        cx_ = x1 + w // 2
+        rounded(draw, (cx_ - 100, y1 + 30, cx_ + 100, y1 + 82), (9, 25, 31), accent, 14, 2)
+        draw.text((cx_ - 86, y1 + 44), "if nota >= 3.0:", font=font(16, True, mono=True), fill=CYAN)
+        left_x, right_x = x1 + 30, x2 - 180
+        branch_y = y2 - 86
+        draw.line((cx_ - 60, y1 + 82, left_x + 70, branch_y), fill=CYAN, width=3)
+        draw.line((cx_ + 60, y1 + 82, right_x + 70, branch_y), fill=YELLOW, width=3)
+        rounded(draw, (left_x, branch_y, left_x + 140, branch_y + 44), (13, 35, 41), CYAN, 12, 2)
+        draw.text((left_x + 16, branch_y + 11), "APRUEBA", font=font(14, True), fill=CYAN)
+        rounded(draw, (right_x, branch_y, right_x + 140, branch_y + 44), (13, 35, 41), YELLOW, 12, 2)
+        draw.text((right_x + 16, branch_y + 11), "REFUERZA", font=font(14, True), fill=YELLOW)
+        draw.text((x1 + 22, y2 - 30), "EL PROGRAMA DECIDE CAMINOS · EJEMPLO DIDÁCTICO", font=font(11), fill=MUTED)
+    elif kind == "kanban":
+        columns = [("PLANEAR", ["historias", "alcance"], CYAN), ("SPRINT", ["módulo UI", "API datos"], accent),
+                   ("PRUEBAS", ["QA manual"], YELLOW), ("ENTREGA", ["demo al equipo"], (150, 200, 150))]
+        col_w = (w - 40 - (len(columns) - 1) * 10) // len(columns)
+        for i, (name, cards, col_) in enumerate(columns):
+            bx = x1 + 20 + i * (col_w + 10)
+            rounded(draw, (bx, y1 + 34, bx + col_w, y2 - 34), (10, 26, 32), (44, 76, 80), 14, 2)
+            draw.text((bx + 10, y1 + 46), name, font=font(12, True), fill=col_)
+            cy_ = y1 + 80
+            for card in cards:
+                rounded(draw, (bx + 10, cy_, bx + col_w - 10, cy_ + 44), (16, 38, 44), col_, 10, 2)
+                draw_lines(draw, wrap_text(draw, card, font(12), col_w - 30), (bx + 20, cy_ + 10), font(12), WHITE, 4)
+                cy_ += 58
+        draw.text((x1 + 22, y2 - 26), "SPRINTS CORTOS · ENTREGA CONTINUA", font=font(11), fill=MUTED)
+    elif kind == "shield":
+        sx, sy = x1 + 78, y1 + h // 2 - 10
+        draw.line([(sx, sy - 60), (sx - 48, sy - 38), (sx - 48, sy + 10), (sx, sy + 64), (sx + 48, sy + 10),
+                   (sx + 48, sy - 38), (sx, sy - 60)], fill=accent, width=4)
+        draw.arc((sx - 9, sy - 26, sx + 9, sy - 8), 180, 360, fill=(222, 184, 90), width=4)
+        rounded(draw, (sx - 17, sy - 8, sx + 17, sy + 22), (222, 184, 90), None, 5)
+        checks = ["validar entradas", "limitar permisos", "proteger datos", "normativa vigente"]
+        step_ = 28 if h < 220 else 36
+        ty = y1 + 40
+        for label in checks:
+            draw.ellipse((x1 + 170, ty, x1 + 188, ty + 18), fill=(13, 36, 40), outline=accent, width=2)
+            draw.line((x1 + 175, ty + 9, x1 + 181, ty + 14), fill=CYAN, width=2)
+            draw.line((x1 + 181, ty + 14, x1 + 189, ty + 4), fill=CYAN, width=2)
+            draw.text((x1 + 200, ty - 1), label, font=font(14 if step_ < 32 else 15, True), fill=WHITE)
+            ty += step_
+        draw.text((x1 + 22, y2 - 16 if h < 220 else y2 - 24), "CIBERSEGURIDAD DESDE EL DISEÑO · ILUSTRATIVO", font=font(10), fill=MUTED)
+    elif kind == "repo":
+        draw.text((x1 + 20, y1 + 14), "terminal · control de versiones", font=font(12, mono=True), fill=MUTED)
+        draw.line((x1 + 18, y1 + 40, x2 - 18, y1 + 40), fill=(48, 82, 84), width=2)
+        rows_ = [("$ git log --oneline", MUTED), ("a3f9c1e feat: módulo de folios", CYAN),
+                 ("b7d2408 fix: validación de fechas", CYAN), ("c8e5119 docs: guía de despliegue", CYAN),
+                 ("$ git push origin main", WHITE), ("revisado por el equipo ✓", YELLOW)]
+        y = y1 + 56
+        for text, color in rows_:
+            draw.text((x1 + 32, y), text, font=font(14, True, mono=True), fill=color)
+            y += 27
+        chip(draw, x1 + 20, y2 - 36, "MENSAJES ÚTILES · HISTORIAL CLARO", accent, mono=True, size=12)
+    elif kind == "assistant":
+        ax, ay = x1 + 84, y1 + h // 2 - 6
+        rounded(draw, (ax - 36, ay - 32, ax + 36, ay + 28), (24, 62, 66), accent, 14, 2)
+        draw.ellipse((ax - 21, ay - 18, ax - 3, ay), fill=CYAN)
+        draw.ellipse((ax + 3, ay - 18, ax + 21, ay), fill=CYAN)
+        draw.line((ax - 12, ay + 9, ax + 12, ay + 9), fill=INK, width=3)
+        draw.line((ax - 6, ay - 44, ax - 6, ay - 34), fill=accent, width=3)
+        draw.ellipse((ax - 9, ay - 51, ax - 3, ay - 45), fill=accent)
+        text_center(draw, (ax, ay + 46), "ASISTENTE IA", font(13, True), accent)
+        bx, by = x2 - 90, y1 + h // 2 - 6
+        draw.ellipse((bx - 34, by - 36, bx + 34, by + 34), fill=(28, 72, 73), outline=WHITE, width=4)
+        draw.ellipse((bx - 25, by - 29, bx + 25, by + 26), fill=(236, 194, 160))
+        draw.pieslice((bx - 30, by - 36, bx + 30, by + 8), 180, 360, fill=(55, 42, 48))
+        draw.ellipse((bx - 13, by - 6, bx - 5, by + 2), fill=INK)
+        draw.ellipse((bx + 5, by - 6, bx + 13, by + 2), fill=INK)
+        draw.arc((bx - 10, by + 8, bx + 10, by + 22), 0, 180, fill=(117, 57, 61), width=2)
+        text_center(draw, (bx, by + 50), " ESTUDIANTE ", font(13, True), WHITE)
+        arrow_y = y1 + h // 2 - 6
+        draw.line((ax + 40, arrow_y, bx - 44, arrow_y), fill=accent, width=3)
+        draw.polygon([(bx - 44, arrow_y), (bx - 58, arrow_y - 9), (bx - 58, arrow_y + 9)], fill=accent)
+        draw.text((x1 + 158, arrow_y - 30), "RESPUESTA PREPARADA", font=font(12, True), fill=accent)
+        draw.text((x1 + 158, arrow_y + 8), "REVISIÓN Y DECISIÓN", font=font(12, True), fill=WHITE)
+        draw.text((x1 + 22, y2 - 22), "LA IA APOYA EL ANÁLISIS · EL EQUIPO DECIDE", font=font(11), fill=MUTED)
+    elif kind == "roadmap":
+        timeline_y = y1 + h // 2 + 4
+        draw.line((x1 + 30, timeline_y, x2 - 30, timeline_y), fill=(48, 82, 84), width=3)
+        milestones = [("REGISTRO", "folio + fecha"), ("CLASIFICACIÓN", "área responsable"),
+                      ("RESPUESTA", "con evidencia"), ("SEGUIMIENTO", "estado visible")]
+        step_w = (w - 60) / (len(milestones) - 1)
+        for i, (label, sub) in enumerate(milestones):
+            mx = x1 + 30 + int(step_w * i)
+            done = i <= 2
+            draw.ellipse((mx - 11, timeline_y - 11, mx + 11, timeline_y + 11),
+                         fill=accent if done else (13, 36, 40), outline=accent, width=3)
+            text_center(draw, (mx, timeline_y - 30), label, font(12, True), WHITE)
+            text_center(draw, (mx, timeline_y + 30), sub, font(11), MUTED)
+            if i < len(milestones) - 1:
+                draw.line((mx + 11, timeline_y, x1 + 30 + int(step_w * (i + 1)) - 11, timeline_y),
+                          fill=accent if i < 2 else (48, 82, 84), width=3)
+        draw.text((x1 + 22, y2 - 22), "FLUJO DEL PROTOTIPO · TRAZABILIDAD DE SOLICITUDES", font=font(11), fill=MUTED)
+    elif kind == "options":
+        opts = [("A", "Automatizar consultas", "Chat de respuestas frecuentes", False),
+                ("B", "Panel de seguimiento", "Estados y folios visibles", True),
+                ("C", "IA asistida", "Con revisión humana", True)]
+        gap_ = 14
+        card_w_ = (w - 48 - gap_ * 2) // 3
+        for i, (letter, title_, sub, pick) in enumerate(opts):
+            bx = x1 + 24 + i * (card_w_ + gap_)
+            border_ = accent if pick else (48, 82, 84)
+            rounded(draw, (bx, y1 + 34, bx + card_w_, y2 - 34), (10, 26, 32), border_, 16, 3)
+            draw.text((bx + 16, y1 + 48), letter, font=font(24, True), fill=accent if pick else MUTED)
+            draw_lines(draw, wrap_text(draw, title_, font(15, True), card_w_ - 32), (bx + 16, y1 + 96), font(15, True), WHITE, 5)
+            draw_lines(draw, wrap_text(draw, sub, font(12), card_w_ - 32), (bx + 16, y2 - 84), font(12), MUTED, 4)
+            if pick:
+                draw.ellipse((bx + 16, y2 - 50, bx + 40, y2 - 26), fill=accent)
+                draw.line((bx + 22, y2 - 40, bx + 29, y2 - 32), fill=INK, width=3)
+                draw.line((bx + 29, y2 - 32, bx + 36, y2 - 46), fill=INK, width=3)
+                draw.text((bx + 48, y2 - 48), "COMBINADA", font=font(12, True), fill=accent)
+        draw.text((x1 + 22, y2 - 22), "ALTERNATIVAS COMPARADAS · DECISIÓN DOCUMENTADA", font=font(11), fill=MUTED)
     else:
         labels = ["IDEA", "PLAN", "GESTIÓN", "REVISIÓN"]
         gap = 10
@@ -410,22 +566,29 @@ def render_supply_videos() -> None:
     products = [
         ("isn-tp-serie-reels-programacion.mp4", "T.P. en Procesos de Programación de Software", CYAN, "vertical",
          VOICE / "isn-tp-reels-narracion.mp3", 18,
-         [("Variables y tipos de datos", "Una variable guarda un valor; los tipos comunes son número, texto y valor lógico.", "REEL 1 · FUNDAMENTOS", "code"),
-          ("Condicionales", "El programa decide caminos: si la condición se cumple ejecuta un bloque; si no, otro.", "REEL 2 · DECISIONES", "code"),
-          ("Ciclos y funciones", "Los ciclos repiten tareas y las funciones empaquetan pasos que se reutilizan.", "REEL 3 · ESTRUCTURAS", "flow"),
-          ("Algoritmos: orden antes del código", "Un algoritmo organiza los pasos de la solución; practica la lógica antes de escribir código.", "SERIE EDUCATIVA · SNIES 111395", "code")]),
+         [("Seis tips para programar mejor", "Una serie didáctica de la T.P. en Procesos de Programación de Software: entender, nombrar, probar, versionar, documentar y revisar.", "APERTURA · SERIE EDUCATIVA", "reelintro"),
+          ("Variables y tipos de datos", "Una variable guarda un valor; los tipos comunes son número, texto y valor lógico. Elige nombres que se entiendan.", "TIP 01 · FUNDAMENTOS", "code"),
+          ("Condicionales: el programa decide", "Si la condición se cumple ejecuta un bloque; si no, otro. Probar los dos caminos evita sorpresas.", "TIP 02 · DECISIONES", "branch"),
+          ("Ciclos y funciones", "Los ciclos repiten tareas y las funciones empaquetan pasos que se reutilizan con un nombre claro.", "TIP 03 · ESTRUCTURAS", "flow"),
+          ("Control de versiones", "Guarda tu trabajo con historial claro: cada cambio queda documentado y puedes volver atrás cuando lo necesites.", "TIP 04 · ORDEN", "repo"),
+          ("Algoritmos antes del código", "Un algoritmo organiza los pasos de la solución; practica la lógica antes de escribir la primera línea.", "TIP 05 · ORDEN MENTAL", "tips"),
+          ("IA con revisión humana", "Cuando uses IA, documenta el prompt y revisa su resultado línea por línea: el criterio es tuyo.", "TIP 06 · SERIE EDUCATIVA · SNIES 111395", "assistant")]),
         ("isn-tec-video-explicativo-sistemas.mp4", "Tecnología en Gestión de Software y Sistemas", CYAN, "landscape",
          VOICE / "isn-tec-video-narracion.mp3", 18,
-         [("El software sigue un ciclo de vida", "Del requisito al mantenimiento: cada fase tiene entradas, salidas y criterios de calidad.", "REQUISITOS", "sdlc"),
-          ("Metodologías ágiles", "Sprints cortos con entrega continua y revisión de avance con el equipo.", "ITERACIÓN", "flow"),
-          ("Bases de datos y sistemas de información", "Entidades, llaves y relaciones organizan los datos que las aplicaciones consultan.", "DATOS", "db"),
-          ("Arquitectura y gestión de proyectos", "Componentes, alcance, tiempo y calidad se planifican con evidencia.", "CIERRE", "idea")]),
+         [("El software sigue un ciclo de vida", "Del requisito al mantenimiento: cada fase tiene entradas, salidas y criterios de calidad.", "REQUISITOS · CICLO DE VIDA", "sdlc"),
+          ("Metodologías ágiles", "Sprints cortos con entrega continua y revisión de avance con el equipo, registrada en cada iteración.", "ITERACIÓN · EQUIPO", "kanban"),
+          ("Bases de datos y sistemas de información", "Entidades, llaves y relaciones organizan los datos que las aplicaciones consultan y actualizan.", "DATOS · ESQUEMA EJEMPLO", "db"),
+          ("Ciberseguridad desde el diseño", "Validar entradas, limitar permisos y proteger datos personales son parte de la calidad del sistema.", "SEGURIDAD · CALIDAD", "shield"),
+          ("Arquitectura y gestión de proyectos", "Componentes, alcance, tiempo y calidad se planifican y controlan con evidencia.", "PLANIFICACIÓN · CONTROL", "idea"),
+          ("Despliegue y soporte", "El sistema llega a producción con operación monitoreada: el ciclo vuelve a empezar con cada mejora.", "CIERRE · SNIES 111397", "roadmap")]),
         ("isn-pro-solucion-tecnologica.mp4", "Ingeniería de Sistemas", CYAN, "landscape",
          VOICE / "isn-pro-solucion-narracion.mp3", 18,
-         [("Una problemática real: trazabilidad", "Gestionar solicitudes académicas de forma ordenada cuesta tiempo y seguimiento.", "CONTEXTO", "cycle"),
-          ("Idear con criterio propio", "Alternativas comparadas: automatización de consultas, panel de seguimiento y respuestas asistidas por IA.", "ANÁLISIS", "idea"),
-          ("Prototipo y demostración", "Un prototipo web simula el flujo de una solicitud y permite medir su utilidad antes de construir el producto.", "IMPLEMENTACIÓN", "code"),
-          ("IA con criterio humano", "La IA apoya el análisis; el ingeniero revisa, edita y decide la solución.", "CIERRE", "idea")]),
+         [("Una problemática real: trazabilidad", "Gestionar solicitudes académicas de forma ordenada cuesta tiempo y seguimiento: la información se dispersa.", "CONTEXTO · PROBLEMÁTICA", "cycle"),
+          ("Alternativas comparadas", "Automatizar consultas, un panel de seguimiento y respuestas asistidas por IA: tres caminos analizados con criterios claros.", "ANÁLISIS · DECISIÓN", "options"),
+          ("La propuesta combina lo mejor", "Registro con folio, clasificación automática y respuesta preparada que el estudiante revisa, edita y aprueba.", "DISEÑO · PROPUESTA", "roadmap"),
+          ("Prototipo y demostración", "Un prototipo web simula el flujo de una solicitud y permite medir su utilidad antes de construir el producto.", "IMPLEMENTACIÓN · DEMO", "code"),
+          ("IA con criterio humano", "La IA apoya el análisis; el ingeniero revisa, edita y decide la solución con seguridad de la información.", "MÉTODO · RESPONSABILIDAD", "assistant"),
+          ("De prototipo a propuesta", "Con evidencia del prototipo queda definido el camino para una solución tecnológica real del examen final.", "CIERRE · SNIES 111393 / 111394", "tips")]),
     ]
     for filename, program, accent, orientation, voice, minimum, scenes in products:
         output = render_video(filename, program, accent, scenes, orientation, voice, minimum)

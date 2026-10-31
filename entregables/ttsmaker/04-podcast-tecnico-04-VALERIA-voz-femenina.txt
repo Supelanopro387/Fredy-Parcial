@@ -1,0 +1,1 @@
+El trabajo se divide en periodos cortos con entregas visibles. Cada cambio de código queda registrado en un repositorio, y las pruebas verifican que lo nuevo no rompa lo anterior. Gestionar software es, sobre todo, coordinar personas, versiones y riesgos con evidencia, no con promesas.

@@ -1,0 +1,1 @@
+Empecemos por los requisitos. Antes de escribir código hay que entender quién usa el sistema y qué necesita resolver. Un requerimiento mal entendido se multiplica: se convierte en retrabajos, demoras y costos. Por eso la fase de análisis es la más barata de corregir y la más cara de ignorar.

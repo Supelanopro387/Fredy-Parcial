@@ -1,0 +1,1 @@
+Hola, soy Santiago. Este es el podcast técnico del área de software de la Fundación de Educación Superior Nueva América, y mi invitada es Valeria, una experta virtual ficticia que habla con voz sintética; ninguna de las dos voces pertenece a una persona real. Hoy: ¿qué pasa dentro de un proyecto de software, desde la solicitud hasta el despliegue?

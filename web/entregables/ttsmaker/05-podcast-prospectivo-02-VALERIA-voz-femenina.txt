@@ -1,0 +1,1 @@
+Primera tendencia: la automatización de procesos repetitivos. No reemplaza al ingeniero: cambia qué parte del trabajo es mecánica y libera tiempo para diseño, verificación y criterio. Verificar un flujo automatizado sigue siendo responsabilidad humana.

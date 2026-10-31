@@ -271,6 +271,8 @@ Esta sección documenta los productos nuevos del examen final: 3 narraciones de 
 
 ## Locuciones de video (IS) — un trabajo de TTSMaker por texto
 
+> **Nuevo:** los 17 guiones del examen final están también como archivos de texto individuales en `entregables/ttsmaker/` (y `web/entregables/ttsmaker/`): abre cada `.txt`, copia su contenido en TTSMaker, genera el MP3, y renombra el archivo descargado con el nombre indicado. El archivo con `-SANTIAGO-` se genera con voz masculina; con `-VALERIA-`, voz femenina.
+
 Voz recomendada: una sola voz por narración (Santiago, masculina colombiana, o Camila, femenina colombiana; ambas son voces genéricas sintéticas, sin imitar a nadie). Velocidad 1.0. Descargar MP3, renombrar tal cual y guardar en `web/media/audio/voz/`.
 
 **`voz/isn-tp-reels-narracion.mp3` — Serie de reels · TP Programación de Software (SNIES 111395)**

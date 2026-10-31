@@ -1,0 +1,1 @@
+Aparecen nuevas preguntas: calidad del dato, trazabilidad de la métrica y límites del modelo. Un sistema que medimos siempre puede explicarse; un sistema que se opaca puede fallar sin avisar. La ingeniería de datos y la analítica piden rigor y documentación, no fe en las herramientas.

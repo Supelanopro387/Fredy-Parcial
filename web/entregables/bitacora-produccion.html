@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101b31">
-  <meta name="description" content="Proceso, herramientas, decisiones y prompts de los doce productos de la campaña académica FESNA.">
+  <meta name="description" content="Proceso, herramientas, decisiones y prompts de los veinticuatro productos de la campaña académica FESNA (más seis productos interactivos del examen final).">
   <title>Bitácora de producción — Portafolio FESNA</title>
   <link rel="stylesheet" href="../styles.css">
   <script src="../app.js" defer></script>
@@ -162,6 +162,95 @@
             <p><strong>Herramientas reales:</strong> ChatGPT (guion y revisión), <a href="https://ttsmaker.com/voice-dialogue-generator" target="_blank" rel="noopener noreferrer">TTSMaker modo diálogo</a>, enlace al Código de Comercio y descarga del MP3. No se clonaron voces ni se atribuyeron opiniones a FESNA.</p>
             <p><strong>Brief documentado:</strong> “Escribe un diálogo educativo en cinco turnos sobre ética, NIIF/NIC, auditoría, revisoría fiscal e inflación/tasas. Haz a Valeria una experta virtual ficticia con voz sintética; identifica ambas voces, cita el marco oficial y evita asesoría o cifras reales”.</p>
           </div><span class="process-type">MP3</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Ingeniería de Sistemas — examen final (6 productos)</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">13</span><div>
+            <h3>Serie de reels — TP Programación de Software (SNIES 111395)</h3>
+            <p><strong>Objetivo:</strong> seis tips de programación en formato vertical 9:16 que complementan la infografía interactiva del ciclo.</p>
+            <p><strong>Proceso:</strong> guion de 6 escenas con Python/Pillow (tarjetas ilustradas originales), FFmpeg con zoompan y concat; la narración (voz TTSMaker) queda pendiente de carga y el video final se vuelve a renderizar automáticamente al insertar <code>voz/isn-tp-reels-narracion.mp3</code>.</p>
+            <p><strong>Reto y decisión:</strong> sin promesas de empleo ni cifras de mercado; cada tip es criterio profesional propio documentado.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), Python/Pillow (escenas), FFmpeg vía imageio-ffmpeg (montaje). Texto TTSMaker documentado en los guiones.</p>
+          </div><span class="process-type">MP4 · 9:16</span></article>
+          <article class="process-item"><span class="process-no">14</span><div>
+            <h3>Lámina de fundamentos de programación — TP (PNG)</h3>
+            <p><strong>Objetivo:</strong> ficha didáctica de conceptos (variable, condicional, ciclo, función) con ejemplos de código verificables.</p>
+            <p><strong>Proceso:</strong> composición 1500×1650 con Pillow; ejemplos triviales escritos a mano. Complementada por la <a href="../index.html#interactivo-infografia">infografía interactiva</a> en HTML/CSS/JS.</p>
+            <p><strong>Herramientas reales:</strong> Python/Pillow, HTML/CSS/JS propio. Sin IA generativa de imagen.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">15</span><div>
+            <h3>Podcast técnico — Tecnología en Gestión de Software y Sistemas (SNIES 111397)</h3>
+            <p><strong>Objetivo:</strong> explicar el ciclo de vida del software (requisitos, versiones, pruebas, ciberseguridad) con Santiago y Valeria, personajes ficticios rotulados.</p>
+            <p><strong>Proceso:</strong> escaleta de 8 turnos; guiones por segmento documentados para TTSMaker (Santiago = voz masculina, Valeria = voz femenina); los MP3 por segmento se cargan en <code>media/audio/voz/isn-tec-podcast-01…08.mp3</code> y se mezclan con <code>scripts/render_final_audio.py</code>.</p>
+            <p><strong>Reto y decisión:</strong> mientras el estudiante genera las voces, el slot del sitio queda rotulado “En producción”: no se publica un MP3 parcial.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), TTSMaker (voces sintéticas, pendiente), FFmpeg (concat). Sin voces clonadas.</p>
+          </div><span class="process-type">MP3 · en producción</span></article>
+          <article class="process-item"><span class="process-no">16</span><div>
+            <h3>Video explicativo — Tecnología (MP4 16:9)</h3>
+            <p><strong>Objetivo:</strong> recorrido del ciclo planes → calidad → producción → soporte con datos del registro SNIES 111397.</p>
+            <p><strong>Proceso:</strong> 4 escenas 1280×720 renderizadas con Python/Pillow + FFmpeg; narración pendiente (<code>voz/isn-tec-video-narracion.mp3</code>) que se auto-mezcla al re-ejecutar el script.</p>
+            <p><strong>Herramientas reales:</strong> Python/Pillow, FFmpeg (imageio-ffmpeg), texto TTSMaker pendiente de descarga.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">17</span><div>
+            <h3>Video de propuesta de solución tecnológica — Profesional (SNIES 111393 / 111394)</h3>
+            <p><strong>Objetivo:</strong> presentar la problemática, comparar tres alternativas y defender el prototipo de trazabilidad de solicitudes.</p>
+            <p><strong>Proceso:</strong> guion con comparación de alternativas (A automatización, B panel, C IA asistida) y criterio de selección; 5 escenas renderizadas; narración pendiente (<code>voz/isn-pro-solucion-narracion.mp3</code>).</p>
+            <p><strong>Reto y decisión:</strong> la IA se declara como apoyo al análisis; la decisión final es humana. El prototipo interactivo vive en <a href="../index.html#interactivo-panel">la web</a>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (comparación), Python/Pillow, FFmpeg, HTML/CSS/JS.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">18</span><div>
+            <h3>Podcast prospectivo — Profesional</h3>
+            <p><strong>Objetivo:</strong> análisis conceptual de tres tendencias del área (automatización, datos, sistemas inteligentes) sin predicciones de mercado ni promesas.</p>
+            <p><strong>Proceso:</strong> escaleta de 6 turnos segmentada para TTSMaker; mezcla final con <code>scripts/render_final_audio.py</code> al completar <code>isn-pro-podcast-01…06.mp3</code>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (escaleta), TTSMaker (voces sintéticas, pendiente), FFmpeg.</p>
+          </div><span class="process-type">MP3 · en producción</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Marketing y Publicidad — examen final (6 productos)</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">19</span><div>
+            <h3>Piezas gráficas comerciales — TP Comercialización y Comunicación Publicitaria (Res. 011477 de 2026)</h3>
+            <p><strong>Objetivo:</strong> tres copys (beneficio, pregunta, acción) para la ruta de comercialización, con datos verificados y sin costos inventados.</p>
+            <p><strong>Proceso:</strong> se generaron variantes con ChatGPT; el estudiante las seleccionó, reescribió y compuso la lámina 1500×1650 con Pillow.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (variantes), Python/Pillow (composición). Textos fuente documentados en los guiones.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">20</span><div>
+            <h3>Chat conversacional con reglas — TP (interactivo HTML)</h3>
+            <p><strong>Objetivo:</strong> simular atención al cliente que responde únicamente con datos verificables de la ruta (títulos, modalidad, SNIES, créditos, contacto) y desvía costos/requisitos a los canales oficiales.</p>
+            <p><strong>Proceso:</strong> base de reglas escritas en JavaScript propio dentro de <code>web/app.js</code>; sin llamada a modelos externos y sin almacenar mensajes. Fallback honesto cuando el dato no está en la base.</p>
+            <p><strong>Reto y decisión:</strong> la guía pide IA generativa de textos; se cumplió el espíritu con un motor de reglas local revisado línea por línea, rotulado como simulación y sin riesgo de alucinaciones.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (borrador de reglas), HTML/CSS/JS propio. <a href="../index.html#interactivo-chat">Abrir el chat</a>.</p>
+          </div><span class="process-type">HTML · interactivo</span></article>
+          <article class="process-item"><span class="process-no">21</span><div>
+            <h3>Buyer persona y copys con IA — Tecnología en Gestión Comercial y Publicidad (Res. 011476 de 2026)</h3>
+            <p><strong>Objetivo:</strong> ficha ficticia “Andrea, 26 años” con objetivos, dolores, canales y criterio de decisión para segmentación didáctica.</p>
+            <p><strong>Proceso:</strong> persona generada con ChatGPT y seleccionada por el estudiante; lámina Pillow con rotulado de personaje ficticio y SNIES de la ruta.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT, Python/Pillow.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">22</span><div>
+            <h3>Auditoría simulada de pauta digital — Tecnología (dashboard interactivo)</h3>
+            <p><strong>Objetivo:</strong> explicar CTR, CPC, CPA y ROAS con una simulación manipulable y fórmulas visibles; sin datos de una campaña real.</p>
+            <p><strong>Proceso:</strong> cálculo transparente en JavaScript (impresiones, clics, conversiones y gasto ajustables; valores invalidados se normalizan y las divisiones imposibles muestran “—”).</p>
+            <p><strong>Herramientas reales:</strong> HTML/CSS/JS propio con revisión del flujo matemático. <a href="../index.html#interactivo-auditoria">Abrir el dashboard</a>.</p>
+          </div><span class="process-type">HTML · interactivo</span></article>
+          <article class="process-item"><span class="process-no">23</span><div>
+            <h3>Plan predictivo de macrotendencias — Profesional Marketing y Publicidad (SNIES 119242 / 119243, Res. 011475 de 2026)</h3>
+            <p><strong>Objetivo:</strong> lámina conceptual de macrotendencias (IA en pauta, comercio social, personalización, datos propios) orientada a planes futuros sin curvas de mercado inventadas.</p>
+            <p><strong>Proceso:</strong> guion por bloques con ChatGPT, edición humana y composición Pillow 1500×1650. Complementado por el <a href="../index.html#interactivo-plan">explorador interactivo</a> que combina dos o más tendencias y sugiere ajustes conceptuales.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT, Python/Pillow, HTML/CSS/JS.</p>
+          </div><span class="process-type">PNG + HTML</span></article>
+          <article class="process-item"><span class="process-no">24</span><div>
+            <h3>Pitch deck “AURORA · Café de Origen” — Profesional (interactivo HTML)</h3>
+            <p><strong>Objetivo:</strong> narrar un pitch completo (problema, solución, mercado ilustrativo, modelo, equipo ficticio, hoja de ruta) con marca ficticia rotulada.</p>
+            <p><strong>Proceso:</strong> guion de 6 láminas editado con IA y revisado a mano; navegación por botones y teclado (flechas, A/D) implementada en JavaScript propio; portada PNG aparte generada con Pillow.</p>
+            <p><strong>Reto y decisión:</strong> mercado y cifras son declarados ilustrativos; ninguna persona real integra el equipo ficticio. <a href="../index.html#interactivo-deck">Abrir el deck</a>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (narrativa), Python/Pillow (portada), HTML/CSS/JS.</p>
+          </div><span class="process-type">HTML + PNG</span></article>
         </div>
       </details>
 

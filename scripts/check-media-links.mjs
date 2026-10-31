@@ -8,8 +8,9 @@ const config = JSON.parse(fs.readFileSync(path.join(root, 'web', 'media-links.js
 const slotIds = [...page.matchAll(/data-media-id="([^"]+)"/g)].map((match) => match[1]);
 const configuredIds = Object.keys(config.products ?? {});
 const errors = [];
+const pendingIds = [];
 
-if (slotIds.length !== 12) errors.push(`Expected 12 media slots; found ${slotIds.length}.`);
+if (slotIds.length !== 24) errors.push(`Expected 24 media slots; found ${slotIds.length}.`);
 
 for (const id of slotIds) {
   if (!(id in (config.products ?? {}))) {
@@ -18,6 +19,12 @@ for (const id of slotIds) {
   }
 
   const rawUrl = config.products[id];
+  // null = producto "En producción" (p. ej. podcasts a la espera de voces TTSMaker).
+  // El slot queda con su estado pendiente visible y sin enlace roto.
+  if (rawUrl === null) {
+    pendingIds.push(id);
+    continue;
+  }
   if (!rawUrl) {
     errors.push(`Media slot is still empty: ${id}`);
     continue;
@@ -61,5 +68,8 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(`Validated ${slotIds.length} product links and ${configuredIds.length} configured media slots.`);
+  if (pendingIds.length) {
+    console.log(`Pending production (${pendingIds.length}): ${pendingIds.join(', ')} — slots show "En producción" until their exports exist.`);
+  }
   if (!config.driveFolderUrl) console.log('Optional Drive folder is not configured; all product links are validated.');
 }

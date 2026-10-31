@@ -262,3 +262,119 @@ Los videos MP4, la infografía PNG y los audios MP3 están en `web/media/`. Los 
 ## Publicación de los productos
 
 Los doce productos exportados están publicados y enlazados desde `web/media-links.json`. Si se reemplaza una pieza, valida el archivo y actualiza la URL correspondiente. La carpeta central de Drive es opcional mientras los enlaces directos del sitio funcionen; se configura en `driveFolderUrl` si el docente la solicita. No publiques archivos confidenciales ni enlaces que requieran permisos del estudiante.
+
+---
+
+# EXAMEN FINAL · Ingeniería de Sistemas y Marketing y Publicidad
+
+Esta sección documenta los productos nuevos del examen final: 3 narraciones de video y 2 podcasts de Ingeniería de Sistemas (con voces sintéticas de TTSMaker pendientes de generar), y las piezas gráficas e interactivas de Marketing y Publicidad. Todo dato institucional proviene del sitio oficial (nuevaamerica.edu.co) y de los planes de estudio publicados; no se inventan costos, requisitos, horarios ni beneficios.
+
+## Locuciones de video (IS) — un trabajo de TTSMaker por texto
+
+Voz recomendada: una sola voz por narración (Santiago, masculina colombiana, o Camila, femenina colombiana; ambas son voces genéricas sintéticas, sin imitar a nadie). Velocidad 1.0. Descargar MP3, renombrar tal cual y guardar en `web/media/audio/voz/`.
+
+**`voz/isn-tp-reels-narracion.mp3` — Serie de reels · TP Programación de Software (SNIES 111395)**
+
+> Tip uno: antes de programar, entiende el problema y descomponlo en pasos. Tip dos: elige nombres claros para tus variables; el código se lee más de lo que se escribe. Tip tres: prueba cada bloque que termines; un error temprano ahorra horas. Tip cuatro: guarda tu trabajo con control de versiones y escribe mensajes útiles. Tip cinco: comenta el porqué, no el qué. Tip seis: documenta el prompt cuando uses IA y revisa su resultado línea por línea. Programación de Software, Fundación de Educación Superior Nueva América. Los datos del programa se verifican en los canales oficiales.
+
+**`voz/isn-tec-video-narracion.mp3` — Video explicativo · Tecnología en Gestión de Software y Sistemas (SNIES 111397)**
+
+> ¿Cómo pasa un proyecto de software de idea a operación? La tecnología en Gestión de Software y Sistemas de la Fundación de Educación Superior Nueva América prepara para planear el desarrollo, coordinar equipos, controlar calidad y mantener los sistemas en producción. En este recorrido veremos el ciclo: requisitos, diseño, construcción, pruebas, despliegue y soporte. Con base de datos, redes y ciberseguridad. Consulta el registro calificado SNIES 111397 y el plan de estudios en la página oficial de FESNA.
+
+**`voz/isn-pro-solucion-narracion.mp3` — Video de propuesta · Profesional (SNIES 111393 / 111394)**
+
+> Problema real: gestionar solicitudes académicas toma tiempo y pierde trazabilidad. Alternativa A, automatizar las consultas frecuentes. Alternativa B, un panel de seguimiento con estados visibles. Alternativa C, respuestas asistidas por IA con revisión humana. La propuesta combina B y C: registro con folio, clasificación automática y respuesta preparada que el estudiante revisa, edita y aprueba. La IA apoya el análisis; la decisión es de las personas. Prototipo del examen final, Ingeniería de Sistemas, SNIES 111393 y 111394.
+
+## Podcast técnico (IS) — `isn-tec-podcast-tecnico.mp3`
+
+Diálogo educativo con los personajes rotulados Santiago (voz masculina sintética) y Valeria (voz femenina sintética), ambos ficticios y declarados al aire. Se generan 8 segmentos: turnos de Santiago con voz masculina, turnos de Valeria con voz femenina. Pegar un segmento por vez en TTSMaker, descargar y guardar como `web/media/audio/voz/isn-tec-podcast-01.mp3` a `…-08.mp3`; luego ejecutar `python scripts/render_final_audio.py` para mezclar el episodio final.
+
+**`isn-tec-podcast-01.mp3` — Santiago (abertura)**
+
+> Hola, soy Santiago. Este es el podcast técnico del área de software de la Fundación de Educación Superior Nueva América, y mi invitada es Valeria, una experta virtual ficticia que habla con voz sintética; ninguna de las dos voces pertenece a una persona real. Hoy: ¿qué pasa dentro de un proyecto de software, desde la solicitud hasta el despliegue?
+
+**`isn-tec-podcast-02.mp3` — Valeria**
+
+> Empecemos por los requisitos. Antes de escribir código hay que entender quién usa el sistema y qué necesita resolver. Un requerimiento mal entendido se multiplica: se convierte en retrabajos, demoras y costos. Por eso la fase de análisis es la más barata de corregir y la más cara de ignorar.
+
+**`isn-tec-podcast-03.mp3` — Santiago**
+
+> Ya entendidos los requisitos, ¿cómo se organiza el trabajo del equipo? Escucho términos como metodologías ágiles, sprints y control de versiones. ¿Qué significan en la práctica para quien estudia Tecnología en Gestión de Software y Sistemas?
+
+**`isn-tec-podcast-04.mp3` — Valeria**
+
+> El trabajo se divide en periodos cortos con entregas visibles. Cada cambio de código queda registrado en un repositorio, y las pruebas verifican que lo nuevo no rompa lo anterior. Gestionar software es, sobre todo, coordinar personas, versiones y riesgos con evidencia, no con promesas.
+
+**`isn-tec-podcast-05.mp3` — Santiago**
+
+> Hablemos de seguridad. ¿En qué momento del desarrollo entra la ciberseguridad: al final, como revisión, o desde el principio?
+
+**`isn-tec-podcast-06.mp3` — Valeria**
+
+> Desde el principio. Cada rincón del sistema que revisamos temprano cuesta menos que un incidente después. Validar entradas, limitar permisos y proteger datos personales no son extras: son parte de la calidad del software. Y siempre tomamos la normativa vigente de protección de datos como referencia, sin inventar requisitos concretos.
+
+**`isn-tec-podcast-07.mp3` — Santiago**
+
+> Cierre: ¿qué consejo le darías a quien empieza la ruta de la programación a la gestión de software en FESNA, sin anticipar precios ni requisitos de ingreso?
+
+**`isn-tec-podcast-08.mp3` — Valeria**
+
+> Que practique con proyectos pequeños y completos: del requerimiento a la entrega. Que documente su trabajo y verifique cada dato institucional, como SNIES y planes de estudio, en las fuentes oficiales. Recuerden: Valeria es un personaje ficticio con voz sintética; este episodio es educativo y no reemplaza la información publicada por la universidad.
+
+## Podcast prospectivo (IS) — `isn-pro-podcast-prospectivo.mp3`
+
+Mismo formato: Santiago y Valeria (personajes ficticios con voces sintéticas). Guion temático de mayor escala: tendencias del área con lenguaje conceptual, sin predicciones de mercado ni cifras inventadas. 6 segmentos en `web/media/audio/voz/isn-pro-podcast-01.mp3` a `…-06.mp3`.
+
+**`isn-pro-podcast-01.mp3` — Santiago (abertura)**
+
+> Bienvenidos al episodio prospectivo de Ingeniería de Sistemas del portafolio FESNA. Con Valeria, experta virtual ficticia, conversamos sobre lo que está moviendo al área: automatización, datos y sistemas inteligentes. Voces sintéticas declaradas; nada aquí es una predicción de mercado.
+
+**`isn-pro-podcast-02.mp3` — Valeria**
+
+> Primera tendencia: la automatización de procesos repetitivos. No reemplaza al ingeniero: cambia qué parte del trabajo es mecánica y libera tiempo para diseño, verificación y criterio. Verificar un flujo automatizado sigue siendo responsabilidad humana.
+
+**`isn-pro-podcast-03.mp3` — Santiago**
+
+> Segunda tendencia: los datos. ¿Qué cambia en Ingeniería de Sistemas cuando las decisiones se fundamentan en series, no en intuiciones?
+
+**`isn-pro-podcast-04.mp3` — Valeria**
+
+> Aparecen nuevas preguntas: calidad del dato, trazabilidad de la métrica y límites del modelo. Un sistema que medimos siempre puede explicarse; un sistema que se opaca puede fallar sin avisar. La ingeniería de datos y la analítica piden rigor y documentación, no fe en las herramientas.
+
+**`isn-pro-podcast-05.mp3` — Santiago**
+
+> Tercera tendencia: sistemas inteligentes que asisten la toma de decisiones, como el prototipo de trazabilidad de este portafolio: IA que prepara la respuesta y el estudiante decide.
+
+**`isn-pro-podcast-06.mp3` — Valeria**
+
+> Exacto: el criterio profesional se conserva. Para terminar: estudiar verificado, practicar con proyectos reales documentados y verificar cada dato en las fuentes oficiales. Este episodio es un análisis conceptual del examen final; no contempla cifras del sector ni promesas de empleo.
+
+# EXAMEN FINAL · Marketing y Publicidad
+
+Las piezas de MKT no requieren audio: son documentos gráficos PNG e interactivos HTML/JS. Se documentan aquí sus guiones y textos fuente.
+
+## `infografias/mkt-tp-piezas-graficas-comerciales.png` — Copys publicitarios (TP Comercialización y Comunicación Publicitaria)
+
+Copys generados con IA, seleccionados y reescritos por el estudiante, con datos verificados (SNIES y sitio oficial). Tres ángulos sobre la ruta de comercialización:
+
+- **Beneficio:** "Aprende a fidelizar a un cliente antes de que llegue a la vitrina: comercialización con IA generativa aplicada a piezas reales. SNIES del T.P.: consúltalo en FESNA."
+- **Pregunta:** "¿Y si tu campaña de ventas la empiezas a construir hoy? T.P. Comercialización y Comunicación Publicitaria: contenido, pauta y medición."
+- **Acción:** "Explora el perfil de la ruta en nuevaamerica.edu.co y pregunta por los canales oficiales. Tu portafolio empieza con tu primer brief."
+
+Nota: el PNG final fue generado por el estudiante con los textos arriba; los copys publicados en la lámina ya fueron revisados y no contienen afirmaciones de costos ni de beneficios económicos.
+
+## `infografias/mkt-tec-buyer-persona-copys.png` — Ficha Andrea (Tecnología en Gestión Comercial y Publicidad)
+
+Buyer persona ficticia rotulada: Andrea, 26 años, aspirante a la ruta; objetivo: medir resultados reales de campañas; dolores: no entender sus KPIs y perder dinero en pauta sin estrategia; canales: video corto y redes sociales; decisión: comparar programas por plan de estudios verificable. SNIES de la ruta (Tecnología, Res. 011476 de 2026, 82 créditos) con fuente.
+
+## Interactivos MKT — guiones fuente
+
+- **Chat (#interactivo-chat):** reglas escritas en `web/app.js` con los únicos datos usables (títulos en cascada, modalidad, SNIES 119242/119243, créditos 49/82/133, 8 periodos, contacto institucional). Desvía costos/requisitos a los canales oficiales: nunca inventa.
+- **Dashboard (#interactivo-auditoria):** fórmulas visibles (CTR = clics ÷ impresiones; CPC = gasto ÷ clics; CPA = gasto ÷ conversiones; ROAS = ingreso ÷ gasto). Datos solo de simulación pedagógica.
+- **Explorador (#interactivo-plan):** recomendaciones conceptuales de las macrotendencias (IA en pauta, comercio social, personalización, datos propios); sin curvas de mercado.
+- **Pitch deck (#interactivo-deck):** marca ficticia AURORA, café de origen. 6 láminas: problema, solución, mercado ilustrativo (Andrea/es), modelo, equipo ficticio y hoja de ruta con supuestos declarados.
+
+## Mapa de enlaces de los productos del examen final
+
+Los 24 productos del examen están en `web/media-links.json`: los 12 del segundo corte y los 12 nuevos. Los dos podcasts de IS quedan como "En producción" hasta la mezcla final (los slots ya apuntan a `media/audio/isn-tec-podcast-tecnico.mp3` y `media/audio/isn-pro-podcast-prospectivo.mp3`).
+

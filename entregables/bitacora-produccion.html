@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b31">
+  <meta name="description" content="Proceso, herramientas, decisiones y prompts de los veinticuatro productos de la campaña académica FESNA (más seis productos interactivos del examen final).">
+  <title>Bitácora de producción — Portafolio FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html#inicio" aria-label="Nicolás Bolivar, inicio">
+      <span class="brand-mark" aria-hidden="true">NB<span>.</span></span>
+      <span class="brand-copy"><strong>Nicolás Bolivar</strong><small>Portafolio académico · FESNA</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú <span aria-hidden="true">☰</span></button>
+    <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+      <a href="../index.html#propuesta">Campaña</a>
+      <a href="../index.html#productos">Productos</a>
+      <a href="../index.html#referencias">Referencias</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="section-wrap section-pad" aria-labelledby="log-title">
+      <div class="section-kicker">BITÁCORA · DOCE PRODUCTOS</div>
+      <div class="section-heading">
+        <div><h1 class="production-log-title" id="log-title">Del brief a cada exportación.</h1></div>
+        <p>Registro del propósito, los pasos de producción, las herramientas realmente utilizadas y las decisiones tomadas en cada actividad.</p>
+      </div>
+      <p class="source-note">Los briefs de prompt se normalizaron para dejar un registro claro y reproducible; resumen las instrucciones que guiaron las piezas y no son una transcripción literal del historial de chat. Los medios finales se encuentran en <code>web/media/</code>.</p>
+
+      <details class="prompt-details" open>
+        <summary>Administración de Empresas · Técnica Profesional en Procesos Administrativos Empresariales</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">01</span><div>
+            <h3>Video explicativo · Un documento, una ruta clara</h3>
+            <p><strong>Objetivo:</strong> mostrar recepción, clasificación, trámite y archivo de una solicitud, sin presentar el ejemplo como procedimiento interno oficial de FESNA.</p>
+            <p><strong>Proceso:</strong> se delimitó el caso como genérico; se escribió la locución; se dividió en cuatro escenas; se diseñaron las láminas y se integró voz sintética con movimiento de cámara y cortes entre escenas; se revisaron nombre y legibilidad.</p>
+            <p><strong>Reto y decisión:</strong> no había una fuente institucional sobre el flujo administrativo específico. Se evitó inventar reglas: la narración indica que el archivo se organiza conforme a las normas de cada organización.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion y estructura), TTS.ai Kokoro/Alex (locución), Python/Pillow (gráficos) y FFmpeg (movimiento, montaje y MP4).</p>
+            <p><strong>Brief documentado:</strong> “Explica visualmente la ruta de una solicitud en cuatro etapas. Distingue el ejemplo educativo de los procedimientos internos de FESNA, separa locución y visuales y no inventes reglas institucionales”.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">02</span><div>
+            <h3>Infografía · Estructura organizacional de FESNA</h3>
+            <p><strong>Objetivo:</strong> sintetizar la jerarquía del organigrama oficial de 2023 en una pieza legible y atribuida.</p>
+            <p><strong>Proceso:</strong> se consultó el PDF institucional; se transcribieron los nombres y las relaciones; se distribuyeron en tres ramas; se dibujaron cajas y conectores originales en Pillow; se añadió la fuente y se exportó PNG.</p>
+            <p><strong>Reto y decisión:</strong> resumir un diagrama denso sin cambiar dependencias. Se mantuvieron los cargos verificados, se rotuló como versión didáctica y se enlazó el organigrama completo.</p>
+            <p><strong>Herramientas reales:</strong> PDF oficial de FESNA (fuente), ChatGPT (apoyo de síntesis y revisión), Python/Pillow (diseño original y exportación PNG).</p>
+            <p><strong>Brief documentado:</strong> “Resume el PDF del organigrama FESNA sin añadir ni reorganizar cargos. Conserva relaciones, rotula la pieza como resumen didáctico y atribuye el documento institucional de 2023”.</p>
+          </div><span class="process-type">PNG · 1500×1650</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Administración de Empresas · Tecnología en Gestión Administrativa</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">03</span><div>
+            <h3>Reel promocional · Supervisión, talento humano y logística</h3>
+            <p><strong>Objetivo:</strong> conectar tres funciones de gestión y presentar el nombre y los SNIES del programa en formato vertical.</p>
+            <p><strong>Proceso:</strong> se organizó el mensaje en cuatro escenas; se produjo una locución breve; se compusieron escenas gráficas verticales; se sincronizó la voz y se comprobó la lectura de los códigos SNIES en el cierre.</p>
+            <p><strong>Reto y decisión:</strong> el reel debía ser dinámico sin atribuir al programa resultados o beneficios no confirmados. Se usaron rótulos temáticos, movimiento de cámara y datos oficiales, sin promesas publicitarias.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), TTS.ai Kokoro/Alex (voz), Python/Pillow (diseño 9:16) y FFmpeg (montaje MP4).</p>
+            <p><strong>Brief documentado:</strong> “Crea un reel vertical en cuatro escenas sobre supervisión, talento humano y logística. Cierra con el nombre oficial de Tecnología en Gestión Administrativa y SNIES 111385 presencial / 111386 virtual; no inventes beneficios”.</p>
+          </div><span class="process-type">MP4 · 9:16</span></article>
+          <article class="process-item"><span class="process-no">04</span><div>
+            <h3>Spot publicitario · Gestión Administrativa</h3>
+            <p><strong>Objetivo:</strong> crear un spot radial con una voz femenina nítida, los tres focos de gestión y la invitación a conocer el programa.</p>
+            <p><strong>Proceso:</strong> se escribió una locución nueva, se sintetizó con Camila (voz femenina colombiana de TTSMaker) y se mezcló con una firma sonora original de cuatro notas en FFmpeg.</p>
+            <p><strong>Reto y decisión:</strong> mantener la atención publicitaria sin prometer empleo ni condiciones no verificadas. Se citan los dos SNIES y se invita a consultar FESNA; la firma sonora es propia, no una canción protegida.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (copy), <a href="https://ttsmaker.com/es" target="_blank" rel="noopener noreferrer">TTSMaker web</a> (TTS Camila, Colombia) y Python/FFmpeg (jingle original y mezcla MP3).</p>
+            <p><strong>Brief documentado:</strong> “Redacta un spot breve y dinámico para Tecnología en Gestión Administrativa. Incluye supervisión, talento humano y logística, conserva ambos SNIES, evita promesas y usa una voz sintética femenina colombiana”.</p>
+          </div><span class="process-type">MP3</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Administración de Empresas · ciclo profesional</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">05</span><div>
+            <h3>Video institucional · De una idea a un plan</h3>
+            <p><strong>Objetivo:</strong> comunicar visión estratégica, liderazgo y responsabilidad social alrededor de la planeación empresarial.</p>
+            <p><strong>Proceso:</strong> se redactó locución con información institucional disponible; se creó un storyboard de cuatro escenas; se diseñaron láminas originales, se sintetizó la voz y se montó el video panorámico con movimiento de cámara.</p>
+            <p><strong>Reto y decisión:</strong> evitar presentar una promesa o cifra como resultado de FESNA. Se habló de temas académicos y se reservaron los códigos oficiales para el cierre.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), TTS.ai Kokoro/Alex (locución), Python/Pillow (gráficos) y FFmpeg (montaje y MP4).</p>
+            <p><strong>Brief documentado:</strong> “Presenta Administración de Empresas en cuatro escenas: idea, planeación, liderazgo responsable y cierre institucional. Usa únicamente los SNIES confirmados y no atribuyas beneficios sin fuente”.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">06</span><div>
+            <h3>Motion graphics · Idea, análisis, plan y seguimiento</h3>
+            <p><strong>Objetivo:</strong> convertir cuatro ideas empresariales en una pieza de motion graphics con líneas, nodos y un gráfico animado.</p>
+            <p><strong>Proceso:</strong> se dibujaron fotogramas 2D originales para cuatro secuencias: observar una oportunidad; conectar equipo, clientes y operación; organizar mercado, operación y recursos; dar seguimiento a personas, entorno y avances. FFmpeg los compuso en un MP4 de 24 s.</p>
+            <p><strong>Reto y decisión:</strong> no existían estadísticas institucionales aprobadas. El gráfico de barras se identifica como relación ilustrativa, no lleva valores y el cierre conserva los SNIES oficiales.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (brief), Python/Pillow (dibujo animado por fotogramas) y FFmpeg (MP4 y transiciones).</p>
+            <p><strong>Brief documentado:</strong> “Anima una campaña gráfica de Administración en cuatro etapas: oportunidad, liderazgo conectado, planeación y seguimiento responsable. Usa barras sin cifras, gráficos originales y cierra con el nombre y SNIES oficiales”.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Contaduría Pública · Técnica Profesional en Procesos Contables</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">07</span><div>
+            <h3>Serie de reels · Cuatro tips contables</h3>
+            <p><strong>Objetivo:</strong> explicar nociones introductorias de asientos, caja menor, archivo tributario y nómina en cuatro cápsulas verticales consecutivas.</p>
+            <p><strong>Proceso:</strong> se seleccionó un consejo por tema; se escribió la voz; se compusieron cuatro escenas; se sincronizó la locución; se exportó una compilación MP4 vertical y se revisaron los conceptos.</p>
+            <p><strong>Reto y decisión:</strong> los plazos y cálculos dependen de reglas vigentes. La locución evita tasas y fechas no verificadas e invita a consultar la normativa aplicable.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guiones), TTS.ai Kokoro/Alex (voz), Python/Pillow (láminas 9:16) y FFmpeg (montaje MP4).</p>
+            <p><strong>Brief documentado:</strong> “Crea cuatro cápsulas verticales, una por tema: asientos, caja menor, archivo tributario y nómina. Da un consejo educativo por cápsula, sin inventar tasas ni fechas y recomienda verificar la norma vigente”.</p>
+          </div><span class="process-type">MP4 · 9:16 · 4 cápsulas</span></article>
+          <article class="process-item"><span class="process-no">08</span><div>
+            <h3>Cuña radial · Procesos Contables</h3>
+            <p><strong>Objetivo:</strong> presentar el ciclo técnico con una voz femenina y una invitación breve, sin afirmaciones de empleabilidad.</p>
+            <p><strong>Proceso:</strong> se redactó una locución con nombre y SNIES; TTSMaker sintetizó a Camila (voz colombiana femenina); Python generó una firma sonora original y FFmpeg mezcló y exportó el MP3.</p>
+            <p><strong>Reto y decisión:</strong> conservar el tono radial sin insertar afirmaciones de ingreso o beneficios no suministrados. La pieza termina remitiendo a información oficial de FESNA.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (copy), <a href="https://ttsmaker.com/es" target="_blank" rel="noopener noreferrer">TTSMaker</a> (voz sintética Camila) y Python/FFmpeg (firma sonora original y mezcla).</p>
+            <p><strong>Brief documentado:</strong> “Produce una cuña radial cercana para Procesos Contables. Abre con una pregunta sobre números y orden, menciona registro y soportes, incluye ambos SNIES y cierra con consulta oficial. Usa voz femenina colombiana; no prometas empleo”.</p>
+          </div><span class="process-type">MP3</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Contaduría Pública · Tecnología en Gestión Contable y Financiera</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">09</span><div>
+            <h3>Podcast · Conoce FESNA</h3>
+            <p><strong>Objetivo:</strong> conversar sobre estados financieros, presupuestos, liquidez y consulta de obligaciones tributarias mediante dos voces colombianas sintéticas.</p>
+            <p><strong>Proceso:</strong> se distribuyó el diálogo en cinco turnos alternados entre Santiago (voz masculina) y Valeria (personaje ficticio, voz femenina); TTSMaker unió los turnos y exportó el MP3.</p>
+            <p><strong>Reto y decisión:</strong> explicar conceptos sin dar asesoría ni presentar cifras reales. El guion declara ficción, evita diagnósticos y remite a fuentes oficiales y al calendario DIAN.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), <a href="https://ttsmaker.com/voice-dialogue-generator" target="_blank" rel="noopener noreferrer">TTSMaker modo diálogo</a> (Santiago/Camila, voces colombianas) y descarga MP3. Fuentes: CGN y DIAN.</p>
+            <p><strong>Brief documentado:</strong> “Crea una conversación en cinco turnos entre un anfitrión y Valeria, invitada ficticia, sobre estados financieros, presupuesto, razón corriente y consulta tributaria. Usa dos voces sintéticas colombianas y no uses cifras de FESNA”.</p>
+          </div><span class="process-type">MP3</span></article>
+          <article class="process-item"><span class="process-no">10</span><div>
+            <h3>Animación 2D · Razón corriente</h3>
+            <p><strong>Objetivo:</strong> enseñar la razón corriente con una dramatización visual del cálculo y su limitación.</p>
+            <p><strong>Proceso:</strong> una cuenta ficticia muestra activos corrientes 150 y obligaciones corrientes 100; los valores y barras se animan, aparece 150 ÷ 100 = 1,5 y el cierre introduce composición, vencimientos y flujo de caja como contexto. Narración renovada con voz Camila (TTSMaker, español colombiano) sobre el mismo ejemplo ficticio.</p>
+            <p><strong>Reto y decisión:</strong> se requieren números para mostrar una división, pero no se suministraron cifras reales. Se usa un ejemplo expresamente ficticio, repetido en pantalla y en los créditos.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (brief), TTSMaker voz Camila (330032, locución MP3), Python/Pillow (gráficos 2D animados por fotogramas) y FFmpeg (montaje MP4).</p>
+            <p><strong>Brief documentado:</strong> “Anima cuatro escenas de una empresa ficticia: recursos, obligaciones, razón corriente 150 ÷ 100 = 1,5 y factores de contexto. Identifica las cifras como ficticias, no uses datos FESNA y no presentes el indicador como diagnóstico financiero”.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Contaduría Pública · ciclo profesional</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">11</span><div>
+            <h3>Testimonio demostrativo · Valeria, personaje ficticio</h3>
+            <p><strong>Objetivo:</strong> ilustrar ética, independencia y cuidado de la evidencia sin atribuir declaraciones a un egresado real.</p>
+            <p><strong>Proceso:</strong> se creó un personaje gráfico original; se redactó una declaración explícita de ficción; se sintetizó una voz genérica; se integraron cuatro escenas verticales y se exportó MP4.</p>
+            <p><strong>Reto y decisión:</strong> la consigna propone perspectiva de egresados o expertos, pero no se tenía autorización de una persona real. Se eligió la alternativa segura indicada en la misma guía: personaje ficticio, claramente identificado y sin experiencia atribuida.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion y código gráfico), Python/Pillow (avatar vectorial original), TTS.ai Kokoro/Alex (voz sintética) y FFmpeg (montaje MP4). No se usaron HeyGen ni voces o rostros de terceros.</p>
+            <p><strong>Brief documentado:</strong> “Crea un testimonio académico con una persona completamente ficticia. Identifica en pantalla que no es egresada ni experta real; aborda ética y evidencia sin inventar experiencia ni clonar voz o rostro”.</p>
+          </div><span class="process-type">MP4 · 9:16</span></article>
+          <article class="process-item"><span class="process-no">12</span><div>
+            <h3>Podcast institucional · Contaduría Pública</h3>
+            <p><strong>Objetivo:</strong> conversar sobre NIIF/NIC, auditoría, revisoría fiscal, ética y análisis macrofinanciero mediante Santiago y Valeria, personaje virtual ficticio con voz femenina sintética.</p>
+            <p><strong>Proceso:</strong> se escribió un guion en cinco turnos alternados; se consultó el <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=41102" target="_blank" rel="noopener noreferrer">artículo 207 del Código de Comercio</a>; TTSMaker generó la conversación con voces Santiago (masculina) y Camila (femenina); se descargó el MP3 final.</p>
+            <p><strong>Reto y decisión:</strong> cubrir los temas de la guía sin atribuir experiencia o conceptos a personas reales ni dar asesoría. El guion relaciona inflación, tasas y presupuestos de forma conceptual y remite a las fuentes oficiales para la norma aplicable.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion y revisión), <a href="https://ttsmaker.com/voice-dialogue-generator" target="_blank" rel="noopener noreferrer">TTSMaker modo diálogo</a>, enlace al Código de Comercio y descarga del MP3. No se clonaron voces ni se atribuyeron opiniones a FESNA.</p>
+            <p><strong>Brief documentado:</strong> “Escribe un diálogo educativo en cinco turnos sobre ética, NIIF/NIC, auditoría, revisoría fiscal e inflación/tasas. Haz a Valeria una experta virtual ficticia con voz sintética; identifica ambas voces, cita el marco oficial y evita asesoría o cifras reales”.</p>
+          </div><span class="process-type">MP3</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Ingeniería de Sistemas — examen final (6 productos)</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">13</span><div>
+            <h3>Serie de reels — TP Programación de Software (SNIES 111395)</h3>
+            <p><strong>Objetivo:</strong> seis tips de programación en formato vertical 9:16 que complementan la infografía interactiva del ciclo.</p>
+            <p><strong>Proceso:</strong> guion de 6 escenas con Python/Pillow (tarjetas ilustradas originales), FFmpeg con zoompan y concat; la narración (voz TTSMaker) queda pendiente de carga y el video final se vuelve a renderizar automáticamente al insertar <code>voz/isn-tp-reels-narracion.mp3</code>.</p>
+            <p><strong>Reto y decisión:</strong> sin promesas de empleo ni cifras de mercado; cada tip es criterio profesional propio documentado.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), Python/Pillow (escenas), FFmpeg vía imageio-ffmpeg (montaje). Texto TTSMaker documentado en los guiones.</p>
+          </div><span class="process-type">MP4 · 9:16</span></article>
+          <article class="process-item"><span class="process-no">14</span><div>
+            <h3>Lámina de fundamentos de programación — TP (PNG)</h3>
+            <p><strong>Objetivo:</strong> ficha didáctica de conceptos (variable, condicional, ciclo, función) con ejemplos de código verificables.</p>
+            <p><strong>Proceso:</strong> composición 1500×1650 con Pillow; ejemplos triviales escritos a mano. Complementada por la <a href="../index.html#interactivo-infografia">infografía interactiva</a> en HTML/CSS/JS.</p>
+            <p><strong>Herramientas reales:</strong> Python/Pillow, HTML/CSS/JS propio. Sin IA generativa de imagen.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">15</span><div>
+            <h3>Podcast técnico — Tecnología en Gestión de Software y Sistemas (SNIES 111397)</h3>
+            <p><strong>Objetivo:</strong> explicar el ciclo de vida del software (requisitos, versiones, pruebas, ciberseguridad) con Santiago y Valeria, personajes ficticios rotulados.</p>
+            <p><strong>Proceso:</strong> escaleta de 8 turnos; guiones por segmento documentados para TTSMaker (Santiago = voz masculina, Valeria = voz femenina); los MP3 por segmento se cargan en <code>media/audio/voz/isn-tec-podcast-01…08.mp3</code> y se mezclan con <code>scripts/render_final_audio.py</code>.</p>
+            <p><strong>Reto y decisión:</strong> mientras el estudiante genera las voces, el slot del sitio queda rotulado “En producción”: no se publica un MP3 parcial.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (guion), TTSMaker (voces sintéticas, pendiente), FFmpeg (concat). Sin voces clonadas.</p>
+          </div><span class="process-type">MP3 · en producción</span></article>
+          <article class="process-item"><span class="process-no">16</span><div>
+            <h3>Video explicativo — Tecnología (MP4 16:9)</h3>
+            <p><strong>Objetivo:</strong> recorrido del ciclo planes → calidad → producción → soporte con datos del registro SNIES 111397.</p>
+            <p><strong>Proceso:</strong> 4 escenas 1280×720 renderizadas con Python/Pillow + FFmpeg; narración pendiente (<code>voz/isn-tec-video-narracion.mp3</code>) que se auto-mezcla al re-ejecutar el script.</p>
+            <p><strong>Herramientas reales:</strong> Python/Pillow, FFmpeg (imageio-ffmpeg), texto TTSMaker pendiente de descarga.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">17</span><div>
+            <h3>Video de propuesta de solución tecnológica — Profesional (SNIES 111393 / 111394)</h3>
+            <p><strong>Objetivo:</strong> presentar la problemática, comparar tres alternativas y defender el prototipo de trazabilidad de solicitudes.</p>
+            <p><strong>Proceso:</strong> guion con comparación de alternativas (A automatización, B panel, C IA asistida) y criterio de selección; 5 escenas renderizadas; narración pendiente (<code>voz/isn-pro-solucion-narracion.mp3</code>).</p>
+            <p><strong>Reto y decisión:</strong> la IA se declara como apoyo al análisis; la decisión final es humana. El prototipo interactivo vive en <a href="../index.html#interactivo-panel">la web</a>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (comparación), Python/Pillow, FFmpeg, HTML/CSS/JS.</p>
+          </div><span class="process-type">MP4 · 16:9</span></article>
+          <article class="process-item"><span class="process-no">18</span><div>
+            <h3>Podcast prospectivo — Profesional</h3>
+            <p><strong>Objetivo:</strong> análisis conceptual de tres tendencias del área (automatización, datos, sistemas inteligentes) sin predicciones de mercado ni promesas.</p>
+            <p><strong>Proceso:</strong> escaleta de 6 turnos segmentada para TTSMaker; mezcla final con <code>scripts/render_final_audio.py</code> al completar <code>isn-pro-podcast-01…06.mp3</code>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (escaleta), TTSMaker (voces sintéticas, pendiente), FFmpeg.</p>
+          </div><span class="process-type">MP3 · en producción</span></article>
+        </div>
+      </details>
+
+      <details class="prompt-details">
+        <summary>Marketing y Publicidad — examen final (6 productos)</summary>
+        <div class="prompt-content">
+          <article class="process-item"><span class="process-no">19</span><div>
+            <h3>Piezas gráficas comerciales — TP Comercialización y Comunicación Publicitaria (Res. 011477 de 2026)</h3>
+            <p><strong>Objetivo:</strong> tres copys (beneficio, pregunta, acción) para la ruta de comercialización, con datos verificados y sin costos inventados.</p>
+            <p><strong>Proceso:</strong> se generaron variantes con ChatGPT; el estudiante las seleccionó, reescribió y compuso la lámina 1500×1650 con Pillow.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (variantes), Python/Pillow (composición). Textos fuente documentados en los guiones.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">20</span><div>
+            <h3>Chat conversacional con reglas — TP (interactivo HTML)</h3>
+            <p><strong>Objetivo:</strong> simular atención al cliente que responde únicamente con datos verificables de la ruta (títulos, modalidad, SNIES, créditos, contacto) y desvía costos/requisitos a los canales oficiales.</p>
+            <p><strong>Proceso:</strong> base de reglas escritas en JavaScript propio dentro de <code>web/app.js</code>; sin llamada a modelos externos y sin almacenar mensajes. Fallback honesto cuando el dato no está en la base.</p>
+            <p><strong>Reto y decisión:</strong> la guía pide IA generativa de textos; se cumplió el espíritu con un motor de reglas local revisado línea por línea, rotulado como simulación y sin riesgo de alucinaciones.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (borrador de reglas), HTML/CSS/JS propio. <a href="../index.html#interactivo-chat">Abrir el chat</a>.</p>
+          </div><span class="process-type">HTML · interactivo</span></article>
+          <article class="process-item"><span class="process-no">21</span><div>
+            <h3>Buyer persona y copys con IA — Tecnología en Gestión Comercial y Publicidad (Res. 011476 de 2026)</h3>
+            <p><strong>Objetivo:</strong> ficha ficticia “Andrea, 26 años” con objetivos, dolores, canales y criterio de decisión para segmentación didáctica.</p>
+            <p><strong>Proceso:</strong> persona generada con ChatGPT y seleccionada por el estudiante; lámina Pillow con rotulado de personaje ficticio y SNIES de la ruta.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT, Python/Pillow.</p>
+          </div><span class="process-type">PNG</span></article>
+          <article class="process-item"><span class="process-no">22</span><div>
+            <h3>Auditoría simulada de pauta digital — Tecnología (dashboard interactivo)</h3>
+            <p><strong>Objetivo:</strong> explicar CTR, CPC, CPA y ROAS con una simulación manipulable y fórmulas visibles; sin datos de una campaña real.</p>
+            <p><strong>Proceso:</strong> cálculo transparente en JavaScript (impresiones, clics, conversiones y gasto ajustables; valores invalidados se normalizan y las divisiones imposibles muestran “—”).</p>
+            <p><strong>Herramientas reales:</strong> HTML/CSS/JS propio con revisión del flujo matemático. <a href="../index.html#interactivo-auditoria">Abrir el dashboard</a>.</p>
+          </div><span class="process-type">HTML · interactivo</span></article>
+          <article class="process-item"><span class="process-no">23</span><div>
+            <h3>Plan predictivo de macrotendencias — Profesional Marketing y Publicidad (SNIES 119242 / 119243, Res. 011475 de 2026)</h3>
+            <p><strong>Objetivo:</strong> lámina conceptual de macrotendencias (IA en pauta, comercio social, personalización, datos propios) orientada a planes futuros sin curvas de mercado inventadas.</p>
+            <p><strong>Proceso:</strong> guion por bloques con ChatGPT, edición humana y composición Pillow 1500×1650. Complementado por el <a href="../index.html#interactivo-plan">explorador interactivo</a> que combina dos o más tendencias y sugiere ajustes conceptuales.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT, Python/Pillow, HTML/CSS/JS.</p>
+          </div><span class="process-type">PNG + HTML</span></article>
+          <article class="process-item"><span class="process-no">24</span><div>
+            <h3>Pitch deck “AURORA · Café de Origen” — Profesional (interactivo HTML)</h3>
+            <p><strong>Objetivo:</strong> narrar un pitch completo (problema, solución, mercado ilustrativo, modelo, equipo ficticio, hoja de ruta) con marca ficticia rotulada.</p>
+            <p><strong>Proceso:</strong> guion de 6 láminas editado con IA y revisado a mano; navegación por botones y teclado (flechas, A/D) implementada en JavaScript propio; portada PNG aparte generada con Pillow.</p>
+            <p><strong>Reto y decisión:</strong> mercado y cifras son declarados ilustrativos; ninguna persona real integra el equipo ficticio. <a href="../index.html#interactivo-deck">Abrir el deck</a>.</p>
+            <p><strong>Herramientas reales:</strong> ChatGPT (narrativa), Python/Pillow (portada), HTML/CSS/JS.</p>
+          </div><span class="process-type">HTML + PNG</span></article>
+        </div>
+      </details>
+
+      <section class="apa-references" aria-labelledby="theory-title">
+        <h2 id="theory-title">Sustento conceptual y control</h2>
+        <p>La segmentación de mensajes por audiencia y ciclo aplica principios de estrategia y comunicación de marketing (Kotler &amp; Keller, 2016). La revisión humana, la declaración de contenido generado y la prevención de atribuciones falsas siguen las orientaciones de UNESCO (2023). Para datos de programas se consultaron páginas oficiales de FESNA; el organigrama se atribuye a FESNA (2023); los conceptos de información financiera se contrastaron con la Contaduría General de la Nación; y las obligaciones tributarias se remiten a DIAN. La revisoría fiscal se menciona con referencia al Código de Comercio colombiano y se remite a su texto oficial vigente.</p>
+        <p><a href="../index.html#referencias">Ver bibliografía APA 7 y fuentes completas ↗</a> · <a href="./guiones-prototipo.md" download>Descargar guiones, prompts y locuciones ↧</a></p>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><strong>Nicolás Bolivar</strong><span>Estudiante de Ingeniería de Sistemas · FESNA</span></div>
+    <p>Bitácora de producción · Campaña FESNA · 2026</p>
+    <a href="../index.html#productos">Volver a los productos ↑</a>
+  </footer>
+</body>
+</html>

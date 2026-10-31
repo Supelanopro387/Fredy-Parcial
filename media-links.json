@@ -1,0 +1,29 @@
+{
+  "driveFolderUrl": "",
+  "products": {
+    "admin-tp-video": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-tp-video-explicativo.mp4",
+    "admin-tp-infografia": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/admin-tp-estructura-organizacional-fesna.png",
+    "admin-tec-reel": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-tec-reel-promocional.mp4",
+    "admin-tec-spot": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/admin-spot-voz-ia.mp3",
+    "admin-prof-video": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-prof-video-institucional.mp4",
+    "admin-prof-motion": "https://supelanopro387.github.io/Fredy-Parcial/media/video/admin-prof-motion-graphics.mp4",
+    "conta-tp-reels": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-tp-serie-reels.mp4",
+    "conta-tp-cuna": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-tp-cuna.mp3",
+    "conta-tec-podcast": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-tec-podcast-conoce-fesna.mp3",
+    "conta-tec-animacion": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-tec-animacion-2d.mp4",
+    "conta-prof-avatar": "https://supelanopro387.github.io/Fredy-Parcial/media/video/conta-prof-testimonio-avatar-ficticio.mp4",
+    "conta-prof-podcast": "https://supelanopro387.github.io/Fredy-Parcial/media/audio/conta-prof-podcast-institucional.mp3",
+    "isn-tp-reels": "https://supelanopro387.github.io/Fredy-Parcial/media/video/isn-tp-serie-reels-programacion.mp4",
+    "isn-tp-infografia": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/isn-tp-fundamentos-programacion.png",
+    "isn-tec-podcast": null,
+    "isn-tec-video": "https://supelanopro387.github.io/Fredy-Parcial/media/video/isn-tec-video-explicativo-sistemas.mp4",
+    "isn-pro-solucion": "https://supelanopro387.github.io/Fredy-Parcial/media/video/isn-pro-solucion-tecnologica.mp4",
+    "isn-pro-podcast": null,
+    "mkt-tp-piezas": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/mkt-tp-piezas-graficas-comerciales.png",
+    "mkt-tp-chat": "https://supelanopro387.github.io/Fredy-Parcial/#interactivo-chat",
+    "mkt-tec-buyer": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/mkt-tec-buyer-persona-copys.png",
+    "mkt-tec-auditoria": "https://supelanopro387.github.io/Fredy-Parcial/#interactivo-auditoria",
+    "mkt-prof-plan": "https://supelanopro387.github.io/Fredy-Parcial/media/infografias/mkt-prof-plan-predictivo-macrotendencias.png",
+    "mkt-prof-pitch": "https://supelanopro387.github.io/Fredy-Parcial/#interactivo-deck"
+  }
+}

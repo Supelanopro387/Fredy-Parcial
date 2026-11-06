@@ -163,7 +163,9 @@ document.querySelectorAll('.copy-prompt').forEach((button) => {
 
 async function loadPublishedMediaLinks() {
   try {
-    const response = await fetch(new URL('media-links.json', document.baseURI), { cache: 'no-store' });
+    // Cache-busting: cada carga solicita una URL única para que ni el CDN
+    // ni el navegador devuelvan un media-links.json desactualizado.
+    const response = await fetch(new URL(`media-links.json?v=${Date.now()}`, document.baseURI), { cache: 'no-store' });
     if (!response.ok) return;
 
     const mediaConfig = await response.json();

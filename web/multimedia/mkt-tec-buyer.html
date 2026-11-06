@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buyer Persona y copys con IA · Marketing y Publicidad · FESNA</title>
+<meta name="description" content="Fichas de buyer persona y copys publicitarios por canal de la campaña Aprende lo que te mueve de FESNA. Producto académico de Marketing y Publicidad (Tecnología).">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --panel:#0f172a; --card:#020617; --line:#1e293b; --txt:#e2e8f0; --muted:#94a3b8;
+  --blue:#0A499C; --orange:#FD531E; --green:#34d399;
+}
+*{box-sizing:border-box}
+body.media-page{margin:0;background:var(--panel);color:var(--txt);font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6}
+.media-wrap{width:min(1060px,calc(100% - 40px));margin-inline:auto;padding:34px 0 60px}
+.back-link{display:inline-block;color:#7dd3fc;text-decoration:none;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.back-link:hover{border-color:var(--blue)}
+.page-header{margin:26px 0 22px}
+.page-header .kicker{margin:0 0 8px;color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);line-height:1.2;color:#fff}
+.page-header .lede{margin:0;color:var(--muted);font-size:14px;max-width:780px}
+.media-section{margin-top:10px}
+
+/* ---- panel pestañas ---- */
+.persona-panel{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tabs{display:flex;gap:8px;padding:14px 14px 0;flex-wrap:wrap}
+.tab{cursor:pointer;border:1px solid var(--line);background:#0b1626;color:var(--muted);font-family:inherit;font-size:13px;font-weight:600;padding:9px 16px;border-radius:12px 12px 0 0;transition:.15s}
+.tab:hover{color:#fff}
+.tab.is-active{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.persona-body{padding:20px;border-top:1px solid var(--line)}
+.persona-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.persona-avatar{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:26px;font-weight:700;color:#fff;flex:none}
+.persona-head h2{margin:0;font-size:20px;color:#fff}
+.persona-head .rol{margin:0;font-size:13px;color:var(--muted)}
+.cita{margin:14px 0 16px;padding:12px 16px;border-left:3px solid var(--orange);background:rgba(253,83,30,.07);border-radius:0 10px 10px 0;font-style:italic;color:#fde8df;font-size:14px}
+.grid-dos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.mini-card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#0b1626}
+.mini-card h3{margin:0 0 8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chips-set{display:flex;flex-wrap:wrap;gap:6px}
+.chips-set .chip-s{font-size:11px;padding:5px 10px;border-radius:999px}
+.chip-dolor{background:rgba(253,83,30,.14);color:#fdba8c;border:1px solid rgba(253,83,30,.45)}
+.chip-motiv{background:rgba(10,73,156,.2);color:#93c5fd;border:1px solid rgba(10,73,156,.65)}
+.chip-digital{background:rgba(52,211,153,.12);color:#6ee7b7;border:1px solid rgba(52,211,153,.4)}
+.viaje{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#0b1626}
+.viaje h3{margin:0 0 10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.viaje ol{margin:0;padding-left:20px;font-size:13px;color:var(--txt)}
+.viaje li{margin-bottom:5px}
+.viaje li b{color:#fff}
+
+/* ---- copys ---- */
+.copys-title{margin:26px 0 4px;font-size:15px;color:#fff}
+.copys-sub{margin:0 0 14px;font-size:12px;color:var(--muted)}
+.copys{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.copy-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--card)}
+.copy-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:6px;margin-bottom:10px}
+.copy-card h3{margin:0 0 6px;font-size:14px;color:#fff}
+.copy-card .gancho{margin:0 0 10px;font-size:14px;font-weight:600;color:#fdba8c}
+.copy-card p{margin:0 0 10px;font-size:13px;color:var(--txt)}
+.copy-cta{display:inline-block;font-size:12px;font-weight:600;color:#071018;background:#e2e8f0;padding:6px 12px;border-radius:999px}
+
+/* ---- cierre ---- */
+.mediacards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.mediacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mediacard h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.mediacard p{margin:0;font-size:13px;color:var(--muted)}
+.page-footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.page-footer a{color:#7dd3fc}
+[hidden]{display:none !important}
+@media (max-width:760px){
+  .grid-dos,.copys,.mediacards{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .persona-body{padding:14px}
+}
+</style>
+</head>
+<body class="media-page">
+<div class="media-wrap">
+  <a class="back-link" href="../index.html#productos">← Volver al portafolio</a>
+
+  <header class="page-header">
+    <p class="kicker">FESNA · CAMPAÑA «APRENDE LO QUE TE MUEVE» · MKT · TECNOLOGÍA</p>
+    <h1>Buyer Persona y copys publicitarios con IA</h1>
+    <p class="lede">Dos perfiles ficticios construidos con apoyo de IA a partir de criterios de segmentación, y una banca de 10 copys (5 por persona) lista para producir en cada canal. Todo lo que suena a dato institucional se remite a los canales oficiales: aquí no se inventan costos, requisitos ni beneficios.</p>
+  </header>
+
+  <section class="media-section" aria-label="Buyer personas y copys">
+    <div class="persona-panel">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" id="tab-diego" role="tab" aria-selected="true" aria-controls="panel-diego">🧢 Diego · bachiller ambicioso</button>
+        <button class="tab" id="tab-laura" role="tab" aria-selected="false" aria-controls="panel-laura">💼 Laura · trabajadora que escala</button>
+      </div>
+
+      <!-- ============ PERSONA 1 · DIEGO ============ -->
+      <div class="persona-body" id="panel-diego" role="tabpanel">
+        <div class="persona-head">
+          <div class="persona-avatar" style="background:linear-gradient(135deg,#FD531E,#F59E0B)">D</div>
+          <div>
+            <h2>Diego, el bachiller ambicioso</h2>
+            <p class="rol">19 años · recién graduado de bachillerato · quiere estudiar sin dejar de trabajar</p>
+          </div>
+        </div>
+        <p class="cita">«No quiero quedarme esperando: quiero que me respeten como adulto, que el estudio me deje avanzar en Bogotá.»</p>
+        <div class="grid-dos">
+          <div class="mini-card">
+            <h3>Dolores</h3>
+            <div class="chips-set">
+              <span class="chip-s chip-dolor">Tiene que empezar a producir ya</span>
+              <span class="chip-s chip-dolor">Le aburre la teoría larga</span>
+              <span class="chip-s chip-dolor">Miedo a perder tiempo con algo que no sirve</span>
+              <span class="chip-s chip-dolor">Presión económica en la casa</span>
+              <span class="chip-s chip-dolor">No sabe qué carrera va con él</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Motivaciones</h3>
+            <div class="chips-set">
+              <span class="chip-s chip-motiv">Estudiar por ciclos y avanzar por módulos</span>
+              <span class="chip-s chip-motiv">Trabajar y estudiar a la vez</span>
+              <span class="chip-s chip-motiv">Ver resultados concretos y rápidos</span>
+              <span class="chip-s chip-motiv">Sentirse seguro al elegir carrera</span>
+              <span class="chip-s chip-motiv">Hacer algo que le apasione</span>
+            </div>
+          </div>
+        </div>
+        <div class="viaje">
+          <h3>Comportamiento digital + viaje de decisión</h3>
+          <div class="chips-set" style="margin-bottom:10px">
+            <span class="chip-s chip-digital">Vive en TikTok</span>
+            <span class="chip-s chip-digital">Decide con humor y contenido corto</span>
+            <span class="chip-s chip-digital">Guarda videos que le convencen</span>
+            <span class="chip-s chip-digital">Pregunta por DM antes de hablar con un asesor</span>
+            <span class="chip-s chip-digital">No lee brochures: ve testimonios</span>
+          </div>
+          <ol>
+            <li><b>Descubre</b> un reel o TikTok con gancho de 3 segundos.</li>
+            <li><b>Investiga</b> en el perfil: ve qué programas hay y qué dicen los comentarios.</li>
+            <li><b>Escribe</b> por WhatsApp con una pregunta puntual.</li>
+            <li><b>Verifica</b> el dato en la página oficial de FESNA antes de decidir.</li>
+            <li><b>Actúa</b>: contacta la admisiones oficial cuando el gancho y la info le cuadraron.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ============ PERSONA 2 · LAURA ============ -->
+      <div class="persona-body" id="panel-laura" role="tabpanel" hidden>
+        <div class="persona-head">
+          <div class="persona-avatar" style="background:linear-gradient(135deg,#0A499C,#2563eb)">L</div>
+          <div>
+            <h2>Laura, la trabajadora que quiere escalar</h2>
+            <p class="rol">27 años · auxiliar de comercio · su experiencia no está formalizada</p>
+          </div>
+        </div>
+        <p class="cita">«Llevo años haciendo el trabajo con fe: ahora quiero el título que le respalde a mi talento.»</p>
+        <div class="grid-dos">
+          <div class="mini-card">
+            <h3>Dolores</h3>
+            <div class="chips-set">
+              <span class="chip-s chip-dolor">Su experiencia no aparece respaldada</span>
+              <span class="chip-s chip-dolor">Jornada laboral larga: poco tiempo libre</span>
+              <span class="chip-s chip-dolor">Le falta credencial para el próximo ascenso</span>
+              <span class="chip-s chip-dolor">Siente que ya es tarde para empezar</span>
+              <span class="chip-s chip-dolor">Temor a no acostumbrarse de nuevo al estudio</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Motivaciones</h3>
+            <div class="chips-set">
+              <span class="chip-s chip-motiv">Formalizarse con formación por ciclos</span>
+              <span class="chip-s chip-motiv">Crecer dentro de la empresa donde ya trabaja</span>
+              <span class="chip-s chip-motiv">Horarios compatibles con su trabajo</span>
+              <span class="chip-s chip-motiv">Ver historias reales de personas como ella</span>
+              <span class="chip-s chip-motiv">Cada ciclo completado es un logro visible</span>
+            </div>
+          </div>
+        </div>
+        <div class="viaje">
+          <h3>Comportamiento digital + viaje de decisión</h3>
+          <div class="chips-set" style="margin-bottom:10px">
+            <span class="chip-s chip-digital">Investiga en Facebook por las noches</span>
+            <span class="chip-s chip-digital">Decide con testimonios reales</span>
+            <span class="chip-s chip-digital">Compara precio-tiempo-beneficio</span>
+            <span class="chip-s chip-digital">Guarda publicaciones para revisar este fin de semana</span>
+            <span class="chip-s chip-digital">Prefiere escribir en horario no laboral</span>
+          </div>
+          <ol>
+            <li><b>Ve</b> un testimonio en Facebook de alguien parecido a ella.</li>
+            <li><b>Guarda</b> la publicación y compara opciones en silencio.</li>
+            <li><b>Pregunta</b> por WhatsApp en la noche, con tiempo.</li>
+            <li><b>Verifica</b> los canales oficiales para confirmar el proceso.</li>
+            <li><b>Commit</b>: decide con evidencia, no con urgencia.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ COPYS ============ -->
+    <h2 class="copys-title">Banca de copys (5 por persona · 10 en total)</h2>
+    <p class="copys-sub">Cada copy trae gancho de 3 segundos, beneficio real y CTA que remite a canales oficiales. Sin datos institucionales inventados.</p>
+
+    <div class="copys" id="copys-diego">
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#E1306C">Instagram · Reel</span>
+        <h3>Reel · Ciclo 1</h3>
+        <p class="gancho">PAPI SI TE LA PASAS EN TikTok…</p>
+        <p>…quédate: aquí decimos la verdad corta. Estudiar por ciclos es como subir un juego por niveles: entras a una técnica y vas ganando cada nivel. Lo que dura la vida es aprender.</p>
+        <span class="copy-cta">CTA → «Mira los programas en la página oficial de FESNA»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#E1306C">Instagram · Carrusel</span>
+        <h3>Carrusel · 4 pasos</h3>
+        <p class="gancho">RECIÉN GRADUADO PERO CON PLAN, NO CON MIEDO</p>
+        <p>Tarjeta 1: elige lo que te mueve. Tarjeta 2: entra por ciclos. Tarjeta 3: trabaja y estudia a la vez. Tarjeta 4: verifícalo todo tú mismo en la página oficial de FESNA. Desliza y siente el plan.</p>
+        <span class="copy-cta">CTA → «Guarda esta publicación y revisa la página oficial»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#000000;box-shadow:0 0 0 1px #1e293b">TikTok</span>
+        <h3>TikTok · Humor</h3>
+        <p class="gancho">POV: DIJERON QUE ESTUDIAR ERA ABURRIDO</p>
+        <p>Corte con humor: el que estudia lo que le mueve ni siente la ruta. La Técnica Profesional es el primer nivel; si te motiva, sigues a Tecnología y luego a Profesional. Lo demás está en la web oficial.</p>
+        <span class="copy-cta">CTA → «Enlace a la página oficial en la bio»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#1877F2">Facebook</span>
+        <h3>Publicación · Testimonio corto</h3>
+        <p class="gancho">«A MIS 19 QUERÍA DOS COSAS: PRODUCIR Y ESTUDIAR»</p>
+        <p>Testimonio de estudiante (ficticio e ilustrativo) que arrancó por ciclos y hoy combina trabajo y estudio. Cada historia real está publicada en los canales oficiales de FESNA: este texto solo motiva a consultarla.</p>
+        <span class="copy-cta">CTA → «Conoce más historias en la página oficial»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#25D366">WhatsApp · Broadcast</span>
+        <h3>Broadcast · Lista de difusión</h3>
+        <p class="gancho">HOLA DIEGO 👋 TE LLEGÓ ESTE MENSAJE POR INTERÉS</p>
+        <p>Mensaje 1/3: «Aprende lo que te mueve» es la campaña de FESNA para que elijas por interés, no por imitación. Para conocer programas y proceso de admisión, revisa la página oficial.</p>
+        <span class="copy-cta">CTA → «Responde ESTUDIO para el enlace oficial»</span>
+      </article>
+    </div>
+
+    <div class="copys" id="copys-laura" hidden>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#E1306C">Instagram · Reel</span>
+        <h3>Reel · Escalar</h3>
+        <p class="gancho">LLEVAS AÑOS HACIENDO EL TRABAJO…</p>
+        <p>…ahora haz que se vea. La formación por ciclos suma a tu experiencia real: primero Técnica, luego Tecnología, luego Profesional. La ruta la confirmas en la página oficial de FESNA.</p>
+        <span class="copy-cta">CTA → «Consulta la ruta en la página oficial»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#E1306C">Instagram · Carrusel</span>
+        <h3>Carrusel · La ruta</h3>
+        <p class="gancho">TU EXPERIENCIA + UN TÍTULO = ASCENSO POSIBLE</p>
+        <p>Tarjeta 1: tu experiencia vale. Tarjeta 2: un ciclo la formaliza. Tarjeta 3: estudias compatible con tu trabajo. Tarjeta 4: la oferta y el proceso están en la página oficial de FESNA.</p>
+        <span class="copy-cta">CTA → «Revisa la página oficial este fin de semana»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#000000;box-shadow:0 0 0 1px #1e293b">TikTok</span>
+        <h3>TikTok · Día en la vida</h3>
+        <p class="gancho">UN DÍA ESTUDIANDO Y TRABAJANDO (SIN DRAMA)</p>
+        <p>Formato POV: mañana oficina, noche una clase. La flexibilidad es más plausible cuando cada fase es corta. Lo institucional (horarios y modalidades) se consulta en la página oficial de FESNA.</p>
+        <span class="copy-cta">CTA → «Mira las modalidades en la página oficial»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#1877F2">Facebook</span>
+        <h3>Publicación · Testimonio largo</h3>
+        <p class="gancho">«LLEVABA AÑOS DE AUXILIAR: QUERÍA QUE ME RESPALDARAN»</p>
+        <p>Testimonio ilustrativo de una adulta que volvió a estudiar por ciclos sin rendir su trabajo. Las historias reales y verificadas están en los canales oficiales de FESNA: este texto solo abre la puerta.</p>
+        <span class="copy-cta">CTA → «Lee historias reales en la página oficial»</span>
+      </article>
+      <article class="copy-card">
+        <span class="copy-tag" style="background:#25D366">WhatsApp · Broadcast</span>
+        <h3>Broadcast · Seguimiento nocturno</h3>
+        <p class="gancho">HOLA LAURA 👋 TU CONSULTA DE AYER, RESUMIDA</p>
+        <p>Mensaje 2/3: «Si dejaste tu consulta pendiente, este es el recordatorio amable: la oferta completa y el proceso de admisión están en la página oficial de FESNA. Nosotros no manejamos costos ni plazos: también los confirmas ahí.»</p>
+        <span class="copy-cta">CTA → «Responde RUTA para recibir el enlace oficial»</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="mediacards" aria-label="Ficha del producto">
+    <div class="mediacard"><h3>Objetivo</h3><p>Construir con IA dos buyer personas accionables y derivar de ellas una banca de copys lista para producción, cubriendo los canales principales de la campaña.</p></div>
+    <div class="mediacard"><h3>Enfoque</h3><p>Segmentación por decisión de compra: Diego decide rápido con humor y contenido corto; Laura decide con evidencia y testimonios. Cada canal lleva un copy calibrado a ese estilo.</p></div>
+    <div class="mediacard"><h3>Apoyo de IA</h3><p>La IA generó borradores de perfiles y copys con criterios pedidos por el estudiante (tono juvenil, sin datos institucionales, CTA con remisión oficial); el estudiante revisó, corrigió y curó cada texto.</p></div>
+  </section>
+
+  <footer class="page-footer">Producto académico de demostración · Nicolás Bolivar · Marketing y Publicidad (Tecnología) · FESNA. Personas y testimonios son ficticios e ilustrativos; la información real de programas, costos y admisiones se consulta exclusivamente en la <a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer">página oficial de la institución</a>.</footer>
+</div>
+
+<script>
+(function(){
+  var tabDiego=document.getElementById('tab-diego');
+  var tabLaura=document.getElementById('tab-laura');
+  var panelDiego=document.getElementById('panel-diego');
+  var panelLaura=document.getElementById('panel-laura');
+  var copysDiego=document.getElementById('copys-diego');
+  var copysLaura=document.getElementById('copys-laura');
+
+  function setPersona(which){
+    var diego = which === 'diego';
+    tabDiego.classList.toggle('is-active', diego);
+    tabLaura.classList.toggle('is-active', !diego);
+    tabDiego.setAttribute('aria-selected', diego ? 'true' : 'false');
+    tabLaura.setAttribute('aria-selected', diego ? 'false' : 'true');
+    panelDiego.hidden = !diego;
+    panelLaura.hidden = diego;
+    copysDiego.hidden = !diego;
+    copysLaura.hidden = diego;
+  }
+  tabDiego.addEventListener('click', function(){ setPersona('diego'); });
+  tabLaura.addEventListener('click', function(){ setPersona('laura'); });
+})();
+</script>
+</body>
+</html>

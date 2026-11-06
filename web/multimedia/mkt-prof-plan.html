@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de marketing predictivo · Marketing y Publicidad · FESNA</title>
+<meta name="description" content="Plan de marketing predictivo de la campaña Aprende lo que te mueve de FESNA. Producto académico de Marketing y Publicidad (Profesional).">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --panel:#0f172a; --card:#020617; --line:#1e293b; --txt:#e2e8f0; --muted:#94a3b8;
+  --blue:#0A499C; --orange:#FD531E;
+}
+*{box-sizing:border-box}
+body.media-page{margin:0;background:var(--panel);color:var(--txt);font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6}
+.media-wrap{width:min(1060px,calc(100% - 40px));margin-inline:auto;padding:34px 0 60px}
+.back-link{display:inline-block;color:#7dd3fc;text-decoration:none;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.back-link:hover{border-color:var(--blue)}
+.page-header{margin:26px 0 16px}
+.page-header .kicker{margin:0 0 8px;color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);line-height:1.2;color:#fff}
+.page-header .lede{margin:0;color:var(--muted);font-size:14px;max-width:780px}
+.aviso{margin:14px 0 18px;padding:12px 16px;border:1px solid rgba(251,191,36,.5);background:rgba(251,191,36,.08);color:#fde68a;border-radius:12px;font-size:13px;font-weight:600}
+.media-section{margin-top:0}
+
+.seccion{margin-top:22px}
+.seccion > h2{margin:0 0 4px;font-size:17px;color:#fff}
+.seccion > p.sub{margin:0 0 14px;font-size:12.5px;color:var(--muted)}
+
+/* barras de impacto */
+.toggles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.toggles button{cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#0b1626;color:var(--muted);transition:.15s}
+.toggles button.is-on{background:var(--orange);border-color:var(--orange);color:#fff}
+.barras{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.barra-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.barra-card.is-dim{opacity:.35;filter:grayscale(.6)}
+.barra-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+.barra-top h3{margin:0;font-size:14px;color:#fff}
+.barra-top span{font-size:12px;font-weight:700;color:var(--orange)}
+.barra-track{height:9px;border-radius:999px;background:#0b1626;border:1px solid var(--line);overflow:hidden}
+.barra-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+.barra-card p{margin:9px 0 0;font-size:12.5px;color:var(--muted)}
+
+/* tablas */
+.table-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px}
+th{background:#0b1626;color:var(--muted);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid rgba(30,41,59,.6);vertical-align:top;white-space:normal}
+tr:last-child td{border-bottom:0}
+td b{color:#fff}
+.senal{color:#93c5fd;font-weight:600}
+.sube{color:#6ee7b7}.baja{color:#fdba8c}
+
+/* estrategia */
+.estrat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.block{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.block h3{margin:0 0 10px;font-size:13px;color:#fff;letter-spacing:.04em}
+.chips-set{display:flex;flex-wrap:wrap;gap:6px}
+.chip-s{font-size:11px;padding:5px 10px;border-radius:999px}
+.chip-persona{background:rgba(10,73,156,.2);color:#93c5fd;border:1px solid rgba(10,73,156,.65)}
+.chip-neuro{background:rgba(253,83,30,.14);color:#fdba8c;border:1px solid rgba(253,83,30,.45)}
+.chip-kpi{background:rgba(148,163,184,.1);color:#cbd5e1;border:1px solid rgba(148,163,184,.4)}
+.block p.nota{margin:10px 0 0;font-size:11.5px;color:var(--muted)}
+.kpi-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.kpi-pill{background:#0b1626;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12px}
+.kpi-pill b{color:#fff}
+
+/* roadmap */
+.sprints{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sprint{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative}
+.sprint .num{font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sprint h3{margin:4px 0 6px;font-size:15px;color:#fff}
+.sprint p{margin:0 0 8px;font-size:12.5px;color:var(--muted)}
+.sprint ul{margin:0;padding-left:18px;font-size:12.5px}
+.sprint li{margin-bottom:4px}
+.dias{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.08em;text-transform:uppercase}
+
+.mediacards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.mediacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mediacard h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.mediacard p{margin:0;font-size:13px;color:var(--muted)}
+.page-footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.page-footer a{color:#7dd3fc}
+@media (max-width:760px){
+  .barras,.estrat-grid,.sprints,.mediacards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body class="media-page">
+<div class="media-wrap">
+  <a class="back-link" href="../index.html#productos">← Volver al portafolio</a>
+
+  <header class="page-header">
+    <p class="kicker">FESNA · CAMPAÑA «APRENDE LO QUE TE MUEVE» · MKT · PROFESIONAL</p>
+    <h1>Plan de marketing predictivo</h1>
+    <p class="lede">De la campaña por intuición a la campaña orientada por datos: macrotendencias de consumo, hipótesis predictivas con señales observables, principios de neuromarketing con ética y una hoja de ruta de 90 días.</p>
+  </header>
+
+  <p class="aviso">⚠️ Las intensidades y los umbrales de esta página son <strong>simulación académica</strong>: ilustran el método, no cifras reales de mercado.</p>
+
+  <section class="media-section" aria-label="Plan predictivo">
+
+    <div class="seccion">
+      <h2>1 · Objetivo</h2>
+      <p class="sub">"De la campaña por intuición a la campaña orientada por datos"</p>
+      <div class="table-card" style="padding:14px 16px">
+        <p style="margin:0;font-size:13.5px">Cada decisión de pauta (canal, mensaje, presupuesto) queda atada a una <b>señal observable</b> y a una <b>acción pactada de antemano</b>: si la señal sube se actúa de una forma; si baja, de otra. Así el plan se audita con hechos, no con impresiones del equipo.</p>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>2 · Macrotendencias de consumo (activa 2 o más)</h2>
+      <p class="sub">Activar o desactivar tendencias recalcula el foco recomendado del plan.</p>
+      <div class="toggles" role="group" aria-label="Alternar tendencias">
+        <button class="is-on" data-t="1">Social-first</button>
+        <button class="is-on" data-t="2">Confianza en IA</button>
+        <button data-t="3">Economía del tiempo</button>
+        <button data-t="4">Mensajería de cierre</button>
+        <button data-t="5">Hiperpersonalización</button>
+        <button data-t="6">Zero-click</button>
+      </div>
+      <div class="barras" id="barras">
+        <div class="barra-card" data-b="1">
+          <div class="barra-top"><h3>Descubrimiento social-first</h3><span>Impacto 92</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:92%"></div></div>
+          <p>El joven descubre carreras en el feed, no en Google. Implica invertir primero en TikTok e Instagram Reels con gancho de 3 segundos.</p>
+        </div>
+        <div class="barra-card" data-b="2">
+          <div class="barra-top"><h3>Confianza delegada a IA</h3><span>Impacto 85</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:85%"></div></div>
+          <p>Las personas ahora esperan respuestas asistidas por IA al instante: el chat de la página 1 es la respuesta, siempre con remisión a los canales oficiales.</p>
+        </div>
+        <div class="barra-card" data-b="3">
+          <div class="barra-top"><h3>Economía del tiempo (micro-learning)</h3><span>Impacto 78</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:78%"></div></div>
+          <p>El estudio se defiende en momentos cortos: contenido que se consume en menos de 60 segundos responde a la realidad del estudiante que trabaja.</p>
+        </div>
+        <div class="barra-card" data-b="4">
+          <div class="barra-top"><h3>Mensajería como canal de cierre</h3><span>Impacto 81</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:81%"></div></div>
+          <p>La conversación de decisión pasa por WhatsApp: la simulación de la auditoría mostraría al mensajero con mejor CPA, con cuidado en frecuencia responsable de mensajes.</p>
+        </div>
+        <div class="barra-card" data-b="5">
+          <div class="barra-top"><h3>Hiperpersonalización esperada</h3><span>Impacto 70</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:70%"></div></div>
+          <p>La audiencia espera que el mensaje la nombre: segmentar por buyer persona (Diego / Laura) es mínimo, no un plus.</p>
+        </div>
+        <div class="barra-card" data-b="6">
+          <div class="barra-top"><h3>Buscador de propósito (zero-click)</h3><span>Impacto 64</span></div>
+          <div class="barra-track"><div class="barra-fill" style="width:64%"></div></div>
+          <p>Las búsquedas resuelven sin clic: la marca institucional debe estar presente en el contenido que responde, no solo en el anuncio que interrumpe.</p>
+        </div>
+      </div>
+      <p class="sub" id="focoRec" style="margin-top:10px">Foco recomendado (simulación): <b>conquista social-first + cierre por mensajería</b>.</p>
+    </div>
+
+    <div class="seccion">
+      <h2>3 · Hipótesis predictivas</h2>
+      <p class="sub">Señal observable → qué predice → acción si sube / acción si baja.</p>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr><th>Señal observable</th><th>Qué predice</th><th>Si sube</th><th>Si baja</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="senal">Tiempo de visualización &gt; 50 % del reel</span></td>
+              <td>El gancho retiene interés y anticipa conquistas con calidad</td>
+              <td class="sube">↳ Escalar ese gancho a carrusel y TikTok con nuevo formato</td>
+              <td class="baja">↳ Cambiar el gancho, no el presupuesto</td>
+            </tr>
+            <tr>
+              <td><span class="senal">CTR por canal vs benchmark simulado 2,1 %</span></td>
+              <td>Salud del canal y sale de qué depende la meta de clics</td>
+              <td class="sube">↳ Sumar presupuesto a ese canal la semana siguiente</td>
+              <td class="baja">↳ Auditar el creativo y pausar la entrega débil</td>
+            </tr>
+            <tr>
+              <td><span class="senal">Clics al enlace oficial desde el chat</span></td>
+              <td>El asesor virtual empuja la decisión hacia los canales oficiales</td>
+              <td class="sube">↳ Ampliar las preguntas rápidas hacia más dudas reales</td>
+              <td class="baja">↳ Revisar las reglas de intents y simplificar la respuesta</td>
+            </tr>
+            <tr>
+              <td><span class="senal">CPA por canal vs meta simulada $1,50</span></td>
+              <td>Eficiencia de la inversión y sostenibilidad del plan</td>
+              <td class="sube">↳ (CPA bajo) replicar el patrón ganador en otros canales</td>
+              <td class="baja">↳ (CPA alto) redirigir el presupuesto al canal mejor rankeado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>4 · Estrategia: segmentación + neuromarketing con ética + KPIs</h2>
+      <p class="sub">Cada palanca operativa queda documentada en la entrega; aquí está el resumen accionable.</p>
+      <div class="estrat-grid">
+        <div class="block">
+          <h3>🎯 Segmentación por buyer persona</h3>
+          <div class="chips-set">
+            <span class="chip-s chip-persona">Diego · conquista social-first</span>
+            <span class="chip-s chip-persona">Laura · nutrición con testimonios</span>
+            <span class="chip-s chip-persona">Retargeting · interesados sin convertir</span>
+          </div>
+          <p class="nota">Cada segmento sale de las fichas de la página 2, con canal y mensaje distintos. Sin datos institucionales: los perfiles son ficticios e ilustrativos.</p>
+        </div>
+        <div class="block">
+          <h3>🧠 Neuromarketing con ética</h3>
+          <div class="chips-set">
+            <span class="chip-s chip-neuro">Prueba social (testimonios verificados)</span>
+            <span class="chip-s chip-neuro">Avance gradual (rutas por ciclos)</span>
+            <span class="chip-s chip-neuro">Framing de tiempo (decisión en tu ritmo)</span>
+            <span class="chip-s chip-neuro">Efecto ancla del esfuerzo (se ve logrado en los ciclos)</span>
+          </div>
+          <p class="nota">Límite ético: ningún principio se usa para presionar la decisión. Los efectos están explicados y todos los datos se consultan en el canal oficial.</p>
+        </div>
+      </div>
+      <div class="kpi-row" aria-label="KPIs del plan">
+        <span class="kpi-pill"><b>CTR</b> · retención del gancho</span>
+        <span class="kpi-pill"><b>Tasa INFO</b> · interés medido por clics informativos</span>
+        <span class="kpi-pill"><b>CPA</b> · costo por consulta/calificación adquirida (simulado)</span>
+        <span class="kpi-pill"><b>ROAS</b> · retorno simulado de la pauta</span>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>5 · Hoja de ruta de 90 días</h2>
+      <p class="sub">3 sprints de 30 días con entregas verificables cada mes.</p>
+      <div class="sprints">
+        <div class="sprint">
+          <div class="num">01</div>
+          <h3>Instrumentar</h3>
+          <p>Poner a medir antes de poner a pagar.</p>
+          <ul>
+            <li>Definir la meta de cada KPI (simulada).</li>
+            <li>Montar el tablero de la auditoría (página 3).</li>
+            <li>Documentar la línea base de los 4 canales.</li>
+          </ul>
+          <span class="dias">Días 1–30</span>
+        </div>
+        <div class="sprint">
+          <div class="num">02</div>
+          <h3>Experimentar</h3>
+          <p>Probar creativos por hipótesis, no por gusto.</p>
+          <ul>
+            <li>2 creativos nuevos por canal débil.</li>
+            <li>Analizar por buyer persona (Diego / Laura).</li>
+            <li>Cortar a tiempo: el semáforo decide.</li>
+          </ul>
+          <span class="dias">Días 31–60</span>
+        </div>
+        <div class="sprint">
+          <div class="num">03</div>
+          <h3>Predecir</h3>
+          <p>Leer la señal del pasado y pactar la del futuro.</p>
+          <ul>
+            <li>Pattern review de 8 semanas de datos.</li>
+            <li>Plan de siguientes 30 días con metas ajustadas por señal.</li>
+            <li>Informe final con aprendizaje documentado.</li>
+          </ul>
+          <span class="dias">Días 61–90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mediacards" aria-label="Ficha del producto">
+    <div class="mediacard"><h3>Objetivo</h3><p>Pasar de la intuición a un método predictivo: cada decisión de campaña atada a una señal observable y una acción pactada de antemano.</p></div>
+    <div class="mediacard"><h3>Enfoque</h3><p>Macrotendencias → hipótesis → cambios con impacto que se presentan como tablero: el widget permite activar tendencias y recalcular el foco del plan.</p></div>
+    <div class="mediacard"><h3>Apoyo de IA</h3><p>La IA ayudó a explorar las macrotendencias y a redactar la tabla de hipótesis; el estudiante la organizó en HTML, escribió la lógica del panel y documentó cada decisión.</p></div>
+  </section>
+
+  <footer class="page-footer">Producto académico de demostración · Nicolás Bolivar · Marketing y Publicidad (Profesional) · FESNA. Los datos, tendencias, benchmarks y KPIs son simulaciones pedagógicas; la información real de programas y admisiones se consulta en la <a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer">página oficial de la institución</a>.</footer>
+</div>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.toggles button');
+  var cards=document.querySelectorAll('.barra-card');
+  var foco=document.getElementById('focoRec');
+  var lecturas={
+    '1,2':'conquista social-first + cierre por mensajería',
+    '1,3':'conquista social-first + contenido supercorto',
+    '1,4':'conquista social-first + cierre por mensajería',
+    '2,4':'chat asistido por IA + cierre por mensajería',
+    '1,5':'personalización por persona + conquista social-first',
+    '2,3':'micro-learning asistido por IA'
+  };
+  function refresco(){
+    var act=[];
+    Array.prototype.forEach.call(cards,function(c){
+      var on=false;
+      Array.prototype.forEach.call(chips,function(ch){
+        if(ch.classList.contains('is-on') && ch.getAttribute('data-t')===c.getAttribute('data-b')) on=true;
+      });
+      c.classList.toggle('is-dim', !on);
+      if(on){ act.push(c.getAttribute('data-b')); }
+    });
+    var key=act.slice(0,3).join(',');
+    var top = Array.prototype.slice.call(cards).filter(function(c){ return !c.classList.contains('is-dim'); });
+    var texto='Foco recomendado (simulación): con '+top.length+(top.length===1?' tendencia':' tendencias')+' activa'+(top.length===1?'' :'s')+', el plan prioriza ';
+    if(top.length===0){
+      texto+='- activa al menos una tendencia para ver el foco.-'.replace(/-/g,'');
+      texto='Foco recomendado (simulación): activa al menos una tendencia para ver el foco.';
+    } else if(top.length===1){
+      texto+=top[0].querySelector('h3').textContent.toLowerCase()+'.';
+    } else {
+      texto+=(lecturas[key] ? lecturas[key] : 'la combinación de las tendencias activas, con conquista social-first primero')+'.';
+    }
+    foco.innerHTML=texto;
+  }
+  Array.prototype.forEach.call(chips,function(ch){
+    ch.addEventListener('click',function(){
+      ch.classList.toggle('is-on');
+      refresco();
+    });
+  });
+  refresco();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat de atención al cliente · Marketing y Publicidad · FESNA</title>
+<meta name="description" content="Simulación de asesor virtual de la campaña Aprende lo que te mueve de FESNA. Producto académico de Marketing y Publicidad (T.P.).">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --panel:#0f172a; --card:#020617; --line:#1e293b; --txt:#e2e8f0; --muted:#94a3b8;
+  --blue:#0A499C; --orange:#FD531E; --user:#dcf8c6; --user-ink:#1e293b;
+}
+*{box-sizing:border-box}
+body.media-page{margin:0;background:var(--panel);color:var(--txt);font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6}
+.media-wrap{width:min(1000px,calc(100% - 40px));margin-inline:auto;padding:34px 0 60px}
+.back-link{display:inline-block;color:#7dd3fc;text-decoration:none;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.back-link:hover{border-color:var(--blue)}
+a{text-decoration:none}
+.page-header{margin:26px 0 22px}
+.page-header .kicker{margin:0 0 8px;color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);line-height:1.2;color:#fff}
+.page-header .lede{margin:0;color:var(--muted);font-size:14px;max-width:760px}
+.chat-app{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 48px rgba(2,6,23,.55)}
+.chat-head{display:flex;align-items:center;gap:12px;padding:13px 16px;background:linear-gradient(120deg,var(--blue),#062d5e);border-bottom:1px solid var(--line)}
+.chat-head .avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--blue);font-weight:700;font-size:22px}
+.chat-head .who span{display:block}
+.chat-head .name{font-size:14px;font-weight:600;color:#fff}
+.chat-head .status{font-size:11px;color:#a5f3c0}
+.chat-head .tag{margin-left:auto;font-size:10px;color:#93c5fd;border:1px solid rgba(147,197,253,.35);padding:4px 8px;border-radius:8px}
+.chat-log{height:420px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#071018}
+.msg{display:flex;gap:8px;align-items:flex-end;max-width:78%}
+.msg.assistant{margin-right:auto}
+.msg.user{margin-left:auto;flex-direction:row-reverse}
+.bubble{padding:9px 12px;border-radius:14px;font-size:13.5px}
+.msg.assistant .bubble{background:#fff;color:var(--user-ink);border-bottom-left-radius:4px}
+.msg.user .bubble{background:var(--user);color:var(--user-ink);border-bottom-right-radius:4px}
+.bubble .clock{display:block;margin-top:4px;font-size:10px;color:rgba(30,41,59,.55);text-align:right}
+.dots{display:inline-flex;gap:4px;padding:10px 12px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#94a3b8;animation:blink 1.2s infinite}
+.dots i:nth-child(2){animation-delay:.2s}
+.dots i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chat-quick{display:flex;flex-wrap:wrap;gap:7px;padding:12px 14px;border-top:1px solid var(--line)}
+.chip{cursor:pointer;border:1px solid var(--line);background:#0b1626;color:var(--txt);font-size:12px;padding:7px 11px;border-radius:999px;transition:.15s}
+.chip:hover{border-color:var(--orange);color:#fff}
+.chat-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+.chat-form input{flex:1;min-width:0;background:#0b1626;border:1px solid var(--line);color:var(--txt);border-radius:999px;padding:10px 15px;font-size:13px}
+.chat-form input:focus-visible{outline:2px solid var(--blue)}
+.chat-form button{background:var(--orange);border:0;color:#fff;border-radius:999px;padding:9px 18px;font-size:15px;cursor:pointer}
+.chat-form button:hover{filter:brightness(1.1)}
+.bubble a{color:#0369a1;font-weight:600;text-decoration:underline}
+.mediacards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.mediacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mediacard h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.mediacard p{margin:0;font-size:13px;color:var(--muted)}
+.page-footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+@media (max-width:760px){.mediacards{grid-template-columns:1fr}.msg{max-width:92%}}
+</style>
+</head>
+<body class="media-page">
+<div class="media-wrap">
+  <a class="back-link" href="../index.html#productos">← Volver al portafolio</a>
+
+  <header class="page-header">
+    <p class="kicker">FESNA · CAMPAÑA «APRENDE LO QUE TE MUEVE» · MKT · TÉCNICA PROFESIONAL</p>
+    <h1>Chat de atención al cliente con IA</h1>
+    <p class="lede">Producto novedoso: simulación de asesor virtual que responde sobre la campaña y la ruta de formación. Sus respuestas provienen de reglas escritas por el estudiante: cuando un dato no está publicado (costos, requisitos), deriva a los canales oficiales en lugar de inventarlo.</p>
+  </header>
+
+  <section class="media-section" aria-label="Simulador de chat">
+    <div class="chat-app">
+      <div class="chat-head">
+        <div class="avatar">F</div>
+        <div class="who"><span class="name">FESNA · Atención al cliente</span><span class="status">● en línea</span></div>
+        <span class="tag">SIMULACIÓN ACADÉMICA</span>
+      </div>
+      <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+      <div class="chat-quick" role="group" aria-label="Preguntas rápidas">
+        <button class="chip" data-q="Hola">👋 Hola</button>
+        <button class="chip" data-q="¿Cómo me inscribo?">¿Cómo me inscribo?</button>
+        <button class="chip" data-q="¿Qué programas tienen?">¿Qué programas tienen?</button>
+        <button class="chip" data-q="¿Qué campaña lanzaron?">¿Qué campaña lanzaron?</button>
+        <button class="chip" data-q="¿Cuánto cuesta?">¿Cuánto cuesta?</button>
+        <button class="chip" data-q="Página oficial">🌐 Página oficial</button>
+      </div>
+      <form class="chat-form" id="chatForm">
+        <label class="sr-only" for="chatText" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Escribe tu mensaje</label>
+        <input id="chatText" autocomplete="off" placeholder="Escribe tu mensaje…">
+        <button type="submit" aria-label="Enviar">➤</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="mediacards" aria-label="Ficha del producto">
+    <div class="mediacard"><h3>Objetivo</h3><p>Ejercitar la atención conversacional en un ejemplo: responder dudas de la campaña con información verificable y trasladar lo comercial a las personas.</p></div>
+    <div class="mediacard"><h3>Enfoque</h3><p>Mensajes cercanos y juveniles, alineados con la campaña «Aprende lo que te mueve»; toda consulta de costos, plazos o requisitos se remite a los canales oficiales de FESNA.</p></div>
+    <div class="mediacard"><h3>Apoyo de IA</h3><p>La IA ayudó a redactar variantes de respuestas y el árbol de intents; el estudiante definió las reglas, revisó cada texto y programó el simulador en JavaScript.</p></div>
+  </section>
+
+  <footer class="page-footer">Producto académico de demostración · Nicolás Bolivar · Marketing y Publicidad (T.P.) · FESNA. El asesor no es oficial y no recopila ni almacena mensajes; los datos de matrícula y admisiones se consultan en la <a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer" style="color:#7dd3fc">página oficial de la institución</a>.</footer>
+</div>
+
+<script>
+(function(){
+  var log=document.getElementById('chatLog');
+  var form=document.getElementById('chatForm');
+  var input=document.getElementById('chatText');
+  var OFICIAL='<a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer">página oficial de FESNA</a>';
+
+  function clock(){
+    var d=new Date();
+    return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
+  }
+  function bubble(kind,html){
+    var wrap=document.createElement('div');
+    wrap.className='msg '+kind;
+    var b=document.createElement('div');
+    b.className='bubble';
+    b.innerHTML=html+'<span class="clock">'+clock()+'</span>';
+    wrap.appendChild(b);
+    log.appendChild(wrap);
+    log.scrollTop=log.scrollHeight;
+    return wrap;
+  }
+  function typing(cb){
+    var t=bubble('assistant','<span class="dots"><i></i><i></i><i></i></span>');
+    setTimeout(function(){
+      t.parentNode.removeChild(t);
+      cb();
+    },700+Math.random()*500);
+  }
+  function link(url,label){return '<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';}
+
+  var INTENTS=[
+    {re:/(hola|buenas|cari|saludos|hey)/i, a:'¡Hola! 👋 Soy el asesor virtual de FESNA. Cuéntame qué te mueve: ¿estás buscando formación por ciclos, tecnología o un profesional? Te cuento sobre la campaña «Aprende lo que te mueve» y sobre cómo seguir el proceso.<br>'},
+    {re:/(inscri|ingresar|matric|admi[sb]|registrar)/i, a:'El proceso de admisión lo administra directamente la universidad 📋. Por eso no te paso plazos ni requisitos desde aquí (no quiero darte una versión desactualizada). Consulta paso a paso en los canales oficiales: '+link('https://www.nuevaamerica.edu.co/','nuevaamerica.edu.co')+' — y pregunta por la ruta «Aprende lo que te mueve».'},
+    {re:/(programa|carrera|cursos|oferta|estudiar qué|que tienen)/i, a:'En FESNA hay formación por ciclos (Técnica Profesional → Tecnología → Profesional) en cuatro áreas de esta campaña: <b>Administración de Empresas</b>, <b>Contaduría Pública</b>, <b>Ingeniería de Sistemas</b> y <b>Marketing y Publicidad</b> 🎯. La oferta completa y los registros oficiales están en la <b>'+OFICIAL+'</b>.'},
+    {re:/(campan|campañ|aprende lo que|mueve|lanzaron)/i, a:'La campaña de este semestre es <b>«Aprende lo que te mueve»</b> 🚀. La idea: que elijas tu carrera por lo que te interesa, no por lo que “deberías” estudiar, y que lo hagas por ciclos, avanzando paso a paso. ¿Quieres que te cuente qué programas participan?'},
+    {re:/(costo|precio|cuanto|valor|matricula|dinero|pago)/i, a:'Los valores de matrícula y opciones de financiación los maneja directamente la universidad 💸. No tengo cifras para no inventarte nada: confírmalo en la <b>'+OFICIAL+'</b> o por los canales oficiales de admisiones.'},
+    {re:/(asesor|humano|hable con|persona real)/i, a:'Claro 🙂. Para hablar con un asesor humano, el canal oficial es la sección de contactos en <b>'+OFICIAL+'</b>. Yo solo soy una simulación académica.'},
+    {re:/(pagina oficial|página oficial|sitio web|web oficial|nuevaamerica)/i, a:'Por supuesto 🌐. El sitio institucional es <b>'+link('https://www.nuevaamerica.edu.co/','nuevaamerica.edu.co')+'</b>; ahí están carreras, admisiones y etiquetas para atender tus dudas oficiales.'},
+    {re:/(gracias|chao|adios|bye|listo)/i, a:'¡Con gusto! 🎓 Recuerda revisar siempre los datos en la <b>'+OFICIAL+'</b>. ¡Éxitos con tu decisión!'}
+  ];
+  var FALLBACK='Mmm, esa pregunta no tengo todavía en mi base de la campaña 🤔. Puedo contarte sobre la campaña «Aprende lo que te mueve», los cuatro programas del portafolio y cómo seguir con admisiones. Para cualquier dato oficial, entra a <b>'+OFICIAL+'</b>.';
+
+  function answer(text){
+    for(var i=0;i<INTENTS.length;i++){
+      if(INTENTS[i].re.test(text)) return INTENTS[i].a;
+    }
+    return FALLBACK;
+  }
+  function send(text){
+    var clean=(text||'').trim();
+    if(!clean) return;
+    bubble('user',clean);
+    input.value='';
+    typing(function(){
+      bubble('assistant',answer(clean));
+    });
+  }
+  var GREETING='¡Hola! 👋 Soy el asesor virtual de FESNA, listo para responder preguntas de la campaña <b>«Aprende lo que te mueve»</b>. Pregúntame por los programas de la campaña o usa una de las opciones rápidas.';
+  bubble('assistant',GREETING);
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    send(input.value);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){
+    c.addEventListener('click',function(){send(c.getAttribute('data-q'));});
+  });
+})();
+</script>
+</body>
+</html>

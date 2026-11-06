@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitch deck de marca internacional · Marketing y Publicidad · FESNA</title>
+<meta name="description" content="Pitch deck interactivo de la marca ficticia KAWA (café de origen colombiano hacia el Asia-Pacífico). Producto académico de Marketing y Publicidad (Profesional).">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --panel:#0f172a; --card:#020617; --line:#1e293b; --txt:#e2e8f0; --muted:#94a3b8;
+  --blue:#0A499C; --orange:#FD531E;
+}
+*{box-sizing:border-box}
+body.media-page{margin:0;background:var(--panel);color:var(--txt);font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6}
+.media-wrap{width:min(1020px,calc(100% - 40px));margin-inline:auto;padding:34px 0 60px}
+.back-link{display:inline-block;color:#7dd3fc;text-decoration:none;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.back-link:hover{border-color:var(--blue)}
+.page-header{margin:26px 0 16px}
+.page-header .kicker{margin:0 0 8px;color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);line-height:1.2;color:#fff}
+.page-header .lede{margin:0;color:var(--muted);font-size:14px;max-width:780px}
+.aviso{margin:14px 0 16px;padding:12px 16px;border:1px solid rgba(251,191,36,.5);background:rgba(251,191,36,.08);color:#fde68a;border-radius:12px;font-size:13px;font-weight:600}
+
+.deck{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.stage{position:relative;min-height:520px}
+.slide{position:absolute;inset:0;padding:38px 44px;display:flex;flex-direction:column;gap:14px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .35s ease, transform .35s ease;overflow-y:auto}
+.slide.is-on{opacity:1;transform:translateY(0);pointer-events:auto;position:relative}
+.slide .num{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.slide h2{margin:0;font-size:clamp(22px,3.4vw,32px);line-height:1.2;color:#fff}
+.slide p.lead{margin:0;font-size:14.5px;color:var(--txt);max-width:760px}
+.slide small{font-size:10.5px;color:var(--muted)}
+.slide {scrollbar-width:thin}
+
+/* portada */
+.logoK{width:86px;height:86px;border-radius:22px;display:grid;place-items:center;font-size:44px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--blue),var(--orange));box-shadow:0 14px 34px rgba(10,73,156,.4)}
+.marca{margin:4px 0 0;font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:#fff;font-weight:700}
+
+/* stats / listas */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.stat{background:#0b1626;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:22px;color:#fff}
+.stat span{font-size:11.5px;color:var(--muted)}
+.tam-bar{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.tam-row{display:grid;grid-template-columns:52px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+.tam-track{height:12px;border-radius:999px;background:#0b1626;border:1px solid var(--line);overflow:hidden}
+.tam-fill{height:100%;border-radius:999px}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.paso{background:#0b1626;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.paso h3{margin:0 0 5px;font-size:12.5px;color:#fff}
+.paso p{margin:0;font-size:12px;color:var(--muted)}
+.h{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+
+/* controles */
+.controls{display:flex;align-items:center;gap:14px;padding:14px 18px;border-top:1px solid var(--line);background:#071018}
+.btn-nav{cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--blue);border:0;border-radius:10px;padding:9px 16px;transition:.15s}
+.btn-nav:hover{filter:brightness(1.15)}
+.btn-nav:disabled{opacity:.35;cursor:not-allowed}
+.dots{display:flex;gap:7px;flex:1;justify-content:center}
+.dots button{cursor:pointer;width:11px;height:11px;border-radius:50%;border:1px solid var(--muted);background:transparent;padding:0;transition:.15s}
+.dots button.is-on{background:var(--orange);border-color:var(--orange);transform:scale(1.25)}
+.counter{font-size:12px;color:var(--muted);min-width:44px;text-align:right}
+
+.mediacards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.mediacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mediacard h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.mediacard p{margin:0;font-size:13px;color:var(--muted)}
+.page-footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+@media (max-width:760px){
+  .stats,.pasos{grid-template-columns:1fr}
+  .slide{padding:24px 20px;min-height:560px}
+}
+</style>
+</head>
+<body class="media-page">
+<div class="media-wrap">
+  <a class="back-link" href="../index.html#productos">← Volver al portafolio</a>
+
+  <header class="page-header">
+    <p class="kicker">FESNA · CAMPAÑA «APRENDE LO QUE TE MUEVE» · MKT · PROFESIONAL · MARCA FICTICIA</p>
+    <h1>Pitch deck · marca internacional</h1>
+    <p class="lede">Ejercicio de marca ficticia: llevar un producto colombiano de origen a un mercado internacional construyendo la confianza pieza por pieza — narrativa verificable, diferenciación y neuromarketing con ética.</p>
+  </header>
+
+  <p class="aviso">⚠️ Marca <strong>KAWA</strong> y todas sus cifras son <strong>ficticias e ilustrativas</strong>: el ejercicio evalúa el método del pitch, no datos de mercado reales.</p>
+
+  <section class="media-section" aria-label="Pitch deck KAWA">
+    <div class="deck">
+      <div class="stage" id="stage">
+
+        <!-- 01 PORTADA -->
+        <article class="slide is-on">
+          <span class="num">Diapositiva 01 · Portada</span>
+          <div class="logoK">K</div>
+          <h2>KAWA · CAFÉ DE ORIGEN</h2>
+          <p class="lead">Café de origen colombiano con historia trazable, hacia el Asia-Pacífico. Pitch académico del área profesional: de la marca local al relato global.</p>
+          <p class="lead" style="color:var(--muted)">Preparado por <b style="color:#fff">Nicolás Bolivar</b> · Marketing y Publicidad (Profesional) · FESNA · 2026</p>
+          <small>Marca, personas y cifras de esta presentación son ficticias e ilustrativas.</small>
+        </article>
+
+        <!-- 02 PROBLEMA -->
+        <article class="slide">
+          <span class="num">Diapositiva 02 · Problema</span>
+          <h2>El café sale como commodity, sin historia</h2>
+          <p class="lead">El grano que viaja al mundo pierde su origen: nadie en la otra punta sabe quién lo cultivó, en qué montaña ni bajo qué prácticas. La historia se queda en Colombia y el valor se queda en el intermediario.</p>
+          <div class="stats">
+            <div class="stat"><b>~70%</b><span>de la exportación simulada se vendería sin referencia de finca (ilustrativo)</span></div>
+            <div class="stat"><b>3–4</b><span>intermediarios estimados entre finca y consumidor final (ilustrativo)</span></div>
+            <div class="stat"><b>Precio</b><span>decidido por el mercado, no por la calidad contada (ilustrativo)</span></div>
+          </div>
+          <small>Datos ilustrativos para el ejercicio: no corresponden a cifras reales del sector.</small>
+        </article>
+
+        <!-- 03 SOLUCIÓN -->
+        <article class="slide">
+          <span class="num">Diapositiva 03 · Solución</span>
+          <h2>Lotes trazables por QR, hasta la finca</h2>
+          <p class="lead">Cada bolsa lleva un código QR que cuenta la historia del lote: la finca, la altitud, la variedad y el proceso. El consumidor escanea y verifica — la confianza se construye con evidencia, no con adjetivos.</p>
+          <div class="pasos">
+            <div class="paso"><span class="h">Paso 1</span><h3>Lote identificado</h3><p>Cada cosecha se registra desde la finca con su propia ficha.</p></div>
+            <div class="paso"><span class="h">Paso 2</span><h3>QR verificable</h3><p>El código lleva al contenido de la historia del lote, siempre al origen.</p></div>
+            <div class="paso"><span class="h">Paso 3</span><h3>Consumidor conectado</h3><p>Quien compra en el Asia-Pacífico conoce la montaña que produce su café.</p></div>
+          </div>
+          <small>Mecanismo ilustrativo del pitch; no constituye oferta comercial real.</small>
+        </article>
+
+        <!-- 04 MERCADO -->
+        <article class="slide">
+          <span class="num">Diapositiva 04 · Mercado</span>
+          <h2>TAM / SAM / SOM (ilustrativos)</h2>
+          <p class="lead">El tamaño de la oportunidad se calcula de lo general a lo ejecutable. Cifras de simulación para el ejercicio.</p>
+          <div class="tam-bar">
+            <div class="tam-row"><span class="h">TAM</span><div class="tam-track"><div class="tam-fill" style="width:100%;background:linear-gradient(90deg,var(--blue),#2563eb)"></div></div><span style="color:#93c5fd">$1.200M</span></div>
+            <div class="tam-row"><span class="h">SAM</span><div class="tam-track"><div class="tam-fill" style="width:42%;background:linear-gradient(90deg,#2563eb,var(--orange))"></div></div><span style="color:#fdba8c">$500M</span></div>
+            <div class="tam-row"><span class="h">SOM</span><div class="tam-track"><div class="tam-fill" style="width:12%;background:var(--orange)"></div></div><span style="color:#fdba8c">$50M</span></div>
+          </div>
+          <small>TAM: mercado simulado total de café de origen hacia Asia-Pacífico · SAM: segmento alcanzable digital-first · SOM: objetivo a 3 años del pitch. Todas las cifras son ficticias.</small>
+        </article>
+
+        <!-- 05 DIFERENCIACIÓN -->
+        <article class="slide">
+          <span class="num">Diapositiva 05 · Diferenciación</span>
+          <h2>Narrativa verificable + neuromarketing con ética</h2>
+          <p class="lead">La diferencia no la declara la marca: la comprueba el consumidor. Cada principio de persuasión tiene respaldo verificable.</p>
+          <div class="stats">
+            <div class="stat"><b>QR</b><span>Prueba social con historia real del lote, no reseñas fabricadas</span></div>
+            <div class="stat"><b>Contexto</b><span>El aroma o el origen se aprecian mejor en contexto: narrativa sensorial situada (ilustrativa)</span></div>
+            <div class="stat"><b>Ética</b><span>Ninguna afirmación sin foto, dato o nombre de finca que la respalde</span></div>
+          </div>
+          <small>Principios de neuromarketing usados como recurso pedagógico, con límite ético declarado.</small>
+        </article>
+
+        <!-- 06 MODELO -->
+        <article class="slide">
+          <span class="num">Diapositiva 06 · Modelo de negocio</span>
+          <h2>DTC + coffee shops + suscripción</h2>
+          <p class="lead">Tres líneas complementarias de la marca ficticia: venta directa online (DTC), puntos físicos aliados y suscripción de lotes con historia. Simulación académica de estructura de ingresos.</p>
+          <div class="pasos">
+            <div class="paso"><span class="h">Línea A</span><h3>DTC online</h3><p>Venta directa con el QR de trazabilidad en cada envío.</p></div>
+            <div class="paso"><span class="h">Línea B</span><h3>Coffee shops aliados</h3><p>Experiencia en cafeterías con relato del lote en la mesa.</p></div>
+            <div class="paso"><span class="h">Línea C</span><h3>Suscripción</h3><p>Un lote nuevo con historia cada mes; el consumidor colecciona orígenes.</p></div>
+          </div>
+          <small>Modelo ilustrativo de pitch, sin proyecciones financieras reales.</small>
+        </article>
+
+        <!-- 07 ROADMAP -->
+        <article class="slide">
+          <span class="num">Diapositiva 07 · Roadmap a 36 meses</span>
+          <h2>Tres horizontes hacia el Asia-Pacífico</h2>
+          <p class="lead">La ruta se planifica como los ciclos académicos: cada horizonte tiene entregas verificables, no promesas.</p>
+          <div class="pasos">
+            <div class="paso"><span class="h">Horizonte 1 · 0–6 meses</span><h3>Fundar y verificar</h3><p>Ficha de finca, manual del lote y prototipo del QR. Origen documentado.</p></div>
+            <div class="paso"><span class="h">Horizonte 2 · 6–18 meses</span><h3>Encontrar la alianza</h3><p>Distribución piloto (2 aliados), primera campaña con KPIs claros.</p></div>
+            <div class="paso"><span class="h">Horizonte 3 · 18–36 meses</span><h3>Escalar con historia</h3><p>Catálogo de 6 lotes, comunidad de suscriptores y segunda ciudad.</p></div>
+          </div>
+          <small>Plan ficticio del pitch: duplica cualquier plazo antes de escalar a la realidad.</small>
+        </article>
+
+        <!-- 08 CIERRE -->
+        <article class="slide">
+          <span class="num">Diapositiva 08 · Cierre</span>
+          <h2>De la montaña al mundo, con historia</h2>
+          <p class="lead">KAWA es un ejercicio académico, pero el mensaje es real para el portafolio: una marca que verifica su historia siempre puede crecer. La confianza se construye como un plan de marketing — pieza por pieza, con evidencia.</p>
+          <p class="lead" style="color:#fdba8c;font-weight:600">Gracias — y el café, eso sí, aquí sí se recomienda con moderación ☕</p>
+          <div class="stats">
+            <div class="stat"><b>8</b><span>láminas con método verificable en este pitch ficticio</span></div>
+            <div class="stat"><b>QR</b><span>el mecanismo que convierte historia en confianza</span></div>
+            <div class="stat"><b>Tú</b><span>decides si la historia convence — consulte los datos en fuentes reales</span></div>
+          </div>
+          <small>Presentación académica: marca ficticia, datos ilustrativos, sin oferta comercial.</small>
+        </article>
+      </div>
+
+      <div class="controls">
+        <button class="btn-nav" id="prev" aria-label="Anterior">←</button>
+        <div class="dots" id="dots"></div>
+        <button class="btn-nav" id="next" aria-label="Siguiente">→</button>
+        <span class="counter" id="counter">1 / 8</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mediacards" aria-label="Ficha del producto">
+    <div class="mediacard"><h3>Objetivo</h3><p>Ejercitar la estructura completa de un pitch: problema, solución, mercado, diferenciación, modelo y ruta — con narrativa que se sostiene por sí sola.</p></div>
+    <div class="mediacard"><h3>Enfoque</h3><p>La marca ficticia aplica los principios del portafolio: trazabilidad como diferenciación, neuromarketing responsable y decisiones basadas en evidencia verificable.</p></div>
+    <div class="mediacard"><h3>Apoyo de IA</h3><p>La IA ayudó a estructurar la narrativa y redactar borradores de cada lámina; el estudiante definió la marca, ilustró los datos de simulación y programó el deck interactivo.</p></div>
+  </section>
+
+  <footer class="page-footer">Producto académico de demostración · Nicolás Bolivar · Marketing y Publicidad (Profesional) · FESNA. KAWA es una marca ficticia creada para el ejercicio; sus cifras son ilustrativas y ninguna de ellas representa datos reales de FESNA ni del sector cafetero: consulte datos reales en la <a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer" style="color:#7dd3fc">página oficial de la institución</a>.</footer>
+</div>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.slide');
+  var total=slides.length;
+  var i=0;
+  var dotsBox=document.getElementById('dots');
+  var counter=document.getElementById('counter');
+  var btnPrev=document.getElementById('prev');
+  var btnNext=document.getElementById('next');
+
+  for(var d=0;d<total;d++){
+    (function(idx){
+      var dot=document.createElement('button');
+      dot.setAttribute('aria-label','Ir a la diapositiva '+(idx+1));
+      dot.addEventListener('click',function(){ go(idx); });
+      dotsBox.appendChild(dot);
+    })(d);
+  }
+  var dots=dotsBox.querySelectorAll('button');
+
+  function go(n){
+    if(n<0||n>=total)return;
+    slides[i].classList.remove('is-on');
+    i=n;
+    slides[i].classList.add('is-on');
+    Array.prototype.forEach.call(dots,function(dt,idx){dt.classList.toggle('is-on',idx===i);});
+    counter.textContent=(i+1)+' / '+total;
+    btnPrev.disabled=(i===0);
+    btnNext.disabled=(i===total-1);
+  }
+  btnPrev.addEventListener('click',function(){go(i-1);});
+  btnNext.addEventListener('click',function(){go(i+1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft')go(i-1);
+    if(e.key==='ArrowRight')go(i+1);
+  });
+  go(0);
+})();
+</script>
+</body>
+</html>

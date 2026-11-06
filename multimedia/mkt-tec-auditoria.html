@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoría de pauta digital · Marketing y Publicidad · FESNA</title>
+<meta name="description" content="Auditoría simulada de pauta digital de la campaña Aprende lo que te mueve de FESNA. Producto académico de Marketing y Publicidad (Tecnología).">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --panel:#0f172a; --card:#020617; --line:#1e293b; --txt:#e2e8f0; --muted:#94a3b8;
+  --blue:#0A499C; --orange:#FD531E; --good:#34d399; --warn:#fbbf24; --bad:#f87171; --amber:#fde68a;
+}
+*{box-sizing:border-box}
+body.media-page{margin:0;background:var(--panel);color:var(--txt);font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6}
+.media-wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto;padding:34px 0 60px}
+.back-link{display:inline-block;color:#7dd3fc;text-decoration:none;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.back-link:hover{border-color:var(--blue)}
+.page-header{margin:26px 0 16px}
+.page-header .kicker{margin:0 0 8px;color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);line-height:1.2;color:#fff}
+.page-header .lede{margin:0;color:var(--muted);font-size:14px;max-width:780px}
+.aviso{margin:14px 0 18px;padding:12px 16px;border:1px solid rgba(251,191,36,.5);background:rgba(251,191,36,.08);color:var(--amber);border-radius:12px;font-size:13px;font-weight:600}
+.media-section{margin-top:0}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi .label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi .value{font-size:30px;font-weight:700;color:#fff;line-height:1.2}
+.kpi .delta{font-size:12px;margin-top:4px}
+.delta.up{color:var(--good)}
+.delta.down{color:var(--bad)}
+.kpi .hint{font-size:10.5px;color:var(--muted);margin-top:2px}
+
+/* filtro */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filter button{cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:#0b1626;color:var(--muted);transition:.15s}
+.filter button:hover{color:#fff}
+.filter button.is-active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* tabla */
+.table-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px}
+th{background:#0b1626;color:var(--muted);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid rgba(30,41,59,.6);white-space:nowrap}
+td.canal{width:124px}
+tr:last-child td{border-bottom:0}
+.badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#071018;padding:4px 10px;border-radius:999px;display:inline-block}
+.badge-ig{background:#E1306C;color:#fff}
+.badge-tt{background:#000;box-shadow:0 0 0 1px #334155;color:#fff}
+.badge-fb{background:#1877F2;color:#fff}
+.badge-wa{background:#25D366;color:#071018}
+.estado{font-size:11px;font-weight:700;color:#071018;padding:4px 10px;border-radius:999px;display:inline-block}
+.estado-ok{background:var(--good)}
+.estado-warn{background:var(--warn)}
+.estado-bad{background:var(--bad)}
+tr.critico td{background:rgba(248,113,113,.06)}
+
+/* hallazgos + plan */
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.block{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.block h3{margin:0 0 10px;font-size:13px;color:#fff;letter-spacing:.04em}
+.block ul{margin:0;padding-left:18px;font-size:13px}
+.block li{margin-bottom:7px}
+.block li b{color:#fff}
+.block li span.acc{color:var(--good)}
+.plan{margin-top:14px}
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.plan-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.plan-card h4{margin:0 0 6px;font-size:13px;color:#fff}
+.plan-card p{margin:0;font-size:12.5px;color:var(--muted)}
+
+.mediacards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.mediacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mediacard h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.mediacard p{margin:0;font-size:13px;color:var(--muted)}
+.page-footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.page-footer a{color:#7dd3fc}
+[hidden]{display:none !important}
+@media (max-width:760px){
+  .kpis,.dos-col,.plan-grid,.mediacards{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  .kpis,.dos-col,.plan-grid,.mediacards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body class="media-page">
+<div class="media-wrap">
+  <a class="back-link" href="../index.html#productos">← Volver al portafolio</a>
+
+  <header class="page-header">
+    <p class="kicker">FESNA · CAMPAÑA «APRENDE LO QUE TE MUEVE» · MKT · TECNOLOGÍA</p>
+    <h1>Auditoría de pauta digital</h1>
+    <p class="lede">Revisión del desempeño simulado de la campaña por canal: KPIs globales, panorama por canal con semáforo y plan de optimización accionable. Todos los valores son pedagógicos y de simulación académica.</p>
+  </header>
+
+  <p class="aviso">⚠️ Todos los valores de esta página son <strong>simulación académica</strong>: no corresponden a pauta real de FESNA.</p>
+
+  <section class="media-section" aria-label="Panel de auditoría">
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label">Impresiones</div>
+        <div class="value">412.400</div>
+        <div class="delta up">▲ +6 % vs meta interna</div>
+        <div class="hint">meta simulada: 390.000</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Clics</div>
+        <div class="value">7.840</div>
+        <div class="delta up">▲ +4 % vs meta interna</div>
+        <div class="hint">meta simulada: 7.540</div>
+      </div>
+      <div class="kpi">
+        <div class="label">CTR</div>
+        <div class="value">1,90 %</div>
+        <div class="delta down">▼ −0,2 pp vs benchmark 2,1 %</div>
+        <div class="hint">benchmark simulado del sector</div>
+      </div>
+      <div class="kpi">
+        <div class="label">ROAS</div>
+        <div class="value">3,4x</div>
+        <div class="delta up">▲ +0,3x vs meta 3,1x</div>
+        <div class="hint">objetivo simulado del corte</div>
+      </div>
+    </div>
+
+    <div class="filter" role="group" aria-label="Filtrar por canal">
+      <button class="is-active" data-f="Todos">Todos</button>
+      <button data-f="Instagram">Instagram</button>
+      <button data-f="TikTok">TikTok</button>
+      <button data-f="Facebook">Facebook</button>
+      <button data-f="WhatsApp">WhatsApp</button>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>Canal</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>CPC</th><th>Conv.</th><th>CPA</th><th>ROAS</th><th>Estado</th></tr>
+        </thead>
+        <tbody id="tbody">
+          <tr data-c="TikTok">
+            <td class="canal"><span class="badge badge-tt">TikTok</span></td>
+            <td>168.900</td><td>5.240</td><td>3,1 %</td><td>$0,19</td><td>310</td><td>$1,45</td><td><b>4,1x</b></td>
+            <td><span class="estado estado-ok">Saludable</span></td>
+          </tr>
+          <tr data-c="Instagram" class="critico">
+            <td class="canal"><span class="badge badge-ig">Instagram</span></td>
+            <td>122.500</td><td>1.470</td><td>1,2 %</td><td>$0,38</td><td>95</td><td>$3,80</td><td><b>1,6x</b></td>
+            <td><span class="estado estado-bad">Crítico</span></td>
+          </tr>
+          <tr data-c="Facebook">
+            <td class="canal"><span class="badge badge-fb">Facebook</span></td>
+            <td>86.000</td><td>1.630</td><td>1,9 %</td><td>$0,27</td><td>205</td><td>$2,45</td><td><b>3,2x</b></td>
+            <td><span class="estado estado-warn">Vigilancia</span></td>
+          </tr>
+          <tr data-c="WhatsApp">
+            <td class="canal"><span class="badge badge-wa">WhatsApp</span></td>
+            <td>35.000</td><td>1.200</td><td>3,4 %</td><td>$0,08</td><td>240</td><td>$0,95</td><td><b>5,8x</b></td>
+            <td><span class="estado estado-ok">Saludable</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dos-col">
+      <div class="block">
+        <h3>🔍 Hallazgos de la auditoría</h3>
+        <ul>
+          <li><b>TikTok lidera la captación</b>: mejor CTR (3,1 %) y ROAS (4,1x) del conjunto — es el canal de Diego.</li>
+          <li><b>Instagram frena la campaña</b>: CTR 1,2 % y ROAS 1,6x por debajo de la meta; su CPA casi triplica el de TikTok.</li>
+          <li><b>Facebook rinde con Laura</b>: ROAS 3,2x en Vigilancia — funciona para el segmento trabajador, no para conquistas.</li>
+          <li><b>WhatsApp es el mejor cierre</b>: CPA $0,95 y ROAS 5,8x; confirma que la mensajería empuja la decisión final.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>🛠️ Plan de optimización por canal</h3>
+        <ul>
+          <li><b>TikTok</b>: <span class="acc">escalar presupuesto</span> y reciclar el gancho que más convierte en formato nuevo cada 2 semanas.</li>
+          <li><b>Instagram</b>: rediseñar el gancho de 3 segundos, cambiar de creativo el 70 % de las piezas y pausar la pauta que no mueva el CTR del 1,5 %.</li>
+          <li><b>Facebook</b>: mantener inversión y optimizar hacia la audiencia similar del testimonio con mejor retención; monitorear el CPA semanalmente.</li>
+          <li><b>WhatsApp</b>: extender los broadcasts a contactos autorizados y automatizar la primera respuesta con la lógica del chat (página 1 de esta serie).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-grid">
+        <div class="plan-card"><h4>1. Detectar</h4><p>Comparar CTR y CPA de cada canal contra el benchmark simulado cada semana.</p></div>
+        <div class="plan-card"><h4>2. Priorizar</h4><p>Asignar presupuesto al canal con mejor ROAS, no al que más impresiones dé.</p></div>
+        <div class="plan-card"><h4>3. Iterar</h4><p>Probar 2 creativos nuevos por canal débil antes de considerarlo crítico definitivo.</p></div>
+        <div class="plan-card"><h4>4. Reportar</h4><p>Documentar el movimiento en la entrega del examen: el dato y la decisión.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mediacards" aria-label="Ficha del producto">
+    <div class="mediacard"><h3>Objetivo</h3><p>Ejercitar la lectura crítica de una pauta real (simulada): no basta con publicar, hay que auditar lo publicado y decidir con base en evidencia.</p></div>
+    <div class="mediacard"><h3>Enfoque</h3><p>Los KPIs siguen la lógica real del embudo: impresiones y clics miden conquista; CTR, CPA y ROAS miden eficiencia. El semáforo traduce los datos en decisiones.</p></div>
+    <div class="mediacard"><h3>Apoyo de IA</h3><p>La IA ayudó a plantear la estructura del panel y los umbrales de semáforo; el estudiante definió los valores simulados, redactó los hallazgos y programó el filtro por canal.</p></div>
+  </section>
+
+  <footer class="page-footer">Producto académico de demostración · Nicolás Bolivar · Marketing y Publicidad (Tecnología) · FESNA. Métricas, metas y benchmarks de esta página son simulaciones pedagógicas sin relación con pauta real; los datos institucionales se consultan en la <a href="https://www.nuevaamerica.edu.co/" target="_blank" rel="noopener noreferrer">página oficial de la institución</a>.</footer>
+</div>
+
+<script>
+(function(){
+  var buttons=document.querySelectorAll('.filter button');
+  var rows=document.querySelectorAll('#tbody tr');
+  Array.prototype.forEach.call(buttons,function(btn){
+    btn.addEventListener('click',function(){
+      Array.prototype.forEach.call(buttons,function(b){b.classList.remove('is-active');});
+      btn.classList.add('is-active');
+      var f=btn.getAttribute('data-f');
+      Array.prototype.forEach.call(rows,function(row){
+        row.hidden=(f!=='Todos'&&row.getAttribute('data-c')!==f);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
